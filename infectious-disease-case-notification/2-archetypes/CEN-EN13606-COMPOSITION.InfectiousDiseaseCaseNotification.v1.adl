@@ -1,0 +1,381 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-COMPOSITION.InfectiousDiseaseCaseNotification.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["date"] = <"2026-09-20">
+        ["name"] = <"Simeon Abanos">
+        ["organisation"] = <"FMI, Sofia University St. Kliment Ohridski">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"Record a rapid notification of a case of an infectious disease, as a general practitioner submits it under Ordinance No 21 of 18 July 2005 on the procedure for registration, notification and reporting of communicable diseases, structured in four sections: the subject, the disease, the classification of the case with the grounds that produced it, and the reporter.">
+            use = <"Built within the doctoral thesis on 2026-09-20, from Ordinance No 21 of 18 July 2005, consolidated text as amended in State Gazette No 35 of 14 April 2026, as that text is held in the database of the information system for registration, notification and reporting of communicable diseases. The vocabulary and the recording style follow CEN-EN13606-COMPOSITION.PATIENT.v1; terminologies are bound through codingSchemeName in the data type itself, as in the published archetype of the Occupational Health Assessment Summary, not through a term_binding section. Three things are recorded as the source has them and are not smoothed over. First, the clinical criterion of a disease may be unnumbered in the ordinance itself - scarlet fever is such a case - so CRITERION.CODE is optional and such a criterion carries only its text; this is not a gap in the model but the source stated exactly. Second, APPLIED.RULE is an uncoded string: it is the expression the system computed with, and there is no nomenclature to bind it to. Third, the coding of SEX is not documented anywhere in the source - neither in the database nor in the system that writes it - so the value travels as the code of that system, with no terminology named. No binding to SNOMED CT or LOINC is made anywhere in this archetype.">
+            misuse = <"Not to be read as a terminology-bound record: three of the four coding schemes are national annexes of an ordinance, not registered international terminologies.">
+            keywords = <"infectious disease", "case notification", "case classification", "Ordinance No 21", "EN ISO 13606">
+            copyright = <"ISO/CEN 13606">
+        >
+    >
+
+definition
+    COMPOSITION[at0000] occurrences matches {1..1} matches {  -- InfectiousDiseaseCaseNotification
+        content existence matches {1..1} cardinality matches {0..*; unordered} matches {
+            SECTION[at0001] occurrences matches {0..*} matches {  -- SECTION-SUBJECT
+                members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    ENTRY[at0002] occurrences matches {0..*} matches {  -- ENTRY-PERSON
+                        items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ELEMENT[at0003] occurrences matches {0..*} matches {  -- SUBJECT.ID
+                                value existence matches {0..1} matches {
+                                    II[at0004] occurrences matches {0..1} matches {  -- II
+                                        extension existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0005] occurrences matches {0..*} matches {  -- BIRTH.DATE
+                                value existence matches {0..1} matches {
+                                    DATE[at0006] occurrences matches {0..1} matches {  -- DATE
+                                        date existence matches {1..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0007] occurrences matches {0..*} matches {  -- SEX
+                                value existence matches {0..1} matches {
+                                    CD[at0008] occurrences matches {0..1} matches {  -- CD
+                                        codeValue existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            SECTION[at0009] occurrences matches {0..*} matches {  -- SECTION-DISEASE
+                members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    ENTRY[at0010] occurrences matches {0..*} matches {  -- ENTRY-DISEASE
+                        items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ELEMENT[at0011] occurrences matches {0..*} matches {  -- DISEASE.NAME
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0012] occurrences matches {0..1} matches {  -- SIMPLE_TEXT
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0013] occurrences matches {0..*} matches {  -- MKB
+                                value existence matches {0..1} matches {
+                                    CD[at0014] occurrences matches {0..1} matches {  -- CD
+                                        codeValue existence matches {0..1} matches {/.*/}
+                                        codingSchemeName existence matches {0..1} matches {"ICD10_1998"}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0015] occurrences matches {0..*} matches {  -- DISEASE.CODE
+                                value existence matches {0..1} matches {
+                                    CD[at0016] occurrences matches {0..1} matches {  -- CD
+                                        codeValue existence matches {0..1} matches {/.*/}
+                                        codingSchemeName existence matches {0..1} matches {"NAREDBA21-PRIL1"}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            SECTION[at0017] occurrences matches {0..*} matches {  -- SECTION-CASE.CLASSIFICATION
+                members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    ENTRY[at0018] occurrences matches {0..*} matches {  -- ENTRY-CASE.CLASS
+                        items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ELEMENT[at0019] occurrences matches {0..*} matches {  -- CASE.CLASS
+                                value existence matches {0..1} matches {
+                                    CD[at0020] occurrences matches {0..1} matches {  -- CD
+                                        codeValue existence matches {0..1} matches {/.*/}
+                                        codingSchemeName existence matches {0..1} matches {"NAREDBA21-PRIL2"}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0021] occurrences matches {0..1} matches {  -- CLASSIFICATION.CONTEXT
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0022] occurrences matches {0..1} matches {  -- SIMPLE_TEXT
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0023] occurrences matches {0..*} matches {  -- APPLIED.RULE
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0024] occurrences matches {0..1} matches {  -- SIMPLE_TEXT
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0025] occurrences matches {0..*} matches {  -- CLASSIFICATION.DATE
+                                value existence matches {0..1} matches {
+                                    DATE[at0026] occurrences matches {0..1} matches {  -- DATE
+                                        date existence matches {1..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            CLUSTER[at0027] occurrences matches {1..*} matches {  -- GROUNDS
+                                parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                                    ELEMENT[at0029] occurrences matches {0..*} matches {  -- CRITERION.CATEGORY
+                                        value existence matches {0..1} matches {
+                                            CD[at0030] occurrences matches {0..1} matches {  -- CD
+                                                codeValue existence matches {0..1} matches {/.*/}
+                                                codingSchemeName existence matches {0..1} matches {"NAREDBA21-PRIL3"}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0031] occurrences matches {0..1} matches {  -- CRITERION.CODE
+                                        value existence matches {0..1} matches {
+                                            CD[at0032] occurrences matches {0..1} matches {  -- CD
+                                                codeValue existence matches {0..1} matches {/.*/}
+                                                codingSchemeName existence matches {0..1} matches {"NAREDBA21-PRIL3"}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0033] occurrences matches {0..*} matches {  -- CRITERION.TEXT
+                                        value existence matches {0..1} matches {
+                                            SIMPLE_TEXT[at0034] occurrences matches {0..1} matches {  -- SIMPLE_TEXT
+                                                originalText existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0028] occurrences matches {1..1} matches {  -- STRUCTURE_TYPE
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            SECTION[at0035] occurrences matches {0..*} matches {  -- SECTION-REPORTER
+                members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    ENTRY[at0036] occurrences matches {0..*} matches {  -- ENTRY-REPORTER
+                        items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ELEMENT[at0037] occurrences matches {0..*} matches {  -- REPORTER.NAME
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0038] occurrences matches {0..1} matches {  -- SIMPLE_TEXT
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0039] occurrences matches {0..*} matches {  -- REPORTER.WORKPLACE
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0040] occurrences matches {0..1} matches {  -- SIMPLE_TEXT
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0041] occurrences matches {0..*} matches {  -- NOTIFICATION.DATE
+                                value existence matches {0..1} matches {
+                                    DATE[at0042] occurrences matches {0..1} matches {  -- DATE
+                                        date existence matches {1..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        territory existence matches {0..1} matches {
+            CS[at0043] occurrences matches {0..1} matches {  -- TERRITORY
+                codeValue existence matches {0..1} matches {"BG"}
+                codingSchemeName existence matches {0..1} matches {"ISO::3166"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"InfectiousDiseaseCaseNotification">
+                    description = <"Rapid notification of a case of an infectious disease under Ordinance No 21">
+                >
+                ["at0001"] = <
+                    text = <"SECTION-SUBJECT">
+                    description = <"The person the notification is about">
+                >
+                ["at0002"] = <
+                    text = <"ENTRY-PERSON">
+                    description = <"Identifying details of the subject, without the national number">
+                >
+                ["at0003"] = <
+                    text = <"SUBJECT.ID">
+                    description = <"Identifier of the subject, assigned by the notifying system">
+                >
+                ["at0004"] = <
+                    text = <"II">
+                    description = <"">
+                >
+                ["at0005"] = <
+                    text = <"BIRTH.DATE">
+                    description = <"Date of birth of the subject">
+                >
+                ["at0006"] = <
+                    text = <"DATE">
+                    description = <"">
+                >
+                ["at0007"] = <
+                    text = <"SEX">
+                    description = <"Sex of the subject, as the code of the notifying system; the source documents no terminology for it">
+                >
+                ["at0008"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0009"] = <
+                    text = <"SECTION-DISEASE">
+                    description = <"The disease the case is notified for">
+                >
+                ["at0010"] = <
+                    text = <"ENTRY-DISEASE">
+                    description = <"The disease as named and coded in the ordinance">
+                >
+                ["at0011"] = <
+                    text = <"DISEASE.NAME">
+                    description = <"Name of the disease as it stands in Annex 1 of the ordinance">
+                >
+                ["at0012"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0013"] = <
+                    text = <"MKB">
+                    description = <"Code of the disease in ICD-10">
+                >
+                ["at0014"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0015"] = <
+                    text = <"DISEASE.CODE">
+                    description = <"Ordinal of the disease in Annex 1 of the ordinance">
+                >
+                ["at0016"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0017"] = <
+                    text = <"SECTION-CASE.CLASSIFICATION">
+                    description = <"The class pronounced for the case and what produced it">
+                >
+                ["at0018"] = <
+                    text = <"ENTRY-CASE.CLASS">
+                    description = <"Classification of the case with its grounds">
+                >
+                ["at0019"] = <
+                    text = <"CASE.CLASS">
+                    description = <"Class of the case: possible, probable or confirmed, by Annex 2 of the ordinance">
+                >
+                ["at0020"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0021"] = <
+                    text = <"CLASSIFICATION.CONTEXT">
+                    description = <"Context in which the class was pronounced, where the definition of the case names one; absent when it does not">
+                >
+                ["at0022"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0023"] = <
+                    text = <"APPLIED.RULE">
+                    description = <"The expression the system computed the class with; an uncoded string, bound to no nomenclature">
+                >
+                ["at0024"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0025"] = <
+                    text = <"CLASSIFICATION.DATE">
+                    description = <"Date the class was pronounced">
+                >
+                ["at0026"] = <
+                    text = <"DATE">
+                    description = <"">
+                >
+                ["at0027"] = <
+                    text = <"GROUNDS">
+                    description = <"One criterion that was ticked and thereby took part in the classification">
+                >
+                ["at0028"] = <
+                    text = <"STRUCTURE_TYPE">
+                    description = <"">
+                >
+                ["at0029"] = <
+                    text = <"CRITERION.CATEGORY">
+                    description = <"Category of the criterion - clinical, laboratory or epidemiological - by its ordinal in Annex 3">
+                >
+                ["at0030"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0031"] = <
+                    text = <"CRITERION.CODE">
+                    description = <"Ordinal of the criterion in Annex 3, where the ordinance numbers it; a criterion the ordinance leaves unnumbered carries none">
+                >
+                ["at0032"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0033"] = <
+                    text = <"CRITERION.TEXT">
+                    description = <"The criterion as worded in the ordinance">
+                >
+                ["at0034"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0035"] = <
+                    text = <"SECTION-REPORTER">
+                    description = <"Who notified and from where">
+                >
+                ["at0036"] = <
+                    text = <"ENTRY-REPORTER">
+                    description = <"The reporter of the notification">
+                >
+                ["at0037"] = <
+                    text = <"REPORTER.NAME">
+                    description = <"Name of the reporting physician">
+                >
+                ["at0038"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0039"] = <
+                    text = <"REPORTER.WORKPLACE">
+                    description = <"Place of work of the reporting physician">
+                >
+                ["at0040"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0041"] = <
+                    text = <"NOTIFICATION.DATE">
+                    description = <"Date the notification was submitted">
+                >
+                ["at0042"] = <
+                    text = <"DATE">
+                    description = <"">
+                >
+                ["at0043"] = <
+                    text = <"TERRITORY">
+                    description = <"">
+                >
+            >
+        >
+    >

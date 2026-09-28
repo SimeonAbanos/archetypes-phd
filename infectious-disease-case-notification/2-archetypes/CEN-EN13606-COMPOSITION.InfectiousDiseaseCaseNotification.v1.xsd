@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Canonical W3C XML Schema generated from the archetype CEN-EN13606-COMPOSITION.InfectiousDiseaseCaseNotification.v1 -->
+<!-- Built within the doctoral thesis of Simeon Abanos, FMI, Sofia University, on 2026-09-20. -->
+<!-- The data types are included from TS14796-dataTypes.xsd, (c) IBIME, Universidad Politecnica de Valencia, CC-BY. -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://EN13606-RM.xsd"
+		   targetNamespace="http://EN13606-RM.xsd" elementFormDefault="qualified"
+		   version="v20260920" id="CEN-EN13606-COMPOSITION.InfectiousDiseaseCaseNotification.v1.xsd">
+	<xs:include schemaLocation="../1-reference-model/TS14796-dataTypes.xsd"/>
+
+	<xs:element name="InfectiousDiseaseCaseNotification" type="T_InfectiousDiseaseCaseNotification"/>
+
+	<xs:complexType name="CD_ICD10_1998">
+		<xs:annotation><xs:documentation>Coded value restricted to the ICD-10 terminology, as bound in the archetype. Follows the practice of the published EN 13606 archetype of the Occupational Health Assessment Summary.</xs:documentation></xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="CV">
+				<xs:sequence>
+					<xs:element name="nullFlavor" type="CS" minOccurs="0"/>
+					<xs:element name="codingScheme" type="OID" minOccurs="0"/>
+					<xs:element name="codingSchemeName" type="xs:string" fixed="ICD10_1998"/>
+					<xs:element name="codingSchemeVersion" type="xs:string" minOccurs="0"/>
+					<xs:element name="codeValue" type="xs:string"/>
+					<xs:element name="displayName" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="CD_NAREDBA21_PRIL1">
+		<xs:annotation><xs:documentation>Coded value restricted to Annex 1 of Ordinance No 21 - the list of diseases subject to registration, notification and reporting. A national annex, not an international terminology.</xs:documentation></xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="CV">
+				<xs:sequence>
+					<xs:element name="nullFlavor" type="CS" minOccurs="0"/>
+					<xs:element name="codingScheme" type="OID" minOccurs="0"/>
+					<xs:element name="codingSchemeName" type="xs:string" fixed="NAREDBA21-PRIL1"/>
+					<xs:element name="codingSchemeVersion" type="xs:string" minOccurs="0"/>
+					<xs:element name="codeValue" type="xs:string"/>
+					<xs:element name="displayName" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="CD_NAREDBA21_PRIL2">
+		<xs:annotation><xs:documentation>Coded value restricted to Annex 2 of Ordinance No 21 - the classes of a case: 1 possible, 2 probable, 3 confirmed.</xs:documentation></xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="CV">
+				<xs:sequence>
+					<xs:element name="nullFlavor" type="CS" minOccurs="0"/>
+					<xs:element name="codingScheme" type="OID" minOccurs="0"/>
+					<xs:element name="codingSchemeName" type="xs:string" fixed="NAREDBA21-PRIL2"/>
+					<xs:element name="codingSchemeVersion" type="xs:string" minOccurs="0"/>
+					<xs:element name="codeValue" type="xs:string"/>
+					<xs:element name="displayName" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="CD_NAREDBA21_PRIL3">
+		<xs:annotation><xs:documentation>Coded value restricted to Annex 3 of Ordinance No 21 - the definitions of the cases, from which both the categories of the criteria and the numbered criteria themselves are taken.</xs:documentation></xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="CV">
+				<xs:sequence>
+					<xs:element name="nullFlavor" type="CS" minOccurs="0"/>
+					<xs:element name="codingScheme" type="OID" minOccurs="0"/>
+					<xs:element name="codingSchemeName" type="xs:string" fixed="NAREDBA21-PRIL3"/>
+					<xs:element name="codingSchemeVersion" type="xs:string" minOccurs="0"/>
+					<xs:element name="codeValue" type="xs:string"/>
+					<xs:element name="displayName" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="T_ENTRY-PERSON">
+		<xs:annotation><xs:documentation>ENTRY-PERSON - Identifying details of the subject, without the national number (ENTRY, at0002)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="SUBJECT.ID" type="II" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="BIRTH.DATE" type="DATE" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="SEX" type="CD" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0002"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_SECTION-SUBJECT">
+		<xs:annotation><xs:documentation>SECTION-SUBJECT - The person the notification is about (SECTION, at0001)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="ENTRY-PERSON" type="T_ENTRY-PERSON" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0001"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_ENTRY-DISEASE">
+		<xs:annotation><xs:documentation>ENTRY-DISEASE - The disease as named and coded in the ordinance (ENTRY, at0010)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="DISEASE.NAME" type="SIMPLE_TEXT" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="MKB" type="CD_ICD10_1998" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="DISEASE.CODE" type="CD_NAREDBA21_PRIL1" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0010"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_SECTION-DISEASE">
+		<xs:annotation><xs:documentation>SECTION-DISEASE - The disease the case is notified for (SECTION, at0009)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="ENTRY-DISEASE" type="T_ENTRY-DISEASE" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0009"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_GROUNDS">
+		<xs:annotation><xs:documentation>GROUNDS - One criterion that was ticked and thereby took part in the classification (CLUSTER, at0027). CRITERION.CODE is optional: the ordinance leaves some criteria unnumbered.</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="CRITERION.CATEGORY" type="CD_NAREDBA21_PRIL3" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="CRITERION.CODE" type="CD_NAREDBA21_PRIL3" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="CRITERION.TEXT" type="SIMPLE_TEXT" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0027"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_ENTRY-CASE.CLASS">
+		<xs:annotation><xs:documentation>ENTRY-CASE.CLASS - Classification of the case with its grounds (ENTRY, at0018). APPLIED.RULE is an uncoded string; there is no nomenclature to bind it to.</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="CASE.CLASS" type="CD_NAREDBA21_PRIL2" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="CLASSIFICATION.CONTEXT" type="SIMPLE_TEXT" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="APPLIED.RULE" type="SIMPLE_TEXT" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="CLASSIFICATION.DATE" type="DATE" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="GROUNDS" type="T_GROUNDS" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0018"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_SECTION-CASE.CLASSIFICATION">
+		<xs:annotation><xs:documentation>SECTION-CASE.CLASSIFICATION - The class pronounced for the case and what produced it (SECTION, at0017)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="ENTRY-CASE.CLASS" type="T_ENTRY-CASE.CLASS" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0017"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_ENTRY-REPORTER">
+		<xs:annotation><xs:documentation>ENTRY-REPORTER - The reporter of the notification (ENTRY, at0036)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="REPORTER.NAME" type="SIMPLE_TEXT" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="REPORTER.WORKPLACE" type="SIMPLE_TEXT" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="NOTIFICATION.DATE" type="DATE" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0036"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_SECTION-REPORTER">
+		<xs:annotation><xs:documentation>SECTION-REPORTER - Who notified and from where (SECTION, at0035)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="ENTRY-REPORTER" type="T_ENTRY-REPORTER" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0035"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_InfectiousDiseaseCaseNotification">
+		<xs:annotation><xs:documentation>InfectiousDiseaseCaseNotification - Rapid notification of a case of an infectious disease under Ordinance No 21 (COMPOSITION, at0000)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="SECTION-SUBJECT" type="T_SECTION-SUBJECT" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="SECTION-DISEASE" type="T_SECTION-DISEASE" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="SECTION-CASE.CLASSIFICATION" type="T_SECTION-CASE.CLASSIFICATION" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="SECTION-REPORTER" type="T_SECTION-REPORTER" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0000"/>
+	</xs:complexType>
+</xs:schema>

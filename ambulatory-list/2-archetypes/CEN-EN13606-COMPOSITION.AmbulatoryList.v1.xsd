@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Canonical W3C XML Schema generated from the archetype CEN-EN13606-COMPOSITION.AmbulatoryList.v1 -->
+<!-- Built within the doctoral thesis of Simeon Abanos, FMI, Sofia University, on 2026-09-12. -->
+<!-- The data types are included from TS14796-dataTypes.xsd, (c) IBIME, Universidad Politecnica de Valencia, CC-BY. -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://EN13606-RM.xsd"
+		   targetNamespace="http://EN13606-RM.xsd" elementFormDefault="qualified"
+		   version="v20260912" id="CEN-EN13606-COMPOSITION.AmbulatoryList.v1.xsd">
+	<xs:include schemaLocation="../1-reference-model/TS14796-dataTypes.xsd"/>
+
+	<xs:element name="AmbulatoryList" type="T_AmbulatoryList"/>
+
+	<xs:complexType name="CD_ICD10_1998">
+		<xs:annotation><xs:documentation>Coded value restricted to the ICD-10 terminology, as bound in the archetype ontology. Follows the practice of the published EN 13606 archetype of the Occupational Health Assessment Summary.</xs:documentation></xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="CV">
+				<xs:sequence>
+					<xs:element name="nullFlavor" type="CS" minOccurs="0"/>
+					<xs:element name="codingScheme" type="OID" minOccurs="0"/>
+					<xs:element name="codingSchemeName" type="xs:string" fixed="ICD10_1998"/>
+					<xs:element name="codingSchemeVersion" type="xs:string" minOccurs="0"/>
+					<xs:element name="codeValue" type="xs:string"/>
+					<xs:element name="displayName" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="T_ENTRY-EXAM.TYPE">
+		<xs:annotation><xs:documentation>ENTRY-EXAM.TYPE (ENTRY, at0096)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="EXAM.TYPE" type="CD" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0096"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_SIMP.CONSULT">
+		<xs:annotation><xs:documentation>SIMP.CONSULT (CLUSTER, at0101)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="KOD.SP" type="CD" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="SP.FOR" type="INT" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="SIMP.MKB" type="CD" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="NO.N" type="CD" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0101"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_ENTRY-DOCS">
+		<xs:annotation><xs:documentation>ENTRY-DOCS (ENTRY, at0099)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="SIMP.CONSULT" type="T_SIMP.CONSULT" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0099"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_VSD.SIMP.CONSULT">
+		<xs:annotation><xs:documentation>VSD.SIMP.CONSULT (CLUSTER, at0119)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="KOD.SP.VSD" type="CD" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="VSD.FOR" type="INT" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="NON.VSD" type="CD" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="ACHlcode" type="CD" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="HOSP.VSD" type="BL" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="VSD.MKB" type="CD" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0119"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_ENTRY-VSD.SIMP.CONSULT">
+		<xs:annotation><xs:documentation>ENTRY-VSD.SIMP.CONSULT (ENTRY, at0118)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="VSD.SIMP.CONSULT" type="T_VSD.SIMP.CONSULT" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0118"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_ENTRY-MDD">
+		<xs:annotation><xs:documentation>ENTRY-MDD (ENTRY, at0133)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="NO.MDD" type="CD" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="MDD.FOR" type="INT" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="KOD.MDD" type="CD" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="ACHl.CODE" type="CD" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="MDD.MKB" type="CD" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0133"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_ENTRY-TALON.TELK">
+		<xs:annotation><xs:documentation>ENTRY-TALON.TELK (ENTRY, at0144)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="ELEMENT" type="BL" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0144"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_ENTRY-LKK">
+		<xs:annotation><xs:documentation>ENTRY-LKK (ENTRY, at0147)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="NO.LKK" type="CD" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="CODE.SPEC" type="CD" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="TYPE.LKK" type="INT" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0147"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_SECTION-OBSERVATION">
+		<xs:annotation><xs:documentation>SECTION-OBSERVATION - Contains entry details from observations (SECTION, at0008)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="ENTRY-EXAM.TYPE" type="T_ENTRY-EXAM.TYPE" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="ENTRY-DOCS" type="T_ENTRY-DOCS" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="ENTRY-VSD.SIMP.CONSULT" type="T_ENTRY-VSD.SIMP.CONSULT" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="ENTRY-MDD" type="T_ENTRY-MDD" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="ENTRY-TALON.TELK" type="T_ENTRY-TALON.TELK" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="ENTRY-LKK" type="T_ENTRY-LKK" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0008"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_MKBLinkD">
+		<xs:annotation><xs:documentation>MKBLinkD (CLUSTER, at0034)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="MKB" type="CD_ICD10_1998" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0034"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_ENTRY-MAIN.DIAG">
+		<xs:annotation><xs:documentation>ENTRY-MAIN.DIAG - Main Diagnose coded using International Classification of Diseases  (ICD) 10 (ENTRY, at0021)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="ImeMD" type="SIMPLE_TEXT" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="MKB" type="CD_ICD10_1998" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="ImeLinkD" type="SIMPLE_TEXT" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="MKBLinkD" type="T_MKBLinkD" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0021"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_MKBLinkD_at0051">
+		<xs:annotation><xs:documentation>MKBLinkD - List of medical codes for secondary diseases (CLUSTER, at0051)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="MKB" type="CD_ICD10_1998" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0051"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_ENTRY-DIAG">
+		<xs:annotation><xs:documentation>ENTRY-DIAG - Secondary diagnose (ENTRY, at0040)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="ImeD" type="SIMPLE_TEXT" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="MKB" type="CD_ICD10_1998" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="ImeLinkD" type="SIMPLE_TEXT" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="MKBLinkD" type="T_MKBLinkD_at0051" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0040"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_SECTION-EVALUATION">
+		<xs:annotation><xs:documentation>SECTION-EVALUATION - Contains entry details from evaluation (SECTION, at0009)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="ENTRY-MAIN.DIAG" type="T_ENTRY-MAIN.DIAG" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="ENTRY-DIAG" type="T_ENTRY-DIAG" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0009"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_HOSP">
+		<xs:annotation><xs:documentation>HOSP (CLUSTER, at0159)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="HOSP.MKB" type="CD" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="PATH.NUM" type="SIMPLE_TEXT" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="NAPR.NO" type="CD" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="DATE.NAPR" type="DATE" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0159"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_ENTRY-HOSP.NAPR">
+		<xs:annotation><xs:documentation>ENTRY-HOSP.NAPR (ENTRY, at0157)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="HOSP" type="T_HOSP" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0157"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_HOSPITALS">
+		<xs:annotation><xs:documentation>HOSPITALS (CLUSTER, at0170)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="NOBI" type="CD" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="DAYS" type="INT" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="HL.MKB" type="CD" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="HL.FROM.DATE" type="DATE" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="HL.TO.DATE" type="DATE" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="HL.TYPE" type="BL" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0170"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_ENTRY-HLIST">
+		<xs:annotation><xs:documentation>ENTRY-HLIST (ENTRY, at0169)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="HOSPITALS" type="T_HOSPITALS" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0169"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_RP.DRUG">
+		<xs:annotation><xs:documentation>RP.DRUG (CLUSTER, at0198)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="PRESC.NUM" type="INT" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="DRUG.CODE" type="CD" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="DRUG.MKB" type="CD" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="QUANTITY" type="INT" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="DAY" type="INT" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0198"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_ENTRY-RP">
+		<xs:annotation><xs:documentation>ENTRY-RP (ENTRY, at0195)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="RP.BOOK" type="CD" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="RP.DRUG" type="T_RP.DRUG" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0195"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_SECTION-INSTRUCTION">
+		<xs:annotation><xs:documentation>SECTION-INSTRUCTION - Contains entry details from instructions for therapy (SECTION, at0010)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="ENTRY-HOSP.NAPR" type="T_ENTRY-HOSP.NAPR" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="ENTRY-HLIST" type="T_ENTRY-HLIST" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="ENTRY-RP" type="T_ENTRY-RP" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0010"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_ENTRY-PROCEDURE">
+		<xs:annotation><xs:documentation>ENTRY-PROCEDURE - To record information about the activities required to carry out a procedure, including the planning, scheduling, performance, suspension, cancellation, documentation and completion. (ENTRY, at0012)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="imeP" type="SIMPLE_TEXT" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="kodP" type="CD" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="ACHlcode" type="CD" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="CountP" type="INT" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0012"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_ENTRY-IZVESTIE">
+		<xs:annotation><xs:documentation>ENTRY-IZVESTIE (ENTRY, at0211)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="IZVESTIE" type="BL" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0211"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_ENTRY-ET.EPIKRIZA">
+		<xs:annotation><xs:documentation>ENTRY-ET.EPIKRIZA (ENTRY, at0214)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="ET.EPIKRIZA" type="BL" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0214"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_ENTRY-MEDICAL.NOTE">
+		<xs:annotation><xs:documentation>ENTRY-MEDICAL.NOTE (ENTRY, at0217)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="MEDICAL.NOTE" type="BL" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0217"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_SECTION-ACTION">
+		<xs:annotation><xs:documentation>SECTION-ACTION - Contains entry details from action based on instruction results (SECTION, at0011)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="ENTRY-PROCEDURE" type="T_ENTRY-PROCEDURE" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="ENTRY-IZVESTIE" type="T_ENTRY-IZVESTIE" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="ENTRY-ET.EPIKRIZA" type="T_ENTRY-ET.EPIKRIZA" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="ENTRY-MEDICAL.NOTE" type="T_ENTRY-MEDICAL.NOTE" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0011"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_ENTRY-AMBULATORY.LIST.DETAILS">
+		<xs:annotation><xs:documentation>ENTRY-AMBULATORY.LIST.DETAILS (ENTRY, at0091)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="DISADV" type="BL" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="INCIDENTALLY" type="BL" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Sign" type="BL" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0091"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_FOREIGNER.COUNTRY">
+		<xs:annotation><xs:documentation>FOREIGNER.COUNTRY (CLUSTER, at0068)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="COUNTRY.CODE" type="DATA_VALUE" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="COUNTRYDNO" type="DATA_VALUE" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="TYPE.CERTIFICATE" type="DATA_VALUE" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="DATE.ISSUE" type="DATA_VALUE" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="DATE.FROM" type="DATA_VALUE" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="DATE.TO" type="DATA_VALUE" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="EHIC.NO" type="DATA_VALUE" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="PERSON.ID.NO" type="DATA_VALUE" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0068"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_NAME">
+		<xs:annotation><xs:documentation>NAME (CLUSTER, at0082)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="GIVEN" type="DATA_VALUE" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="SURNAME" type="DATA_VALUE" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="FAMILY.NAME" type="DATA_VALUE" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0082"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_PERSONAL.DATA">
+		<xs:annotation><xs:documentation>PERSONAL.DATA - Personal data (ENTRY, at0059)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="EGN" type="CD" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="LNCH" type="CD" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="SS.NO" type="CD" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="FOREIGNER.COUNTRY" type="T_FOREIGNER.COUNTRY" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="RZOK" type="CD" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="ZDR.RAJON" type="CD" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="NAME" type="T_NAME" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="ADDRESS" type="SIMPLE_TEXT" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="IS.HEALTH.INSURANCE" type="INT" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0059"/>
+	</xs:complexType>
+
+	<xs:complexType name="T_AmbulatoryList">
+		<xs:annotation><xs:documentation>AmbulatoryList - Ambulatory list of a patient, as reported by a general practitioner (COMPOSITION, at0000)</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="SECTION-OBSERVATION" type="T_SECTION-OBSERVATION" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="SECTION-EVALUATION" type="T_SECTION-EVALUATION" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="SECTION-INSTRUCTION" type="T_SECTION-INSTRUCTION" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="SECTION-ACTION" type="T_SECTION-ACTION" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="ENTRY-AMBULATORY.LIST.DETAILS" type="T_ENTRY-AMBULATORY.LIST.DETAILS" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="PERSONAL.DATA" type="T_PERSONAL.DATA" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="archetype_node_id" type="xs:string" fixed="at0000"/>
+	</xs:complexType>
+</xs:schema>

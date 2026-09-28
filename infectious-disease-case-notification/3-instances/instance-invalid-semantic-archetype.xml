@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Semantically invalid - step 2, against the archetype: the case class is coded in NAREDBA21-PRIL1, while the archetype fixes the coding scheme to NAREDBA21-PRIL2. Otherwise the same as instance-valid.xml. -->
+<!-- Instance of the archetype CEN-EN13606-COMPOSITION.InfectiousDiseaseCaseNotification.v1,
+     exported by the system that holds the notice. Notice No 2253.
+     The national number of the subject is not part of this document. -->
+<InfectiousDiseaseCaseNotification xmlns="http://EN13606-RM.xsd"
+                                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                   xsi:schemaLocation="http://EN13606-RM.xsd ../2-archetypes/CEN-EN13606-COMPOSITION.InfectiousDiseaseCaseNotification.v1.xsd">
+	<SECTION-SUBJECT>
+		<ENTRY-PERSON>
+			<SUBJECT.ID>
+				<extension>225</extension>
+				<assigningAuthorityName>Information system for registration, notification and reporting of communicable diseases</assigningAuthorityName>
+				<root/>
+			</SUBJECT.ID>
+			<BIRTH.DATE>
+				<date>1955-06-24</date>
+			</BIRTH.DATE>
+			<SEX>
+				<codeValue>1</codeValue>
+			</SEX>
+		</ENTRY-PERSON>
+	</SECTION-SUBJECT>
+	<SECTION-DISEASE>
+		<ENTRY-DISEASE>
+			<DISEASE.NAME>
+				<originalText>Скарлатина</originalText>
+			</DISEASE.NAME>
+			<MKB>
+				<codingSchemeName>ICD10_1998</codingSchemeName>
+				<codeValue>A38</codeValue>
+			</MKB>
+			<DISEASE.CODE>
+				<codingSchemeName>NAREDBA21-PRIL1</codingSchemeName>
+				<codeValue>53</codeValue>
+				<displayName>Скарлатина</displayName>
+			</DISEASE.CODE>
+		</ENTRY-DISEASE>
+	</SECTION-DISEASE>
+	<SECTION-CASE.CLASSIFICATION>
+		<ENTRY-CASE.CLASS>
+			<CASE.CLASS>
+				<codingSchemeName>NAREDBA21-PRIL1</codingSchemeName>
+				<codeValue>3</codeValue>
+				<displayName>потвърден</displayName>
+			</CASE.CLASS>
+			<APPLIED.RULE>
+				<originalText>1:1 AND 2:1</originalText>
+			</APPLIED.RULE>
+			<CLASSIFICATION.DATE>
+				<date>2026-04-17</date>
+			</CLASSIFICATION.DATE>
+			<GROUNDS>
+				<CRITERION.CATEGORY>
+					<codingSchemeName>NAREDBA21-PRIL3</codingSchemeName>
+					<codeValue>53.1</codeValue>
+					<displayName>Клинични критерии:</displayName>
+				</CRITERION.CATEGORY>
+				<CRITERION.TEXT>
+					<originalText>Всяко лице със заболяване, което се характеризира с внезапно начало, повишаване на температурата, изразен токсикоинфекциозен синдром, повръщане, болки в гърлото, ангина, характерни обриви по кожата и лигавиците и левкоцитоза.</originalText>
+				</CRITERION.TEXT>
+			</GROUNDS>
+			<GROUNDS>
+				<CRITERION.CATEGORY>
+					<codingSchemeName>NAREDBA21-PRIL3</codingSchemeName>
+					<codeValue>53.2</codeValue>
+					<displayName>Лабораторни критерии:</displayName>
+				</CRITERION.CATEGORY>
+				<CRITERION.CODE>
+					<codingSchemeName>NAREDBA21-PRIL3</codingSchemeName>
+					<codeValue>53.2.1</codeValue>
+				</CRITERION.CODE>
+				<CRITERION.TEXT>
+					<originalText>изолиране на S. pyogenes от клиничен материал;</originalText>
+				</CRITERION.TEXT>
+			</GROUNDS>
+		</ENTRY-CASE.CLASS>
+	</SECTION-CASE.CLASSIFICATION>
+	<SECTION-REPORTER>
+		<ENTRY-REPORTER>
+			<REPORTER.NAME>
+				<originalText>д-р Галина Любенова</originalText>
+			</REPORTER.NAME>
+			<REPORTER.WORKPLACE>
+				<originalText>АИППМП „Асеновград“</originalText>
+			</REPORTER.WORKPLACE>
+			<NOTIFICATION.DATE>
+				<date>2026-04-17</date>
+			</NOTIFICATION.DATE>
+		</ENTRY-REPORTER>
+	</SECTION-REPORTER>
+</InfectiousDiseaseCaseNotification>

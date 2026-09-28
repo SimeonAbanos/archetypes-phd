@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AmbulatoryList xmlns="http://EN13606-RM.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://EN13606-RM.xsd ../2-archetypes/CEN-EN13606-COMPOSITION.AmbulatoryList.v1.xsd">
+	<SECTION-EVALUATION>
+		<ENTRY-MAIN.DIAG>
+			<ImeMD>
+				<originalText>Есенциална (първична) хипертония</originalText>
+			</ImeMD>
+			<MKB>
+				<codingSchemeName>ICD10_1998</codingSchemeName>
+				<codeValue>I10</codeValue>
+				<displayName>Essential (primary) hypertension</displayName>
+			</MKB>
+		</ENTRY-MAIN.DIAG>
+	</SECTION-EVALUATION>
+</AmbulatoryList>

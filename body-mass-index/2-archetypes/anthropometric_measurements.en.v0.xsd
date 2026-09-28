@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.oceanehr.com/templates" xmlns:oe="http://schemas.openehr.org/v1" targetNamespace="http://schemas.oceanehr.com/templates" elementFormDefault="qualified">
+  <!-- Template Data Schema (TDS) derived from the operational template anthropometric_measurements.en.v0 with tds.py in 3-instances/generation. It follows the form of the TDS that Template Designer of Ocean Health Systems exports and carries the structure of the template; the constraints on the values are checked against the operational template. -->
+  <xs:import namespace="http://schemas.openehr.org/v1" schemaLocation="../1-reference-model/Version.xsd"/>
+  <xs:element name="Anthropometric_measurements">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="value" type="xs:string" default="Anthropometric measurements"/>
+              <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+              <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+        <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+        <xs:element name="language" type="oe:CODE_PHRASE"/>
+        <xs:element name="territory" type="oe:CODE_PHRASE"/>
+        <xs:element name="category" type="oe:DV_CODED_TEXT"/>
+        <xs:element name="composer" type="oe:PARTY_PROXY"/>
+        <xs:element name="context" type="oe:EVENT_CONTEXT" minOccurs="0"/>
+        <xs:element name="Body_weight" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="value" type="xs:string" default="Body weight"/>
+                    <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+              <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+              <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+              <xs:element name="language" type="oe:CODE_PHRASE"/>
+              <xs:element name="encoding" type="oe:CODE_PHRASE"/>
+              <xs:element name="subject" type="oe:PARTY_PROXY"/>
+              <xs:element name="provider" type="oe:PARTY_PROXY" minOccurs="0"/>
+              <xs:element name="other_participations" type="oe:PARTICIPATION" minOccurs="0" maxOccurs="unbounded"/>
+              <xs:element name="work_flow_id" type="oe:OBJECT_REF" minOccurs="0"/>
+              <xs:element name="protocol" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="name">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="value" type="xs:string" default="protocol structure"/>
+                          <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                          <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+                    <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+                    <xs:element name="Device" minOccurs="0" type="oe:CLUSTER"/>
+                    <xs:element name="Extension" minOccurs="0" maxOccurs="unbounded" type="oe:CLUSTER"/>
+                  </xs:sequence>
+                  <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="at0015" use="required"/>
+                  <xs:attribute name="type" fixed="ITEM_TREE"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="guideline_id" type="oe:OBJECT_REF" minOccurs="0"/>
+              <xs:element name="data">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="name">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="value" type="xs:string" default="history"/>
+                          <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                          <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+                    <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+                    <xs:element name="origin" type="oe:DV_DATE_TIME"/>
+                    <xs:element name="period" type="oe:DV_DURATION" minOccurs="0"/>
+                    <xs:element name="duration" type="oe:DV_DURATION" minOccurs="0"/>
+                    <xs:element name="Any_event" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="name">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="value" type="xs:string" default="Any event"/>
+                                <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                                <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+                          <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+                          <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+                          <xs:element name="time" type="oe:DV_DATE_TIME"/>
+                          <xs:element name="data">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="name">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="value" type="xs:string" default="Simple"/>
+                                      <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                                      <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+                                <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+                                <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+                                <xs:element name="Weight">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="name">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="value" type="xs:string" default="Weight"/>
+                                            <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                                            <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+                                      <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+                                      <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+                                      <xs:choice>
+                                        <xs:element name="value" type="oe:DV_QUANTITY"/>
+                                        <xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+                                      </xs:choice>
+                                    </xs:sequence>
+                                    <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="at0004" use="required"/>
+                                    <xs:attribute name="type" fixed="ELEMENT"/>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Comment" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="name">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="value" type="xs:string" default="Comment"/>
+                                            <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                                            <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+                                      <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+                                      <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+                                      <xs:choice>
+                                        <xs:element name="value" type="oe:DV_TEXT"/>
+                                        <xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+                                      </xs:choice>
+                                    </xs:sequence>
+                                    <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="at0024" use="required"/>
+                                    <xs:attribute name="type" fixed="ELEMENT"/>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="at0001" use="required"/>
+                              <xs:attribute name="type" fixed="ITEM_TREE"/>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="state" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="name">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="value" type="xs:string" default="state structure"/>
+                                      <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                                      <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+                                <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+                                <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+                                <xs:element name="State_of_dress" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="name">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="value" type="xs:string" default="State of dress"/>
+                                            <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                                            <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+                                      <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+                                      <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+                                      <xs:choice>
+                                        <xs:element name="value" type="oe:DV_CODED_TEXT"/>
+                                        <xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+                                      </xs:choice>
+                                    </xs:sequence>
+                                    <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="at0009" use="required"/>
+                                    <xs:attribute name="type" fixed="ELEMENT"/>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Confounding_factors" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="name">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="value" type="xs:string" default="Confounding factors"/>
+                                            <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                                            <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+                                      <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+                                      <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+                                      <xs:choice>
+                                        <xs:element name="value" type="oe:DV_TEXT"/>
+                                        <xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+                                      </xs:choice>
+                                    </xs:sequence>
+                                    <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="at0025" use="required"/>
+                                    <xs:attribute name="type" fixed="ELEMENT"/>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="at0008" use="required"/>
+                              <xs:attribute name="type" fixed="ITEM_TREE"/>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="width" type="oe:DV_DURATION" minOccurs="0"/>
+                          <xs:element name="sample_count" type="xs:int" minOccurs="0"/>
+                          <xs:element name="math_function" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+                        </xs:sequence>
+                        <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="at0003" use="required"/>
+                        <xs:attribute name="type" use="required">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:enumeration value="POINT_EVENT"/>
+                              <xs:enumeration value="INTERVAL_EVENT"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="summary" type="oe:ITEM_STRUCTURE" minOccurs="0"/>
+                  </xs:sequence>
+                  <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="at0002" use="required"/>
+                  <xs:attribute name="type" fixed="HISTORY"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="state" type="oe:HISTORY" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="openEHR-EHR-OBSERVATION.body_weight.v2" use="required"/>
+            <xs:attribute name="type" fixed="OBSERVATION"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Height_Length" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="value" type="xs:string" default="Height/Length"/>
+                    <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+              <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+              <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+              <xs:element name="language" type="oe:CODE_PHRASE"/>
+              <xs:element name="encoding" type="oe:CODE_PHRASE"/>
+              <xs:element name="subject" type="oe:PARTY_PROXY"/>
+              <xs:element name="provider" type="oe:PARTY_PROXY" minOccurs="0"/>
+              <xs:element name="other_participations" type="oe:PARTICIPATION" minOccurs="0" maxOccurs="unbounded"/>
+              <xs:element name="work_flow_id" type="oe:OBJECT_REF" minOccurs="0"/>
+              <xs:element name="protocol" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="name">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="value" type="xs:string" default="List"/>
+                          <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                          <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+                    <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+                    <xs:element name="Device" minOccurs="0" type="oe:CLUSTER"/>
+                    <xs:element name="Extension" minOccurs="0" maxOccurs="unbounded" type="oe:CLUSTER"/>
+                  </xs:sequence>
+                  <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="at0007" use="required"/>
+                  <xs:attribute name="type" fixed="ITEM_TREE"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="guideline_id" type="oe:OBJECT_REF" minOccurs="0"/>
+              <xs:element name="data">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="name">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="value" type="xs:string" default="history"/>
+                          <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                          <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+                    <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+                    <xs:element name="origin" type="oe:DV_DATE_TIME"/>
+                    <xs:element name="period" type="oe:DV_DURATION" minOccurs="0"/>
+                    <xs:element name="duration" type="oe:DV_DURATION" minOccurs="0"/>
+                    <xs:element name="Any_event" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="name">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="value" type="xs:string" default="Any event"/>
+                                <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                                <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+                          <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+                          <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+                          <xs:element name="time" type="oe:DV_DATE_TIME"/>
+                          <xs:element name="data">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="name">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="value" type="xs:string" default="Simple"/>
+                                      <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                                      <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+                                <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+                                <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+                                <xs:element name="Height_Length">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="name">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="value" type="xs:string" default="Height/Length"/>
+                                            <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                                            <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+                                      <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+                                      <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+                                      <xs:choice>
+                                        <xs:element name="value" type="oe:DV_QUANTITY"/>
+                                        <xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+                                      </xs:choice>
+                                    </xs:sequence>
+                                    <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="at0004" use="required"/>
+                                    <xs:attribute name="type" fixed="ELEMENT"/>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Comment" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="name">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="value" type="xs:string" default="Comment"/>
+                                            <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                                            <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+                                      <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+                                      <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+                                      <xs:choice>
+                                        <xs:element name="value" type="oe:DV_TEXT"/>
+                                        <xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+                                      </xs:choice>
+                                    </xs:sequence>
+                                    <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="at0018" use="required"/>
+                                    <xs:attribute name="type" fixed="ELEMENT"/>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="at0003" use="required"/>
+                              <xs:attribute name="type" fixed="ITEM_TREE"/>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="state" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="name">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="value" type="xs:string" default="Tree"/>
+                                      <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                                      <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+                                <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+                                <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+                                <xs:element name="Position" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="name">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="value" type="xs:string" default="Position"/>
+                                            <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                                            <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+                                      <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+                                      <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+                                      <xs:choice>
+                                        <xs:element name="value" type="oe:DV_CODED_TEXT"/>
+                                        <xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+                                      </xs:choice>
+                                    </xs:sequence>
+                                    <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="at0014" use="required"/>
+                                    <xs:attribute name="type" fixed="ELEMENT"/>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Confounding_factors" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="name">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="value" type="xs:string" default="Confounding factors"/>
+                                            <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                                            <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+                                      <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+                                      <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+                                      <xs:choice>
+                                        <xs:element name="value" type="oe:DV_TEXT"/>
+                                        <xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+                                      </xs:choice>
+                                    </xs:sequence>
+                                    <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="at0019" use="required"/>
+                                    <xs:attribute name="type" fixed="ELEMENT"/>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="at0013" use="required"/>
+                              <xs:attribute name="type" fixed="ITEM_TREE"/>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="width" type="oe:DV_DURATION" minOccurs="0"/>
+                          <xs:element name="sample_count" type="xs:int" minOccurs="0"/>
+                          <xs:element name="math_function" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+                        </xs:sequence>
+                        <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="at0002" use="required"/>
+                        <xs:attribute name="type" use="required">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:enumeration value="POINT_EVENT"/>
+                              <xs:enumeration value="INTERVAL_EVENT"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="summary" type="oe:ITEM_STRUCTURE" minOccurs="0"/>
+                  </xs:sequence>
+                  <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="at0001" use="required"/>
+                  <xs:attribute name="type" fixed="HISTORY"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="state" type="oe:HISTORY" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="openEHR-EHR-OBSERVATION.height.v2" use="required"/>
+            <xs:attribute name="type" fixed="OBSERVATION"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Body_Mass_Index_BMI" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="value" type="xs:string" default="Body Mass Index (BMI)"/>
+                    <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+              <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+              <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+              <xs:element name="language" type="oe:CODE_PHRASE"/>
+              <xs:element name="encoding" type="oe:CODE_PHRASE"/>
+              <xs:element name="subject" type="oe:PARTY_PROXY"/>
+              <xs:element name="provider" type="oe:PARTY_PROXY" minOccurs="0"/>
+              <xs:element name="other_participations" type="oe:PARTICIPATION" minOccurs="0" maxOccurs="unbounded"/>
+              <xs:element name="work_flow_id" type="oe:OBJECT_REF" minOccurs="0"/>
+              <xs:element name="protocol" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="name">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="value" type="xs:string" default="Tree"/>
+                          <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                          <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+                    <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+                    <xs:element name="Method" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="name">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="value" type="xs:string" default="Method"/>
+                                <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                                <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+                          <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+                          <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+                          <xs:choice>
+                            <xs:element name="value" type="oe:DV_CODED_TEXT"/>
+                            <xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+                          </xs:choice>
+                        </xs:sequence>
+                        <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="at0006" use="required"/>
+                        <xs:attribute name="type" fixed="ELEMENT"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Formula" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="name">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="value" type="xs:string" default="Formula"/>
+                                <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                                <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+                          <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+                          <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+                          <xs:choice>
+                            <xs:element name="value" type="oe:DV_TEXT"/>
+                            <xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+                          </xs:choice>
+                        </xs:sequence>
+                        <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="at0010" use="required"/>
+                        <xs:attribute name="type" fixed="ELEMENT"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Extension" minOccurs="0" maxOccurs="unbounded" type="oe:CLUSTER"/>
+                  </xs:sequence>
+                  <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="at0005" use="required"/>
+                  <xs:attribute name="type" fixed="ITEM_TREE"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="guideline_id" type="oe:OBJECT_REF" minOccurs="0"/>
+              <xs:element name="data">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="name">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="value" type="xs:string" default="history"/>
+                          <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                          <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+                    <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+                    <xs:element name="origin" type="oe:DV_DATE_TIME"/>
+                    <xs:element name="period" type="oe:DV_DURATION" minOccurs="0"/>
+                    <xs:element name="duration" type="oe:DV_DURATION" minOccurs="0"/>
+                    <xs:element name="Any_event" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="name">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="value" type="xs:string" default="Any event"/>
+                                <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                                <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+                          <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+                          <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+                          <xs:element name="time" type="oe:DV_DATE_TIME"/>
+                          <xs:element name="data">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="name">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="value" type="xs:string" default="Single"/>
+                                      <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                                      <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+                                <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+                                <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+                                <xs:element name="Body_mass_index">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="name">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="value" type="xs:string" default="Body mass index"/>
+                                            <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                                            <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+                                      <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+                                      <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+                                      <xs:choice>
+                                        <xs:element name="value" type="oe:DV_QUANTITY"/>
+                                        <xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+                                      </xs:choice>
+                                    </xs:sequence>
+                                    <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="at0004" use="required"/>
+                                    <xs:attribute name="type" fixed="ELEMENT"/>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Clinical_interpretation" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="name">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="value" type="xs:string" default="Clinical interpretation"/>
+                                            <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                                            <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+                                      <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+                                      <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+                                      <xs:choice>
+                                        <xs:element name="value" type="oe:DV_TEXT"/>
+                                        <xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+                                      </xs:choice>
+                                    </xs:sequence>
+                                    <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="at0013" use="required"/>
+                                    <xs:attribute name="type" fixed="ELEMENT"/>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Comment" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="name">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="value" type="xs:string" default="Comment"/>
+                                            <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                                            <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+                                      <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+                                      <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+                                      <xs:choice>
+                                        <xs:element name="value" type="oe:DV_TEXT"/>
+                                        <xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+                                      </xs:choice>
+                                    </xs:sequence>
+                                    <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="at0012" use="required"/>
+                                    <xs:attribute name="type" fixed="ELEMENT"/>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="at0003" use="required"/>
+                              <xs:attribute name="type" fixed="ITEM_TREE"/>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="state" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="name">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="value" type="xs:string" default="Tree"/>
+                                      <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                                      <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+                                <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+                                <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+                                <xs:element name="Confounding_factors" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="name">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="value" type="xs:string" default="Confounding factors"/>
+                                            <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+                                            <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0"/>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0"/>
+                                      <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded"/>
+                                      <xs:element name="feeder_audit" type="oe:FEEDER_AUDIT" minOccurs="0"/>
+                                      <xs:choice>
+                                        <xs:element name="value" type="oe:DV_TEXT"/>
+                                        <xs:element name="null_flavour" type="oe:DV_CODED_TEXT"/>
+                                      </xs:choice>
+                                    </xs:sequence>
+                                    <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="at0011" use="required"/>
+                                    <xs:attribute name="type" fixed="ELEMENT"/>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="at0014" use="required"/>
+                              <xs:attribute name="type" fixed="ITEM_TREE"/>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="width" type="oe:DV_DURATION" minOccurs="0"/>
+                          <xs:element name="sample_count" type="xs:int" minOccurs="0"/>
+                          <xs:element name="math_function" type="oe:DV_CODED_TEXT" minOccurs="0"/>
+                        </xs:sequence>
+                        <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="at0002" use="required"/>
+                        <xs:attribute name="type" use="required">
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:enumeration value="POINT_EVENT"/>
+                              <xs:enumeration value="INTERVAL_EVENT"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="summary" type="oe:ITEM_STRUCTURE" minOccurs="0"/>
+                  </xs:sequence>
+                  <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="at0001" use="required"/>
+                  <xs:attribute name="type" fixed="HISTORY"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="state" type="oe:HISTORY" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="openEHR-EHR-OBSERVATION.body_mass_index.v2" use="required"/>
+            <xs:attribute name="type" fixed="OBSERVATION"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="archetype_node_id" type="oe:archetypeNodeId" fixed="openEHR-EHR-COMPOSITION.anthropometry.v0" use="required"/>
+      <xs:attribute name="type" fixed="COMPOSITION"/>
+      <xs:attribute name="template_id" type="xs:string" fixed="anthropometric_measurements.en.v0" use="required"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

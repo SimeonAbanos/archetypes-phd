@@ -1,0 +1,3377 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Structurally invalid - step 1, against the reference model: the composition has no rc_id, which the reference model requires. Otherwise the same as the published instance instanceCOMPOSITION.OccupationaHealthAssessmentlSummary - instance.xml. -->
+<COMPOSITION xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns="http://EN13606-RM.xsd">
+	<name xsi:type="SIMPLE_TEXT">
+		<nullFlavor>
+			<codeValue>0001983567</codeValue>
+		</nullFlavor>
+	</name>
+	<archetype_id>at0000</archetype_id>
+	<synthesised>false</synthesised>
+	<committal>
+		<ehr_system>
+			<root>
+				<oid>oid_value</oid>
+			</root>
+		</ehr_system>
+		<time_committed>
+			<time>2006-03-02T22:25:25</time>
+		</time_committed>
+		<committer>
+			<root>
+				<oid>oid_value</oid>
+			</root>
+		</committer>
+	</committal>
+	<!--PERSONAL DATA-->
+	<content xsi:type="ENTRY">
+		<name xsi:type="SIMPLE_TEXT">
+			<nullFlavor>
+				<codeValue>NI</codeValue>
+			</nullFlavor>
+		</name>
+		<archetype_id>at0002</archetype_id>
+		<rc_id>
+			<root>
+				<oid>oid_value</oid>
+			</root>
+		</rc_id>
+		<synthesised>true</synthesised>
+		<uncertainty_expressed>false</uncertainty_expressed>
+		<!--FIRST NAME-->
+		<items xsi:type="ELEMENT">
+			<name xsi:type="SIMPLE_TEXT">
+				<nullFlavor>
+					<codeValue>Име</codeValue><!--Data value xxx!!!!-->
+				</nullFlavor>
+			</name>
+			<archetype_id>at0003</archetype_id>
+			<rc_id>
+				<root>
+					<oid>oid_value</oid>
+				</root>
+			</rc_id>
+			<synthesised>true</synthesised>
+			<!--FIRST_NAME_VALUE-->
+			<value xsi:type="SIMPLE_TEXT">
+				<originalText>Петър</originalText><!--Data value xxx!!!!-->
+				<language>
+					<codingSchemeName>ISO_639-1</codingSchemeName>
+					<codeValue>bg</codeValue>
+				</language>
+				<charset>
+					<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+					<codeValue>UTF-16</codeValue>
+				</charset>
+			</value>
+		</items>
+		<!--MIDDLE NAME-->
+		<items xsi:type="ELEMENT">
+			<name xsi:type="SIMPLE_TEXT">
+				<nullFlavor>
+					<codeValue>Презиме</codeValue>
+				</nullFlavor>
+			</name>
+			<archetype_id>at0004</archetype_id>
+			<rc_id>
+				<root>
+					<oid>oid_value</oid>
+				</root>
+			</rc_id>
+			<synthesised>false</synthesised>
+			<!--MIDDLE_NAME_VALUE-->
+			<value xsi:type="SIMPLE_TEXT">
+				<originalText>Георгиев</originalText><!--Data value xxx!!!!-->
+				<language>
+					<codingSchemeName>ISO_639-1</codingSchemeName>
+					<codeValue>bg</codeValue>
+				</language>
+				<charset>
+					<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+					<codeValue>UTF-16</codeValue>
+				</charset>
+			</value>
+		</items>
+		<!--FAMILY NAME-->
+		<items xsi:type="ELEMENT">
+			<name xsi:type="SIMPLE_TEXT">
+				<nullFlavor>
+					<codeValue>Фамилия</codeValue><!--Data value xxx!!!!-->
+				</nullFlavor>
+			</name>
+			<archetype_id>at0005</archetype_id>
+			<rc_id>
+				<root>
+					<oid>oid_value</oid>
+				</root>
+			</rc_id>
+			<synthesised>true</synthesised>
+			<!--FAMILY_NAME_VALUE-->
+			<value xsi:type="SIMPLE_TEXT">
+				<originalText>Иванов</originalText><!--Data value xxx!!!!-->
+				<language>
+					<codingSchemeName>ISO_639-1</codingSchemeName>
+					<codeValue>en</codeValue>
+				</language>
+				<charset>
+					<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+					<codeValue>UTF-16</codeValue>
+				</charset>
+			</value>
+		</items>
+		<!--EGN-->
+		<items xsi:type="ELEMENT">
+			<name xsi:type="SIMPLE_TEXT">
+				<nullFlavor>
+					<codeValue>ЕГН</codeValue><!--Data value xxx!!!!-->
+				</nullFlavor>
+			</name>
+			<archetype_id>at0015</archetype_id>
+			<rc_id>
+				<root>
+					<oid>oid_value</oid>
+				</root>
+			</rc_id>
+			<synthesised>false</synthesised>
+			<!--EGN_VALUE-->
+			<value xsi:type="SIMPLE_TEXT">
+				<originalText>8010126654</originalText><!--Data value xxx!!!!-->
+				<language>
+					<codingSchemeName>ISO_639-1</codingSchemeName>
+					<codeValue>bg</codeValue>
+				</language>
+				<charset>
+					<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+					<codeValue>UTF-16</codeValue>
+				</charset>
+			</value>
+		</items>
+		<!--PERMANENT_ADDRESS-->
+		<items xsi:type="CLUSTER">
+			<name xsi:type="SIMPLE_TEXT">
+				<nullFlavor>
+					<codeValue>Адрес</codeValue><!--Data value xxx!!!!-->
+				</nullFlavor>
+			</name>
+			<archetype_id>at0095</archetype_id>
+			<rc_id>
+				<root>
+					<oid>oid_value</oid>
+				</root>
+			</rc_id>
+			<synthesised>true</synthesised>
+			<structure_type>
+				<codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+				<codeValue>STRC01</codeValue>
+			</structure_type>
+			<!--DISTRICT-->
+			<parts xsi:type="ELEMENT">
+				<name xsi:type="SIMPLE_TEXT">
+					<nullFlavor>
+						<codeValue>Област</codeValue><!--Data value xxx!!!!-->
+					</nullFlavor>
+				</name>
+				<archetype_id>at0107</archetype_id>
+				<rc_id>
+					<root>
+						<oid>oid_value</oid>
+					</root>
+				</rc_id>
+				<synthesised>true</synthesised>
+				<item_category>
+					<codingSchemeName>CEN/TC251/EN13606-3:ITEM_CATEGORY</codingSchemeName>
+					<codeValue>IC02</codeValue>
+				</item_category>
+				<!--DISTRICT_VALUE-->
+				<value xsi:type="SIMPLE_TEXT">
+					<originalText>гр. София</originalText><!--Data value xxx!!!!-->
+					<language>
+						<codingSchemeName>ISO_639-1</codingSchemeName>
+						<codeValue>en</codeValue>
+					</language>
+					<charset>
+						<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+						<codeValue>UTF-16</codeValue>
+					</charset>
+				</value>
+			</parts>
+			<!--MUNICIPALITY-->
+			<parts xsi:type="ELEMENT">
+				<name xsi:type="SIMPLE_TEXT">
+					<nullFlavor>
+						<codeValue>Община</codeValue><!--Data value xxx!!!!-->
+					</nullFlavor>
+				</name>
+				<archetype_id>at0127</archetype_id>
+				<rc_id>
+					<root>
+						<oid>oid_value</oid>
+					</root>
+				</rc_id>
+				<synthesised>true</synthesised>
+				<!--MUNICIPALITY_VALUE-->
+				<value xsi:type="SIMPLE_TEXT">
+					<originalText>община Столична</originalText><!--Data value xxx!!!!-->
+					<language>
+						<codingSchemeName>ISO_639-1</codingSchemeName>
+						<codeValue>bg</codeValue>
+					</language>
+					<charset>
+						<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+						<codeValue>UTF-16</codeValue>
+					</charset>
+				</value>
+			</parts>
+			<!--CITY_TOWN-->
+			<parts xsi:type="ELEMENT">
+				<name xsi:type="SIMPLE_TEXT">
+					<nullFlavor>
+						<codeValue>Град/ село</codeValue><!--Data value xxx!!!!-->
+					</nullFlavor>
+				</name>
+				<archetype_id>at0201</archetype_id>
+				<rc_id>
+					<root>
+						<oid>oid_value</oid>
+					</root>
+				</rc_id>
+				<synthesised>false</synthesised>
+				<!--CITY_TOWN_VALUE-->
+				<value xsi:type="SIMPLE_TEXT">
+					<originalText>гр. София</originalText>
+					<language>
+						<codingSchemeName>ISO_639-1</codingSchemeName>
+						<codeValue>en</codeValue>
+					</language>
+					<charset>
+						<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+						<codeValue>UTF-16</codeValue>
+					</charset>
+				</value>
+			</parts>
+			<!--STREET_BLVD_NUM-->
+			<parts xsi:type="ELEMENT">
+				<name xsi:type="SIMPLE_TEXT">
+					<nullFlavor>
+						<codeValue>Улица, булевард</codeValue><!--Data value xxx!!!!-->
+					</nullFlavor>
+				</name>
+				<archetype_id>at0213</archetype_id>
+				<rc_id>
+					<root>
+						<oid>oid_value</oid>
+					</root>
+				</rc_id>
+				<synthesised>true</synthesised>
+				<!--STREET_BLVD_NUM_VALUE-->
+				<value xsi:type="SIMPLE_TEXT">
+					<originalText>ул. Столична среща, 22</originalText><!--Data value xxx!!!!-->
+				</value>
+			</parts>
+		</items>
+		<!--GENERAL_PRACTITIONER-->
+		<items xsi:type="CLUSTER">
+			<name xsi:type="SIMPLE_TEXT">
+				<nullFlavor>
+					<codeValue>NI</codeValue>
+				</nullFlavor>
+			</name>
+			<archetype_id>at0219</archetype_id>
+			<rc_id>
+				<root>
+					<oid>oid_value</oid>
+				</root>
+			</rc_id>
+			<synthesised>false</synthesised>
+			<structure_type>
+				<codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+				<codeValue>STRC01</codeValue>
+			</structure_type>
+			<!--GP_NAMES-->
+			<parts xsi:type="ELEMENT">
+				<name xsi:type="SIMPLE_TEXT">
+					<nullFlavor>
+						<codeValue>Личен лекар</codeValue><!--Data value xxx!!!!-->
+					</nullFlavor>
+				</name>
+				<archetype_id>at0223</archetype_id>
+				<rc_id>
+					<root>
+						<oid>oid_value</oid>
+					</root>
+				</rc_id>
+				<synthesised>false</synthesised>
+				<!--GP_NAMES_VALUE-->
+				<value xsi:type="SIMPLE_TEXT">
+					<originalText>Георги Иванов</originalText><!--Data value xxx!!!!-->
+				</value>
+			</parts>
+			<!--GP_PRACTICE_ADDRESS-->
+			<parts xsi:type="ELEMENT">
+				<name xsi:type="SIMPLE_TEXT">
+					<nullFlavor>
+						<codeValue>Адрес на личния лекар</codeValue><!--Data value xxx!!!!-->
+					</nullFlavor>
+				</name>
+				<archetype_id>at0225</archetype_id>
+				<rc_id>
+					<root>
+						<oid>oid_value</oid>
+					</root>
+				</rc_id>
+				<synthesised>false</synthesised>
+				<!--GP_PRACTICE_ADDRESS_VALUE-->
+				<value xsi:type="SIMPLE_TEXT">
+					<originalText>бул. Сливница 303</originalText><!--Data value xxx!!!!-->
+				</value>
+			</parts>
+			<!--GP_PHONE-->
+			<parts xsi:type="ELEMENT">
+				<name xsi:type="SIMPLE_TEXT">
+					<nullFlavor>
+						<codeValue>Телефон на личния лекар</codeValue><!--Data value xxx!!!!-->
+					</nullFlavor>
+				</name>
+				<archetype_id>at0227</archetype_id>
+				<rc_id>
+					<root>
+						<oid>oid_value</oid>
+					</root>
+				</rc_id>
+				<synthesised>false</synthesised>
+				<!--GP_PHONE_VALUE-->
+				<value xsi:type="SIMPLE_TEXT">
+					<originalText>02989123456</originalText><!--Data value xxx!!!!-->
+					<charset>
+						<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+						<codeValue>UTF-16</codeValue>
+					</charset>
+				</value>
+			</parts>
+		</items>
+	</content>
+	<!--EMPLOYMENT_HISTORY-->
+	<content xsi:type="SECTION">
+		<name xsi:type="SIMPLE_TEXT">
+			<nullFlavor>
+				<codeValue>Професионален маршрут</codeValue><!--Data value xxx!!!!-->
+			</nullFlavor>
+		</name>
+		<archetype_id>at0265</archetype_id>
+		<rc_id>
+			<root>
+				<oid>oid_value</oid>
+			</root>
+		</rc_id>
+		<synthesised>true</synthesised>
+		<!--EMPLOYMENT_SECTION-->
+		<members xsi:type="SECTION">
+			<name xsi:type="SIMPLE_TEXT">
+				<nullFlavor>
+					<codeValue>Местоработата</codeValue><!--Data value xxx!!!!-->
+				</nullFlavor>
+			</name>
+			<archetype_id>at0066</archetype_id>
+			<rc_id>
+				<root>
+					<oid>oid_value</oid>
+				</root>
+			</rc_id>
+			<synthesised>true</synthesised>
+			<!--EMPLOYMENT_DATA-->
+			<members xsi:type="ENTRY">
+				<name xsi:type="SIMPLE_TEXT">
+					<nullFlavor>
+						<codeValue>NI</codeValue>
+					</nullFlavor>
+				</name>
+				<archetype_id>at0266</archetype_id>
+				<rc_id>
+					<root>
+						<oid>oid_value</oid>
+					</root>
+				</rc_id>
+				<synthesised>true</synthesised>
+				<uncertainty_expressed>true</uncertainty_expressed>
+				<!--EMPLOYER-->
+				<items xsi:type="ELEMENT">
+					<name xsi:type="SIMPLE_TEXT">
+						<nullFlavor>
+							<codeValue>Работодател</codeValue><!--Data value xxx!!!!-->
+						</nullFlavor>
+					</name>
+					<archetype_id>at0267</archetype_id>
+					<rc_id>
+						<root>
+							<oid>oid_value</oid>
+						</root>
+					</rc_id>
+					<synthesised>true</synthesised>
+					<!--EMPLOYER_VALUE-->
+					<value xsi:type="SIMPLE_TEXT">
+						<originalText>Цех за производство и преработка на оловни акумулатори
+						</originalText><!--Data value xxx!!!!-->
+						<language>
+							<codingSchemeName>ISO_639-1</codingSchemeName>
+							<codeValue>bg</codeValue>
+						</language>
+						<charset>
+							<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+							<codeValue>UTF-16</codeValue>
+						</charset>
+					</value>
+				</items>
+				<!--PROFESSION-->
+				<items xsi:type="ELEMENT">
+					<name xsi:type="SIMPLE_TEXT">
+						<nullFlavor>
+							<codeValue>Професия</codeValue><!--Data value xxx!!!!-->
+						</nullFlavor>
+					</name>
+					<archetype_id>at0276</archetype_id>
+					<rc_id>
+						<root>
+							<oid>oid_value</oid>
+						</root>
+					</rc_id>
+					<synthesised>false</synthesised>
+					<!--PROFESSION_VALUE-->
+					<value xsi:type="SIMPLE_TEXT">
+						<originalText>Складов работник</originalText><!--Data value xxx!!!!-->
+						<language>
+							<codingSchemeName>ISO_639-1</codingSchemeName>
+							<codeValue>en</codeValue>
+						</language>
+						<charset>
+							<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+							<codeValue>UTF-16</codeValue>
+						</charset>
+					</value>
+				</items>
+				<!--EMPLOYMENT_DURATION-->
+				<items xsi:type="CLUSTER">
+					<name xsi:type="SIMPLE_TEXT">
+						<nullFlavor>
+							<codeValue>Стаж, продължителност на работа</codeValue><!--Data value xxx!!!!-->
+						</nullFlavor>
+					</name>
+					<archetype_id>at0268</archetype_id>
+					<rc_id>
+						<root>
+							<oid>oid_value</oid>
+						</root>
+					</rc_id>
+					<synthesised>false</synthesised>
+					<structure_type>
+						<codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+						<codeValue>STRC01</codeValue>
+					</structure_type>
+					<!--START_EMPLOYMENT-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>Дата на назначаване</codeValue><!--Data value xxx!!!!-->
+							</nullFlavor>
+						</name>
+						<archetype_id>at0270</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>false</synthesised>
+						<!--START_EMPLOYMENT_DATE-->
+						<value xsi:type="DATE">
+							<date>2017-03-30</date><!--Data value xxx!!!!-->
+						</value>
+					</parts>
+					<!--END_EMPLOYMENT-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>Дата на напускане</codeValue><!--Data value xxx!!!!-->
+							</nullFlavor>
+						</name>
+						<archetype_id>at0274</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>false</synthesised>
+						<!--END_EMPLOYMENT_DATE-->
+						<value xsi:type="DATE">
+							<date>2021-12-25</date><!--Data value xxx!!!!-->
+						</value>
+					</parts>
+				</items>
+				<!--MISSED_PERIODIC_EXAM-->
+				<items xsi:type="ELEMENT">
+					<name xsi:type="SIMPLE_TEXT">
+						<nullFlavor>
+							<codeValue>Пропуснал периодичен преглед</codeValue><!--Data value xxx!!!!-->
+						</nullFlavor>
+					</name>
+					<archetype_id>at0327</archetype_id>
+					<rc_id>
+						<root>
+							<oid>oid_value</oid>
+						</root>
+					</rc_id>
+					<synthesised>false</synthesised>
+					<!--MISSED_PERIODIC-->
+					<value xsi:type="SIMPLE_TEXT">
+						<originalText>0</originalText><!--Data value xxx!!!!-->
+					</value>
+				</items>
+				<!--MISSED_EXAM-->
+				<items xsi:type="ELEMENT">
+					<name xsi:type="SIMPLE_TEXT">
+						<nullFlavor>
+							<codeValue>Пропуснал изследване</codeValue><!--Data value xxx!!!!-->
+						</nullFlavor>
+					</name>
+					<archetype_id>at0329</archetype_id>
+					<rc_id>
+						<root>
+							<oid>oid_value</oid>
+						</root>
+					</rc_id>
+					<synthesised>true</synthesised>
+					<!--MISSED_EXAM_VALUE-->
+					<value xsi:type="SIMPLE_TEXT">
+						<originalText>0</originalText><!--Data value xxx!!!!-->
+					</value>
+				</items>
+			</members>
+			<!--ILLNESS_DISABILITY_INCIDENT_REGISTRATIONS-->
+			<members xsi:type="ENTRY">
+				<name xsi:type="SIMPLE_TEXT">
+					<nullFlavor>
+						<codeValue>NI</codeValue>
+					</nullFlavor>
+				</name>
+				<archetype_id>at0297</archetype_id>
+				<rc_id>
+					<root>
+						<oid>oid_value</oid>
+					</root>
+				</rc_id>
+				<synthesised>false</synthesised>
+				<uncertainty_expressed>false</uncertainty_expressed>
+				<!--PROFESSIONAL_ILLNESSES-->
+				<!-- Start data for first professional illness -->
+				<items xsi:type="CLUSTER">
+					<name xsi:type="SIMPLE_TEXT">
+						<nullFlavor>
+							<codeValue>NI</codeValue>
+						</nullFlavor>
+					</name>
+					<archetype_id>at0298</archetype_id>
+					<rc_id>
+						<root>
+							<oid>oid_value</oid>
+						</root>
+					</rc_id>
+					<synthesised>true</synthesised>
+					<structure_type>
+						<codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+						<codeValue>STRC01</codeValue>
+					</structure_type>
+					<!--NUMBER_OF_DOCUMENT-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>Номер на документ за професионално заболяване</codeValue><!--Data value xxx!!!!-->
+							</nullFlavor>
+						</name>
+						<archetype_id>at0300</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--NUMBER_OF_DOCUMENT_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>1122/065 от 11.02.2020</originalText><!--Data value xxx!!!!-->
+						</value>
+					</parts>
+					<!--PROFESSIONAL_ILLNESS_DIAGNOSE-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>Диагноза за професионално заболяване (МКБ-10)</codeValue><!--Data value xxx!!!!-->
+							</nullFlavor>
+						</name>
+						<archetype_id>at0302</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--PROFESSIONAL_ILLNESS_DIAGNOSE_VALUE-->
+						<value xsi:type="CODED_TEXT">
+							<nullFlavor>
+								<codingSchemeName>ICD10_1998</codingSchemeName>
+							</nullFlavor>
+							<codedValue>
+								<nullFlavor>
+									<codeValue>G62.2</codeValue><!--Data value xxx!!!!-->
+								</nullFlavor>
+							</codedValue>
+						</value>
+						<!-- <displayName>Professional illness diagnose</displayName> -->
+					</parts>
+				</items><!-- End data for first professional illness -->
+				<!-- Start data for second professional illness -->
+				<items xsi:type="CLUSTER">
+					<name xsi:type="SIMPLE_TEXT">
+						<nullFlavor>
+							<codeValue>NI</codeValue>
+						</nullFlavor>
+					</name>
+					<archetype_id>at0298</archetype_id>
+					<rc_id>
+						<root>
+							<oid>oid_value</oid>
+						</root>
+					</rc_id>
+					<synthesised>true</synthesised>
+					<structure_type>
+						<codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+						<codeValue>STRC01</codeValue>
+					</structure_type>
+					<!--NUMBER_OF_DOCUMENT-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>Номер на документ за професионално заболяване</codeValue><!--Data value xxx!!!!-->
+							</nullFlavor>
+						</name>
+						<archetype_id>at0300</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--NUMBER_OF_DOCUMENT_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>1011/065 от 09.04.2021</originalText><!--Data value xxx!!!!-->
+						</value>
+					</parts>
+					<!--PROFESSIONAL_ILLNESS_DIAGNOSE-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>Диагноза за професионално заболяване (МКБ-10)</codeValue><!--Data value xxx!!!!-->
+							</nullFlavor>
+						</name>
+						<archetype_id>at0302</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--PROFESSIONAL_ILLNESS_DIAGNOSE_VALUE-->
+						<value xsi:type="CODED_TEXT">
+							<nullFlavor>
+								<codingSchemeName>ICD10_1998</codingSchemeName>
+							</nullFlavor>
+							<codedValue>
+								<nullFlavor>
+									<codeValue>N14.3</codeValue><!--Data value xxx!!!!-->
+								</nullFlavor>
+							</codedValue>
+						</value>
+						<!-- <displayName>Professional illness diagnose</displayName> -->
+					</parts>
+				</items><!-- End data for second professional illness -->
+				<!--LABOR_INCIDENTS-->
+				<items xsi:type="CLUSTER"><!-- skip -->
+					<name xsi:type="SIMPLE_TEXT">
+						<nullFlavor>
+							<codeValue>NI</codeValue>
+						</nullFlavor>
+					</name>
+					<archetype_id>at0316</archetype_id>
+					<rc_id>
+						<root>
+							<oid>oid_value</oid>
+						</root>
+					</rc_id>
+					<synthesised>true</synthesised>
+					<structure_type>
+						<codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+						<codeValue>STRC01</codeValue>
+					</structure_type>
+					<!--NUMBER_DOCUMENT_INCIDENT-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0318</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>false</synthesised>
+						<!--NUMBER_DOCUMENT_INCIDENT_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>NI</originalText>
+						</value>
+					</parts>
+					<!--LABOR_INCIDENT_DIAGNOSE-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0320</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>false</synthesised>
+						<!--LABOR_INCIDENT_DIAGNOSE_VALUE-->
+						<value xsi:type="CODED_TEXT">
+							<nullFlavor>
+								<codingSchemeName>ICD10_1998</codingSchemeName>
+							</nullFlavor>
+							<codedValue>
+								<nullFlavor>
+									<codeValue>NI</codeValue>
+								</nullFlavor>
+							</codedValue>
+							<!-- <displayName>Diagnose of labor incident</displayName> -->
+						</value>
+					</parts>
+					<!--DATE_OF_LABOR_INCIDENT-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0322</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>false</synthesised>
+						<!--DATE_OF_LABOR_INCIDENT_VALUE-->
+						<value xsi:type="DATE">
+							<date>2020-05-31</date>
+						</value>
+					</parts>
+					<!--INCIDENT_LOCATION-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0324</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>false</synthesised>
+						<!--INCIDENT_LOCATION_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>originalText_value</originalText>
+							<language>
+								<codingSchemeName>ISO_639-1</codingSchemeName>
+								<codeValue>bg</codeValue>
+							</language>
+							<charset>
+								<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+								<codeValue>UTF-16</codeValue>
+							</charset>
+						</value>
+					</parts>
+				</items>
+				<!--LABOR_EXEMPTIONS-->
+				<items xsi:type="CLUSTER"><!-- skip -->
+					<name xsi:type="SIMPLE_TEXT">
+						<nullFlavor>
+							<codeValue>NI</codeValue>
+						</nullFlavor>
+					</name>
+					<archetype_id>at0092</archetype_id>
+					<rc_id>
+						<root>
+							<oid>oid_value</oid>
+						</root>
+					</rc_id>
+					<synthesised>false</synthesised>
+					<structure_type>
+						<codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+						<codeValue>STRC01</codeValue>
+					</structure_type>
+					<!--EXEMPTION_DIAGNOSE-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0094</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--EXEMPTION_DIAGNOSE_VALUE-->
+						<value xsi:type="CODED_TEXT">
+							<nullFlavor>
+								<codingSchemeName>ICD10_1998</codingSchemeName>
+							</nullFlavor>
+							<codedValue>
+								<nullFlavor>
+									<codeValue>codeValue_value</codeValue>
+								</nullFlavor>
+							</codedValue>
+							<!-- <displayName>ICD10_1998 diagnose</displayName> -->
+						</value>
+					</parts>
+					<!--WORKPLACE_RELOCATION-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0097</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>false</synthesised>
+						<!--WORKPLACE_RELOCATION_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>originalText_value</originalText>
+						</value>
+					</parts>
+					<!--EXEMPTION_DURATION-->
+					<parts xsi:type="CLUSTER">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0101</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<structure_type>
+							<codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+							<codeValue>STRC01</codeValue>
+						</structure_type>
+						<!--START_DATE-->
+						<parts xsi:type="ELEMENT">
+							<name xsi:type="SIMPLE_TEXT">
+								<nullFlavor>
+									<codeValue>NI</codeValue>
+								</nullFlavor>
+							</name>
+							<archetype_id>at0103</archetype_id>
+							<rc_id>
+								<root>
+									<oid>oid_value</oid>
+								</root>
+							</rc_id>
+							<synthesised>false</synthesised>
+							<!--START_DATE_VALUE-->
+							<value xsi:type="DATE">
+								<date>1924-10-07</date>
+							</value>
+						</parts>
+						<!--END_DATE-->
+						<parts xsi:type="ELEMENT">
+							<name xsi:type="SIMPLE_TEXT">
+								<nullFlavor>
+									<codeValue>NI</codeValue>
+								</nullFlavor>
+							</name>
+							<archetype_id>at0105</archetype_id>
+							<rc_id>
+								<root>
+									<oid>oid_value</oid>
+								</root>
+							</rc_id>
+							<synthesised>true</synthesised>
+							<!--END_DATE_VALUE-->
+							<value xsi:type="DATE">
+								<date>2020-09-08</date>
+							</value>
+						</parts>
+					</parts>
+					<!--EXEMPTION_PROFESSION-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0108</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--EXEMPTION_PROFESSION_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>originalText_value</originalText>
+							<language>
+								<codingSchemeName>ISO_639-1</codingSchemeName>
+								<codeValue>en</codeValue>
+							</language>
+							<charset>
+								<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+								<codeValue>UTF-16</codeValue>
+							</charset>
+						</value>
+					</parts>
+				</items>
+				<!--PERMANENT_WORK_DISABILITY-->
+				<items xsi:type="CLUSTER">
+					<name xsi:type="SIMPLE_TEXT">
+						<nullFlavor>
+							<codeValue>NI</codeValue>
+						</nullFlavor>
+					</name>
+					<archetype_id>at0137</archetype_id>
+					<rc_id>
+						<root>
+							<oid>oid_value</oid>
+						</root>
+					</rc_id>
+					<synthesised>true</synthesised>
+					<structure_type>
+						<codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+						<codeValue>STRC01</codeValue>
+					</structure_type>
+					<!--NUMBER_DOCUMENT_DISABILITY-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0139</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>false</synthesised>
+						<!--NUMBER_DOCUMENT_DISABILITY_VALUE -->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>originalText_value</originalText>
+						</value>
+					</parts>
+					<!--DISABILITY_REASON_DIAGNOSE-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0141</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--DISABILITY_REASON_DIAGNOSE-->
+						<value xsi:type="CODED_TEXT">
+							<nullFlavor>
+								<codingSchemeName>SNOMED-CT</codingSchemeName>
+							</nullFlavor>
+							<codedValue>
+								<nullFlavor>
+									<codeValue>codeValue_value</codeValue>
+								</nullFlavor>
+							</codedValue>
+							<!-- <displayName>Reason for disability (diagnose)</displayName> -->
+						</value>
+					</parts>
+					<!--DISABILITY_LEVEL-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0143</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>false</synthesised>
+						<!--DISABILITY_LEVEL_LEVEL -->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>Above 90%</originalText>
+							<language>
+								<codingSchemeName>ISO_639-1</codingSchemeName>
+								<codeValue>en</codeValue>
+							</language>
+							<charset>
+								<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+								<codeValue>UTF-16</codeValue>
+							</charset>
+						</value>
+					</parts>
+				</items>
+			</members>
+			<!--WORKPLACE-->
+			<members xsi:type="ENTRY">
+				<name xsi:type="SIMPLE_TEXT">
+					<nullFlavor>
+						<codeValue>Работно място</codeValue><!--Data value xxx!!!!-->
+					</nullFlavor>
+				</name>
+				<archetype_id>at0151</archetype_id>
+				<rc_id>
+					<root>
+						<oid>oid_value</oid>
+					</root>
+				</rc_id>
+				<synthesised>false</synthesised>
+				<uncertainty_expressed>false</uncertainty_expressed>
+				<!--WORKPLACE_DESCRIPTION-->
+				<items xsi:type="ELEMENT">
+					<name xsi:type="SIMPLE_TEXT">
+						<nullFlavor>
+							<codeValue>Описание на работното място</codeValue><!--Data value xxx!!!!-->
+						</nullFlavor>
+					</name>
+					<archetype_id>at0171</archetype_id>
+					<rc_id>
+						<root>
+							<oid>oid_value</oid>
+						</root>
+					</rc_id>
+					<synthesised>false</synthesised>
+					<!--WORKPLACE_DESCRIPTION_VALUE-->
+					<value xsi:type="SIMPLE_TEXT">
+						<originalText>Склад за акумулатори</originalText><!--Data value xxx!!!!-->
+						<language>
+							<codingSchemeName>ISO_639-1</codingSchemeName>
+							<codeValue>bg</codeValue>
+						</language>
+						<charset>
+							<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+							<codeValue>UTF-16</codeValue>
+						</charset>
+					</value>
+				</items>
+				<!--WORKPLACE_ACTIVITY_DESCRIPTION-->
+				<items xsi:type="ELEMENT">
+					<name xsi:type="SIMPLE_TEXT">
+						<nullFlavor>
+							<codeValue>Дейност на работното място</codeValue><!--Data value xxx!!!!-->
+						</nullFlavor>
+					</name>
+					<archetype_id>at0155</archetype_id>
+					<rc_id>
+						<root>
+							<oid>oid_value</oid>
+						</root>
+					</rc_id>
+					<synthesised>false</synthesised>
+					<!--WORKPLACE_ACTIVITY_DESCRIPTION_VALUE-->
+					<value xsi:type="SIMPLE_TEXT">
+						<originalText>Складов работник</originalText><!--Data value xxx!!!!-->
+						<language>
+							<codingSchemeName>ISO_639-1</codingSchemeName>
+							<codeValue>bg</codeValue>
+						</language>
+						<charset>
+							<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+							<codeValue>UTF-16</codeValue>
+						</charset>
+					</value>
+				</items>
+				<!--WORKPLACE_FACTORS-->
+				<items xsi:type="CLUSTER">
+					<name xsi:type="SIMPLE_TEXT">
+						<nullFlavor>
+							<codeValue>Вредности на работнато място</codeValue><!--Data value xxx!!!!-->
+						</nullFlavor>
+					</name>
+					<archetype_id>at0169</archetype_id>
+					<rc_id>
+						<root>
+							<oid>oid_value</oid>
+						</root>
+					</rc_id>
+					<synthesised>true</synthesised>
+					<structure_type>
+						<codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+						<codeValue>STRC01</codeValue>
+					</structure_type>
+					<!--MICROCLIMATE-->
+					<parts xsi:type="CLUSTER">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0200</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<structure_type>
+							<codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+							<codeValue>STRC01</codeValue>
+						</structure_type>
+						<!--TEMPERATURE-->
+						<parts xsi:type="ELEMENT">
+							<name xsi:type="SIMPLE_TEXT">
+								<nullFlavor>
+									<codeValue>NI</codeValue>
+								</nullFlavor>
+							</name>
+							<archetype_id>at0203</archetype_id>
+							<rc_id>
+								<root>
+									<oid>oid_value</oid>
+								</root>
+							</rc_id>
+							<synthesised>true</synthesised>
+							<!--TEMPERATURE_VALUE-->
+							<value xsi:type="PQ">
+								<value>18.0</value>
+								<units>
+									<codingSchemeName>UCUM</codingSchemeName>
+									<codeValue>Cel</codeValue>
+								</units>
+							</value>
+						</parts>
+						<!--HUMIDITY-->
+						<parts xsi:type="ELEMENT">
+							<name xsi:type="SIMPLE_TEXT">
+								<nullFlavor>
+									<codeValue>NI</codeValue>
+								</nullFlavor>
+							</name>
+							<archetype_id>at0205</archetype_id>
+							<rc_id>
+								<root>
+									<oid>oid_value</oid>
+								</root>
+							</rc_id>
+							<synthesised>true</synthesised>
+							<!--HUMIDITY_VALUE-->
+							<value xsi:type="PQ">
+								<value>80.0</value>
+								<units>
+									<codingSchemeName>UCUM</codingSchemeName>
+									<codeValue>80%</codeValue>
+								</units>
+							</value>
+						</parts>
+						<!--WIND_SPEED-->
+						<parts xsi:type="ELEMENT">
+							<name xsi:type="SIMPLE_TEXT">
+								<nullFlavor>
+									<codeValue>NI</codeValue>
+								</nullFlavor>
+							</name>
+							<archetype_id>at0206</archetype_id>
+							<rc_id>
+								<root>
+									<oid>oid_value</oid>
+								</root>
+							</rc_id>
+							<synthesised>true</synthesised>
+							<!--WIND_SPEED_VALUE-->
+							<value xsi:type="PQ">
+								<value>0</value>
+								<units>
+									<codingSchemeName>UCUM</codingSchemeName>
+									<codeValue>m/s</codeValue>
+								</units>
+							</value>
+						</parts>
+						<!--ATM_PRESSURE-->
+						<parts xsi:type="ELEMENT">
+							<name xsi:type="SIMPLE_TEXT">
+								<nullFlavor>
+									<codeValue>Професионални болести, причинени от атмосферно налягане</codeValue>
+								</nullFlavor>
+							</name>
+							<archetype_id>at0113</archetype_id>
+							<rc_id>
+								<root>
+									<oid>oid_value</oid>
+								</root>
+							</rc_id>
+							<synthesised>true</synthesised>
+							<!--CODE_VALUE-->
+							<value xsi:type="SIMPLE_TEXT">
+								<originalText>2301</originalText>
+							</value>
+						</parts>
+					</parts>
+					<!--LIGHTHNING-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0207</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--LIGHTNING_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>originalText_value</originalText>
+						</value>
+					</parts>
+					<!--NOISE-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0211</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>false</synthesised>
+						<!--CODE_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>2101</originalText>
+						</value>
+					</parts>
+					<!--VIBRATIONS-->
+					<parts xsi:type="CLUSTER">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>Професионални болести, причинени от локални вибрации.</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0212</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<structure_type>
+							<codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+							<codeValue>STRC01</codeValue>
+						</structure_type>
+						<!--COMMON_VIBRATIONS-->
+						<parts xsi:type="ELEMENT">
+							<name xsi:type="SIMPLE_TEXT">
+								<nullFlavor>
+									<codeValue>Професионални болести, причинени от общи вибрации.</codeValue>
+								</nullFlavor>
+							</name>
+							<archetype_id>at0215</archetype_id>
+							<rc_id>
+								<root>
+									<oid>oid_value</oid>
+								</root>
+							</rc_id>
+							<synthesised>true</synthesised>
+							<!--COMMON_VIB_VALUE-->
+							<!--CODE_VALUE--><value xsi:type="SIMPLE_TEXT">
+								<originalText>2202</originalText>
+							</value>
+						</parts>
+						<!--LOCAL_VIBRATIONS-->
+						<parts xsi:type="ELEMENT">
+							<name xsi:type="SIMPLE_TEXT">
+								<nullFlavor>
+									<codeValue>NI</codeValue>
+								</nullFlavor>
+							</name>
+							<archetype_id>at0217</archetype_id>
+							<rc_id>
+								<root>
+									<oid>oid_value</oid>
+								</root>
+							</rc_id>
+							<synthesised>false</synthesised>
+							<!--CODE_VALUE-->
+							<value xsi:type="SIMPLE_TEXT">
+								<originalText>2202</originalText>
+							</value>
+						</parts>
+					</parts>
+					<!--IONIZING_RADIATION-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>Професионални болести, причинени от йонизиращи лъчения</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0218</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--CODE_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>2601</originalText>
+						</value>
+					</parts>
+					<!--NONIONIZING_RADIATION-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>Професионални болести, причинени от нейонизирани лъчения</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0220</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--CODE_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>2501</originalText>
+						</value>
+					</parts>
+					<!--DUST_TYPE-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0221</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>false</synthesised>
+						<!--CODE_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>5101</originalText>
+						</value>
+					</parts>
+					<!--CHEMICAL_AGENTS-->
+					<parts xsi:type="CLUSTER">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0231</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>false</synthesised>
+						<structure_type>
+							<codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+							<codeValue>STRC01</codeValue>
+						</structure_type>
+						<!--CHEMICAL_AGENT 1-->
+						<parts xsi:type="ELEMENT">
+							<name xsi:type="SIMPLE_TEXT">
+								<nullFlavor>
+									<codeValue>Професионални болести, причинени от неорганични химични агенти</codeValue><!--Data value xxx!!!!-->
+								</nullFlavor>
+							</name>
+							<archetype_id>at0233</archetype_id>
+							<rc_id>
+								<root>
+									<oid>oid_value</oid>
+								</root>
+							</rc_id>
+							<synthesised>true</synthesised>
+							<!--CHEMICAL_AGENT_VALUE-->
+							<value xsi:type="SIMPLE_TEXT">
+								<originalText>Олово и съединенията му</originalText><!--Data value xxx!!!!-->
+							</value>
+						</parts>
+						<!--CODE-->
+						<parts xsi:type="ELEMENT">
+							<name xsi:type="SIMPLE_TEXT">
+								<nullFlavor>
+									<codeValue>Код на вредност</codeValue><!--Data value xxx!!!!-->
+								</nullFlavor>
+							</name>
+							<archetype_id>at0080</archetype_id>
+							<rc_id>
+								<root>
+									<oid>oid_value</oid>
+								</root>
+							</rc_id>
+							<synthesised>false</synthesised>
+							<!--CODE_VALUE-->
+							<value xsi:type="SIMPLE_TEXT">
+								<originalText>1101</originalText><!--Data value xxx!!!!-->
+							</value>
+						</parts>
+					</parts>
+					<!-- Chemical agent 2 -->
+					<parts xsi:type="CLUSTER">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0231</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>false</synthesised>
+						<structure_type>
+							<codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+							<codeValue>STRC01</codeValue>
+						</structure_type>
+						<!--CHEMICAL_AGENT 1-->
+						<parts xsi:type="ELEMENT">
+							<name xsi:type="SIMPLE_TEXT">
+								<nullFlavor>
+									<codeValue>NI</codeValue>
+								</nullFlavor>
+							</name>
+							<archetype_id>at0233</archetype_id>
+							<rc_id>
+								<root>
+									<oid>oid_value</oid>
+								</root>
+							</rc_id>
+							<synthesised>true</synthesised>
+							<!--CHEMICAL_AGENT_VALUE-->
+							<value xsi:type="SIMPLE_TEXT">
+								<originalText>Органични съединения  на оловото: тетраетилолово, тетраметилолово и др.</originalText><!--Data value xxx!!!!-->
+							</value>
+						</parts>
+						<!--CODE-->
+						<parts xsi:type="ELEMENT">
+							<name xsi:type="SIMPLE_TEXT">
+								<nullFlavor>
+									<codeValue>Код на вредност</codeValue><!--Data value xxx!!!!-->
+								</nullFlavor>
+							</name>
+							<archetype_id>at0080</archetype_id>
+							<rc_id>
+								<root>
+									<oid>oid_value</oid>
+								</root>
+							</rc_id>
+							<synthesised>false</synthesised>
+							<!--CODE_VALUE-->
+							<value xsi:type="SIMPLE_TEXT">
+								<originalText>1224</originalText><!--Data value xxx!!!!-->
+							</value>
+						</parts>
+					</parts>
+					<!--BIOLOGICAL_AGENTS-->
+					<parts xsi:type="CLUSTER">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0235</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<structure_type>
+							<codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+							<codeValue>STRC01</codeValue>
+						</structure_type>
+						<!--BIO_CODE-->
+						<parts xsi:type="ELEMENT">
+							<name xsi:type="SIMPLE_TEXT">
+								<nullFlavor>
+									<codeValue>Професионални болести, причинени от биологични агенти</codeValue>
+								</nullFlavor>
+							</name>
+							<archetype_id>at0237</archetype_id>
+							<rc_id>
+								<root>
+									<oid>oid_value</oid>
+								</root>
+							</rc_id>
+							<synthesised>false</synthesised>
+							<!--CODE_VALUE-->
+							<value xsi:type="SIMPLE_TEXT">
+								<originalText>3101</originalText>
+							</value>
+						</parts>
+					</parts>
+					<!--WORK_POSTURE-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0241</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--WORK_POSTURE_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>Dynamic</originalText>
+						</value>
+					</parts>
+					<!--MANUAL_HEAVYLOAD_LIFTING-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>Физическо натоварване (ръчна работа с тежести, двигателно-монотонна работа, работа с голяма скорост,  работна поза и др.)</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0242</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>false</synthesised>
+						<!--CODE_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>4101</originalText>
+						</value>
+					</parts>
+					<!--MONOTONIC_WORK_ACTIVITY-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0243</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>false</synthesised>
+						<!--MONOTONIC_WORK_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>0</originalText>
+						</value>
+					</parts>
+					<!--NEURO_PSY_TENSION-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>Професионални болести, причинени от пренапрежение.</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0245</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--CODE_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>4201</originalText>
+						</value>
+					</parts>
+					<!--WORK_ACTIVITY_ORGANIZATION-->
+					<parts xsi:type="CLUSTER">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>Професионални болести, причинени от статично физическо усилие и динамична физическа работа.</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0246</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>false</synthesised>
+						<structure_type>
+							<codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+							<codeValue>STRC01</codeValue>
+						</structure_type>
+						<!--OPERATION_MODE-->
+						<parts xsi:type="ELEMENT">
+							<name xsi:type="SIMPLE_TEXT">
+								<nullFlavor>
+									<codeValue>NI</codeValue>
+								</nullFlavor>
+							</name>
+							<archetype_id>at0248</archetype_id>
+							<rc_id>
+								<root>
+									<oid>oid_value</oid>
+								</root>
+							</rc_id>
+							<synthesised>true</synthesised>
+							<!--OPERATION_MODE_VALUE-->
+							<value xsi:type="SIMPLE_TEXT">
+								<originalText>discontinuous mode of work</originalText>
+								<language>
+									<codingSchemeName>ISO_639-1</codingSchemeName>
+									<codeValue>en</codeValue>
+								</language>
+								<charset>
+									<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+									<codeValue>UTF-16</codeValue>
+								</charset>
+							</value>
+						</parts>
+						<!--WORKTIME_DURATION-->
+						<parts xsi:type="ELEMENT">
+							<name xsi:type="SIMPLE_TEXT">
+								<nullFlavor>
+									<codeValue>NI</codeValue>
+								</nullFlavor>
+							</name>
+							<archetype_id>at0249</archetype_id>
+							<rc_id>
+								<root>
+									<oid>oid_value</oid>
+								</root>
+							</rc_id>
+							<synthesised>true</synthesised>
+							<!--WORKTIME_VALUE-->
+							<value xsi:type="SIMPLE_TEXT">
+								<originalText>нормално работно време</originalText>
+								<language>
+									<codingSchemeName>ISO_639-1</codingSchemeName>
+									<codeValue>en</codeValue>
+								</language>
+								<charset>
+									<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+									<codeValue>UTF-16</codeValue>
+								</charset>
+							</value>
+						</parts>
+						<!--PHYSIOLOGICAL_MODE_REST-->
+						<parts xsi:type="ELEMENT">
+							<name xsi:type="SIMPLE_TEXT">
+								<nullFlavor>
+									<codeValue>NI</codeValue>
+								</nullFlavor>
+							</name>
+							<archetype_id>at0250</archetype_id>
+							<rc_id>
+								<root>
+									<oid>oid_value</oid>
+								</root>
+							</rc_id>
+							<synthesised>true</synthesised>
+							<!--SIMPLE_TEXT-->
+							<value xsi:type="SIMPLE_TEXT">
+								<originalText>1</originalText>
+							</value>
+						</parts>
+					</parts>
+					<!--OTHER_FACTORS-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0251</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>false</synthesised>
+						<!--OTHER_FACTORS_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>няма</originalText>
+							<language>
+								<codingSchemeName>ISO_639-1</codingSchemeName>
+								<codeValue>bg</codeValue>
+							</language>
+							<charset>
+								<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+								<codeValue>UTF-16</codeValue>
+							</charset>
+						</value>
+					</parts>
+				</items>
+				<!-- WORKPLACE_FACTORS END-->
+			</members>
+			<!--PRELIMINARY_MEDICAL_EXAMS No. 1 start-->
+			<members xsi:type="ENTRY">
+				<name xsi:type="SIMPLE_TEXT">
+					<nullFlavor>
+						<codeValue>Данни за предварителен медицински преглед</codeValue><!--Data value xxx!!!!-->
+					</nullFlavor>
+				</name>
+				<archetype_id>at0285</archetype_id>
+				<rc_id>
+					<root>
+						<oid>oid_value</oid>
+					</root>
+				</rc_id>
+				<synthesised>false</synthesised>
+				<uncertainty_expressed>true</uncertainty_expressed>
+				<!--HAS_PASSED_EXAMINATION-->
+				<items xsi:type="ELEMENT">
+					<name xsi:type="SIMPLE_TEXT">
+						<nullFlavor>
+							<codeValue>Извършено параклинично изследване</codeValue><!--Data value xxx!!!!-->
+						</nullFlavor>
+					</name>
+					<archetype_id>at0286</archetype_id>
+					<rc_id>
+						<root>
+							<oid>oid_value</oid>
+						</root>
+					</rc_id>
+					<synthesised>false</synthesised>
+					<!--HAS_PASSED_EXAMINATION_VALUE-->
+					<value xsi:type="SIMPLE_TEXT"><!--Passed preliminary exam -->
+						<originalText>1</originalText><!--Data value xxx!!!!-->
+					</value>
+				</items>
+				<!--CARD_PRELIMINARY_EXAM_DATA-->
+				<items xsi:type="CLUSTER">
+					<name xsi:type="SIMPLE_TEXT">
+						<nullFlavor>
+							<codeValue>Данни за изследването</codeValue><!--Data value xxx!!!!-->
+						</nullFlavor>
+					</name>
+					<archetype_id>at0292</archetype_id>
+					<rc_id>
+						<root>
+							<oid>oid_value</oid>
+						</root>
+					</rc_id>
+					<synthesised>false</synthesised>
+					<structure_type>
+						<codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+						<codeValue>STRC01</codeValue>
+					</structure_type>
+					<!--CARD_ISSUED_BY_DOCTOR-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>Имена на доктор</codeValue><!--Data value xxx!!!!-->
+							</nullFlavor>
+						</name>
+						<archetype_id>at0294</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--CARD_ISSUED_BY__DOCTOR_VALUE -->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>Георги Иванов</originalText><!--Data value xxx!!!!-->
+							<language>
+								<codingSchemeName>ISO_639-1</codingSchemeName>
+								<codeValue>en</codeValue>
+							</language>
+							<charset>
+								<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+								<codeValue>UTF-16</codeValue>
+							</charset>
+						</value>
+					</parts>
+					<!--CARD_ISSUED_DATE-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>Дата на издаване на документа</codeValue><!--Data value xxx!!!!-->
+							</nullFlavor>
+						</name>
+						<archetype_id>at0343</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>false</synthesised>
+						<!--CARD_ISSUED_DATE_VALIUE-->
+						<value xsi:type="DATE">
+							<date>2019-08-06</date><!--Data value xxx!!!!-->
+						</value>
+					</parts>
+					<!--CARD_FOR_PROFESSION-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>Изследване на упражняване на професия</codeValue><!--Data value xxx!!!!-->
+							</nullFlavor>
+						</name>
+						<archetype_id>at0345</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--CARD_FOR_PROFESSION_VALUE -->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>Складов работник</originalText><!--Data value xxx!!!!-->
+							<language>
+								<codingSchemeName>ISO_639-1</codingSchemeName>
+								<codeValue>bg</codeValue>
+							</language>
+							<charset>
+								<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+								<codeValue>UTF-16</codeValue>
+							</charset>
+						</value>
+					</parts>
+					<!--EXAM_DATE-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>Дата на изследването</codeValue><!--Data value xxx!!!!-->
+							</nullFlavor>
+						</name>
+						<archetype_id>at0359</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--EXAM_DATE_VALUE-->
+						<value xsi:type="DATE">
+							<date>2019-08-01</date><!--Data value xxx!!!!-->
+						</value>
+					</parts>
+					<!--DIAGNOSE-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>Диагноза ICD-10</codeValue><!--Data value xxx!!!!-->
+							</nullFlavor>
+						</name>
+						<archetype_id>at0361</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--DIAGNOSE_VALUE-->
+						<value xsi:type="CODED_TEXT">
+							<nullFlavor>
+								<codingSchemeName>ICD10_1998</codingSchemeName>
+							</nullFlavor>
+							<codedValue>
+								<nullFlavor>
+									<codeValue>G62.2</codeValue><!--Data value xxx!!!!-->
+								</nullFlavor>
+							</codedValue>
+							<!-- <displayName>Diagnose from medical preliminary exam</displayName> -->
+						</value>
+					</parts>
+					<!--EXAMINATION-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>Данни от изследването</codeValue><!--Data value xxx!!!!-->
+							</nullFlavor>
+						</name>
+						<archetype_id>at0040</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>false</synthesised>
+						<!--EXAMINATION_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>повишени стойности на олово (Pb) в кръв - 55  μg/dL  (норма до 25 μg/dL)</originalText><!--Data value xxx!!!!-->
+						</value>
+					</parts>
+					<!--DOCTOR_CONCLUSION-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>Заключение за годност да упражнява професията</codeValue><!--Data value xxx!!!!-->
+							</nullFlavor>
+						</name>
+						<archetype_id>at0381</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--DOCTOR_CONCLUSION_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>Може да упражнява професията Складов работник до 3 год след назначението</originalText><!--Data value xxx!!!!-->
+							<language>
+								<codingSchemeName>ISO_639-1</codingSchemeName>
+								<codeValue>bg</codeValue>
+							</language>
+							<charset>
+								<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+								<codeValue>UTF-16</codeValue>
+							</charset>
+						</value>
+					</parts>
+				</items>
+			</members>
+			<!--PRELIMINARY_MEDICAL_EXAMS No. 1 end-->
+			<!--PRELIMINARY_MEDICAL_EXAMS No. 2 start-->
+			<members xsi:type="ENTRY">
+				<name xsi:type="SIMPLE_TEXT">
+					<nullFlavor>
+						<codeValue>Данни за предварителен медицински преглед</codeValue><!--Data value xxx!!!!-->
+					</nullFlavor>
+				</name>
+				<archetype_id>at0285</archetype_id>
+				<rc_id>
+					<root>
+						<oid>oid_value</oid>
+					</root>
+				</rc_id>
+				<synthesised>false</synthesised>
+				<uncertainty_expressed>true</uncertainty_expressed>
+				<!--HAS_PASSED_EXAMINATION-->
+				<items xsi:type="ELEMENT">
+					<name xsi:type="SIMPLE_TEXT">
+						<nullFlavor>
+							<codeValue>Извършено параклинично изследване</codeValue><!--Data value xxx!!!!-->
+						</nullFlavor>
+					</name>
+					<archetype_id>at0286</archetype_id>
+					<rc_id>
+						<root>
+							<oid>oid_value</oid>
+						</root>
+					</rc_id>
+					<synthesised>false</synthesised>
+					<!--HAS_PASSED_EXAMINATION_VALUE-->
+					<value xsi:type="SIMPLE_TEXT"><!--Passed preliminary exam -->
+						<originalText>1</originalText><!--Data value xxx!!!!-->
+					</value>
+				</items>
+				<items xsi:type="CLUSTER">
+					<name xsi:type="SIMPLE_TEXT">
+						<nullFlavor>
+							<codeValue>Данни за изследването</codeValue><!--Data value xxx!!!!-->
+						</nullFlavor>
+					</name>
+					<archetype_id>at0292</archetype_id>
+					<rc_id>
+						<root>
+							<oid>oid_value</oid>
+						</root>
+					</rc_id>
+					<synthesised>false</synthesised>
+					<structure_type>
+						<codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+						<codeValue>STRC01</codeValue>
+					</structure_type>
+					<!--CARD_ISSUED_BY_DOCTOR-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>Имена на доктор</codeValue><!--Data value xxx!!!!-->
+							</nullFlavor>
+						</name>
+						<archetype_id>at0294</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--CARD_ISSUED_BY__DOCTOR_VALUE -->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>Иван Георгиев</originalText><!--Data value xxx!!!!-->
+							<language>
+								<codingSchemeName>ISO_639-1</codingSchemeName>
+								<codeValue>en</codeValue>
+							</language>
+							<charset>
+								<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+								<codeValue>UTF-16</codeValue>
+							</charset>
+						</value>
+					</parts>
+					<!--CARD_ISSUED_DATE-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>Дата на издаване на документа</codeValue><!--Data value xxx!!!!-->
+							</nullFlavor>
+						</name>
+						<archetype_id>at0343</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>false</synthesised>
+						<!--CARD_ISSUED_DATE_VALIUE-->
+						<value xsi:type="DATE">
+							<date>2020-07-05</date><!--Data value xxx!!!!-->
+						</value>
+					</parts>
+					<!--CARD_FOR_PROFESSION-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>Изследване на упражняване на професия</codeValue><!--Data value xxx!!!!-->
+							</nullFlavor>
+						</name>
+						<archetype_id>at0345</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--CARD_FOR_PROFESSION_VALUE -->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>Складов работник</originalText><!--Data value xxx!!!!-->
+							<language>
+								<codingSchemeName>ISO_639-1</codingSchemeName>
+								<codeValue>bg</codeValue>
+							</language>
+							<charset>
+								<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+								<codeValue>UTF-16</codeValue>
+							</charset>
+						</value>
+					</parts>
+					<!--EXAM_DATE-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>Дата на изследването</codeValue><!--Data value xxx!!!!-->
+							</nullFlavor>
+						</name>
+						<archetype_id>at0359</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--EXAM_DATE_VALUE-->
+						<value xsi:type="DATE">
+							<date>2020-07-03</date><!--Data value xxx!!!!-->
+						</value>
+					</parts>
+					<!--DIAGNOSE-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>Диагноза ICD-10</codeValue><!--Data value xxx!!!!-->
+							</nullFlavor>
+						</name>
+						<archetype_id>at0361</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--DIAGNOSE_VALUE-->
+						<value xsi:type="CODED_TEXT">
+							<nullFlavor>
+								<codingSchemeName>ICD10_1998</codingSchemeName>
+							</nullFlavor>
+							<codedValue>
+								<nullFlavor>
+									<codeValue>G62.2</codeValue><!--Data value xxx!!!!-->
+								</nullFlavor>
+							</codedValue>
+							<!-- <displayName>Diagnose from medical preliminary exam</displayName> -->
+						</value>
+					</parts>
+					<!--EXAMINATION-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>Данни от изследването</codeValue><!--Data value xxx!!!!-->
+							</nullFlavor>
+						</name>
+						<archetype_id>at0040</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>false</synthesised>
+						<!--EXAMINATION_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>повишени стойности на олово (Pb) в кръв - 0.25  μmol/L  (норма до 0.10  μmol/L),повишени стойности на олово (Pb) в урина - 0.55  µmol/l</originalText><!--Data value xxx!!!!-->
+						</value>
+					</parts>
+					<!--DOCTOR_CONCLUSION-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>Заключение за годност да упражнява професията</codeValue><!--Data value xxx!!!!-->
+							</nullFlavor>
+						</name>
+						<archetype_id>at0381</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--DOCTOR_CONCLUSION_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>Може да упражнява професията Складов работник до 3 год след назначението</originalText><!--Data value xxx!!!!-->
+							<language>
+								<codingSchemeName>ISO_639-1</codingSchemeName>
+								<codeValue>bg</codeValue>
+							</language>
+							<charset>
+								<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+								<codeValue>UTF-16</codeValue>
+							</charset>
+						</value>
+					</parts>
+				</items>
+			</members>
+			<!-- Preliminary exam 2 end -->
+			<!--PRELIMINARY_OBLIGATORY_EXAM-->
+			<members xsi:type="ENTRY">
+				<name xsi:type="SIMPLE_TEXT">
+					<nullFlavor>
+						<codeValue>NI</codeValue>
+					</nullFlavor>
+				</name>
+				<archetype_id>at0122</archetype_id>
+				<rc_id>
+					<root>
+						<oid>oid_value</oid>
+					</root>
+				</rc_id>
+				<synthesised>true</synthesised>
+				<uncertainty_expressed>true</uncertainty_expressed>
+				<!--COMMISSION-->
+				<items xsi:type="CLUSTER">
+					<name xsi:type="SIMPLE_TEXT">
+						<nullFlavor>
+							<codeValue>NI</codeValue>
+						</nullFlavor>
+					</name>
+					<archetype_id>at0402</archetype_id>
+					<rc_id>
+						<root>
+							<oid>oid_value</oid>
+						</root>
+					</rc_id>
+					<synthesised>false</synthesised>
+					<structure_type>
+						<codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+						<codeValue>STRC01</codeValue>
+					</structure_type>
+					<!--ADDRESS-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0404</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>false</synthesised>
+						<!--ADDRESS_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>originalText_value</originalText>
+							<language>
+								<codingSchemeName>ISO_639-1</codingSchemeName>
+								<codeValue>en</codeValue>
+							</language>
+							<charset>
+								<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+								<codeValue>UTF-16</codeValue>
+							</charset>
+						</value>
+					</parts>
+					<!--TITLE-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0412</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>false</synthesised>
+						<!--TITLE_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>originalText_value</originalText>
+							<language>
+								<codingSchemeName>ISO_639-1</codingSchemeName>
+								<codeValue>en</codeValue>
+							</language>
+							<charset>
+								<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+								<codeValue>UTF-16</codeValue>
+							</charset>
+						</value>
+					</parts>
+					<!--DATE-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0420</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--DATE_VALUE -->
+						<value xsi:type="DATE">
+							<date>2082-05-04</date>
+						</value>
+					</parts>
+					<!--CONCLUSION__CONCLUSION-->
+					<parts xsi:type="CLUSTER">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0428</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<structure_type>
+							<codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+							<codeValue>STRC01</codeValue>
+						</structure_type>
+						<!--PROFESSION_OK-->
+						<parts xsi:type="ELEMENT">
+							<name xsi:type="SIMPLE_TEXT">
+								<nullFlavor>
+									<codeValue>NI</codeValue>
+								</nullFlavor>
+							</name>
+							<archetype_id>at0430</archetype_id>
+							<rc_id>
+								<root>
+									<oid>oid_value</oid>
+								</root>
+							</rc_id>
+							<synthesised>false</synthesised>
+							<!--PROFESSION_OK_VALUE-->
+							<value xsi:type="SIMPLE_TEXT">
+								<originalText>originalText_value</originalText>
+								<language>
+									<codingSchemeName>ISO_639-1</codingSchemeName>
+									<codeValue>bg</codeValue>
+								</language>
+								<charset>
+									<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+									<codeValue>UTF-16</codeValue>
+								</charset>
+							</value>
+						</parts>
+						<!--WORKPLACE_OK-->
+						<parts xsi:type="ELEMENT">
+							<name xsi:type="SIMPLE_TEXT">
+								<nullFlavor>
+									<codeValue>NI</codeValue>
+								</nullFlavor>
+							</name>
+							<archetype_id>at0444</archetype_id>
+							<rc_id>
+								<root>
+									<oid>oid_value</oid>
+								</root>
+							</rc_id>
+							<synthesised>true</synthesised>
+							<!--WORKPLACE_OK_VALUE -->
+							<value xsi:type="SIMPLE_TEXT">
+								<originalText>originalText_value</originalText>
+								<language>
+									<codingSchemeName>ISO_639-1</codingSchemeName>
+									<codeValue>bg</codeValue>
+								</language>
+								<charset>
+									<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+									<codeValue>UTF-16</codeValue>
+								</charset>
+							</value>
+						</parts>
+						<!--CONDITIONS-->
+						<parts xsi:type="CLUSTER">
+							<name xsi:type="SIMPLE_TEXT">
+								<nullFlavor>
+									<codeValue>NI</codeValue>
+								</nullFlavor>
+							</name>
+							<archetype_id>at0234</archetype_id>
+							<rc_id>
+								<root>
+									<oid>oid_value</oid>
+								</root>
+							</rc_id>
+							<synthesised>false</synthesised>
+							<structure_type>
+								<codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+								<codeValue>STRC01</codeValue>
+							</structure_type>
+							<!--CONDITION-->
+							<parts xsi:type="ELEMENT">
+								<name xsi:type="SIMPLE_TEXT">
+									<nullFlavor>
+										<codeValue>NI</codeValue>
+									</nullFlavor>
+								</name>
+								<archetype_id>at0239</archetype_id>
+								<rc_id>
+									<root>
+										<oid>oid_value</oid>
+									</root>
+								</rc_id>
+								<synthesised>false</synthesised>
+								<!--CONDITION_VALUE -->
+								<value xsi:type="SIMPLE_TEXT">
+									<originalText>originalText_value</originalText>
+									<language>
+										<codingSchemeName>ISO_639-1</codingSchemeName>
+										<codeValue>en</codeValue>
+									</language>
+									<charset>
+										<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+										<codeValue>UTF-16</codeValue>
+									</charset>
+								</value>
+							</parts>
+						</parts>
+						<!--PROFESSION_EXCEPTIONS-->
+						<parts xsi:type="CLUSTER">
+							<name xsi:type="SIMPLE_TEXT">
+								<nullFlavor>
+									<codeValue>NI</codeValue>
+								</nullFlavor>
+							</name>
+							<archetype_id>at0068</archetype_id>
+							<rc_id>
+								<root>
+									<oid>oid_value</oid>
+								</root>
+							</rc_id>
+							<synthesised>true</synthesised>
+							<structure_type>
+								<codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+								<codeValue>STRC01</codeValue>
+							</structure_type>
+							<!--PROFESSION-->
+							<parts xsi:type="ELEMENT">
+								<name xsi:type="SIMPLE_TEXT">
+									<nullFlavor>
+										<codeValue>NI</codeValue>
+									</nullFlavor>
+								</name>
+								<archetype_id>at0070</archetype_id>
+								<rc_id>
+									<root>
+										<oid>oid_value</oid>
+									</root>
+								</rc_id>
+								<synthesised>true</synthesised>
+								<!--PROFESSION_VALUE -->
+								<value xsi:type="SIMPLE_TEXT">
+									<originalText>originalText_value</originalText>
+									<language>
+										<codingSchemeName>ISO_639-1</codingSchemeName>
+										<codeValue>bg</codeValue>
+									</language>
+									<charset>
+										<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+										<codeValue>UTF-16</codeValue>
+									</charset>
+								</value>
+							</parts>
+							<!--INDUSTRY-->
+							<parts xsi:type="ELEMENT">
+								<name xsi:type="SIMPLE_TEXT">
+									<nullFlavor>
+										<codeValue>NI</codeValue>
+									</nullFlavor>
+								</name>
+								<archetype_id>at0078</archetype_id>
+								<rc_id>
+									<root>
+										<oid>oid_value</oid>
+									</root>
+								</rc_id>
+								<synthesised>true</synthesised>
+								<!--INDUSTRY_VALUE -->
+								<value xsi:type="SIMPLE_TEXT">
+									<originalText>originalText_value</originalText>
+									<language>
+										<codingSchemeName>ISO_639-1</codingSchemeName>
+										<codeValue>en</codeValue>
+									</language>
+									<charset>
+										<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+										<codeValue>UTF-16</codeValue>
+									</charset>
+								</value>
+							</parts>
+						</parts>
+					</parts>
+				</items>
+			</members>
+			<!--PERIODIC_MEDICAL_EXAMS-->
+			<members xsi:type="ENTRY">
+				<name xsi:type="SIMPLE_TEXT">
+					<nullFlavor>
+						<codeValue>NI</codeValue>
+					</nullFlavor>
+				</name>
+				<archetype_id>at0512</archetype_id>
+				<rc_id>
+					<root>
+						<oid>oid_value</oid>
+					</root>
+				</rc_id>
+				<synthesised>false</synthesised>
+				<uncertainty_expressed>true</uncertainty_expressed>
+				<!--EXAM_WORKPLACE-->
+				<items xsi:type="ELEMENT">
+					<name xsi:type="SIMPLE_TEXT">
+						<nullFlavor>
+							<codeValue>NI</codeValue>
+						</nullFlavor>
+					</name>
+					<archetype_id>at0513</archetype_id>
+					<rc_id>
+						<root>
+							<oid>oid_value</oid>
+						</root>
+					</rc_id>
+					<synthesised>true</synthesised>
+					<!--EXAM_WORKPLACE_VALUE-->
+					<value xsi:type="SIMPLE_TEXT">
+						<originalText>originalText_value</originalText>
+					</value>
+				</items>
+				<!--EXAM_FOR_PROFESSION-->
+				<items xsi:type="ELEMENT">
+					<name xsi:type="SIMPLE_TEXT">
+						<nullFlavor>
+							<codeValue>NI</codeValue>
+						</nullFlavor>
+					</name>
+					<archetype_id>at0526</archetype_id>
+					<rc_id>
+						<root>
+							<oid>oid_value</oid>
+						</root>
+					</rc_id>
+					<synthesised>false</synthesised>
+					<!--EXAM_FOR_PROFESSION_VALUE -->
+					<value xsi:type="SIMPLE_TEXT">
+						<originalText>originalText_value</originalText>
+						<language>
+							<codingSchemeName>ISO_639-1</codingSchemeName>
+							<codeValue>en</codeValue>
+						</language>
+						<charset>
+							<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+							<codeValue>UTF-16</codeValue>
+						</charset>
+					</value>
+				</items>
+				<!--EXAM_DATE-->
+				<items xsi:type="ELEMENT">
+					<name xsi:type="SIMPLE_TEXT">
+						<nullFlavor>
+							<codeValue>NI</codeValue>
+						</nullFlavor>
+					</name>
+					<archetype_id>at0552</archetype_id>
+					<rc_id>
+						<root>
+							<oid>oid_value</oid>
+						</root>
+					</rc_id>
+					<synthesised>true</synthesised>
+					<!--EXAM_DATE_VALUE -->
+					<value xsi:type="DATE">
+						<date>1931-11-04</date>
+					</value>
+				</items>
+				<!--EXAM_AUTHORITY-->
+				<items xsi:type="ELEMENT">
+					<name xsi:type="SIMPLE_TEXT">
+						<nullFlavor>
+							<codeValue>NI</codeValue>
+						</nullFlavor>
+					</name>
+					<archetype_id>at0560</archetype_id>
+					<rc_id>
+						<root>
+							<oid>oid_value</oid>
+						</root>
+					</rc_id>
+					<synthesised>true</synthesised>
+					<!--EXAM_AUTHORITY_VALUE  -->
+					<value xsi:type="SIMPLE_TEXT">
+						<originalText>originalText_value</originalText>
+					</value>
+				</items>
+				<!--DOCTOR_SPECIALTY-->
+				<items xsi:type="ELEMENT">
+					<name xsi:type="SIMPLE_TEXT">
+						<nullFlavor>
+							<codeValue>NI</codeValue>
+						</nullFlavor>
+					</name>
+					<archetype_id>at0562</archetype_id>
+					<rc_id>
+						<root>
+							<oid>oid_value</oid>
+						</root>
+					</rc_id>
+					<synthesised>true</synthesised>
+					<!--DOCTOR_SPECIALTY_VALUE-->
+					<value xsi:type="SIMPLE_TEXT">
+						<originalText>originalText_value</originalText>
+						<language>
+							<codingSchemeName>ISO_639-1</codingSchemeName>
+							<codeValue>bg</codeValue>
+						</language>
+						<charset>
+							<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+							<codeValue>UTF-16</codeValue>
+						</charset>
+					</value>
+				</items>
+				<!--EXAM_DESCRIPTION-->
+				<items xsi:type="ELEMENT">
+					<name xsi:type="SIMPLE_TEXT">
+						<nullFlavor>
+							<codeValue>NI</codeValue>
+						</nullFlavor>
+					</name>
+					<archetype_id>at0576</archetype_id>
+					<rc_id>
+						<root>
+							<oid>oid_value</oid>
+						</root>
+					</rc_id>
+					<synthesised>true</synthesised>
+					<!--EXAM_DESCRIPTION_VALUE-->
+					<value xsi:type="SIMPLE_TEXT">
+						<originalText>originalText_value</originalText>
+						<language>
+							<codingSchemeName>ISO_639-1</codingSchemeName>
+							<codeValue>bg</codeValue>
+						</language>
+						<charset>
+							<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+							<codeValue>UTF-16</codeValue>
+						</charset>
+					</value>
+				</items>
+				<!--CONCLUSION-->
+				<items xsi:type="CLUSTER">
+					<name xsi:type="SIMPLE_TEXT">
+						<nullFlavor>
+							<codeValue>NI</codeValue>
+						</nullFlavor>
+					</name>
+					<archetype_id>at0584</archetype_id>
+					<rc_id>
+						<root>
+							<oid>oid_value</oid>
+						</root>
+					</rc_id>
+					<synthesised>true</synthesised>
+					<structure_type>
+						<codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+						<codeValue>STRC01</codeValue>
+					</structure_type>
+					<!--CLINICALY_FIT-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0586</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>false</synthesised>
+						<!--CLINICALY_FIT_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>1</originalText>
+						</value>
+					</parts>
+					<!--ILLNESSES-->
+					<parts xsi:type="CLUSTER">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0589</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<structure_type>
+							<codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+							<codeValue>STRC01</codeValue>
+						</structure_type>
+						<!--ILLNESS-->
+						<parts xsi:type="ELEMENT">
+							<name xsi:type="SIMPLE_TEXT">
+								<nullFlavor>
+									<codeValue>NI</codeValue>
+								</nullFlavor>
+							</name>
+							<archetype_id>at0591</archetype_id>
+							<rc_id>
+								<root>
+									<oid>oid_value</oid>
+								</root>
+							</rc_id>
+							<synthesised>true</synthesised>
+							<!--ILLNESS_VALUE -->
+							<value xsi:type="CODED_TEXT">
+								<nullFlavor>
+									<codingSchemeName>ICD10_1998</codingSchemeName>
+								</nullFlavor>
+								<codedValue>
+									<nullFlavor>
+										<codeValue>codeValue_value</codeValue>
+									</nullFlavor>
+								</codedValue>
+								<!-- <displayName>&amp;#1047;&amp;#1072;&amp;#1073;&amp;#1086;&amp;#1083;&amp;#1103;&amp;#1074;&amp;#1072;&amp;#1085;&amp;#107</displayName> -->
+							</value>
+						</parts>
+					</parts>
+					<!--DISPANSERISATION_YESNO-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0593</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>false</synthesised>
+						<!--DISPANSERISATION_YESNO_VALUE -->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>0</originalText>
+						</value>
+					</parts>
+					<!--HOSPITALIZATION_YESNO-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0595</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--HOSPITALIZATION_YESNO_VALUE -->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>0</originalText>
+						</value>
+					</parts>
+					<!--NEEDS_EMPLOYMENT-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0597</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--NEEDS_EMPLOYMENT_VALUE -->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>1</originalText>
+						</value>
+					</parts>
+				</items>
+			</members>
+			<!--PERIODIC_OBLIGATORY_EXAM-->
+			<members xsi:type="ENTRY">
+				<name xsi:type="SIMPLE_TEXT">
+					<nullFlavor>
+						<codeValue>NI</codeValue>
+					</nullFlavor>
+				</name>
+				<archetype_id>at0123</archetype_id>
+				<rc_id>
+					<root>
+						<oid>oid_value</oid>
+					</root>
+				</rc_id>
+				<synthesised>true</synthesised>
+				<uncertainty_expressed>false</uncertainty_expressed>
+				<!--COMMISSION-->
+				<items xsi:type="CLUSTER">
+					<name xsi:type="SIMPLE_TEXT">
+						<nullFlavor>
+							<codeValue>NI</codeValue>
+						</nullFlavor>
+					</name>
+					<archetype_id>at0174</archetype_id>
+					<rc_id>
+						<root>
+							<oid>oid_value</oid>
+						</root>
+					</rc_id>
+					<synthesised>true</synthesised>
+					<structure_type>
+						<codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+						<codeValue>STRC01</codeValue>
+					</structure_type>
+					<!--ADDRESS-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0176</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>false</synthesised>
+						<!--ADDRESS_VALIUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>originalText_value</originalText>
+						</value>
+					</parts>
+					<!--TITLE-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0190</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--TITLE_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>originalText_value</originalText>
+						</value>
+					</parts>
+					<!--DATE-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0192</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--DATE-->
+						<value xsi:type="DATE">
+							<date>1915-01-02</date>
+						</value>
+					</parts>
+					<!--COMMISSION_CONCLUSION-->
+					<parts xsi:type="CLUSTER">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0599</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<structure_type>
+							<codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+							<codeValue>STRC01</codeValue>
+						</structure_type>
+						<!--PROFESSION_OK-->
+						<parts xsi:type="ELEMENT">
+							<name xsi:type="SIMPLE_TEXT">
+								<nullFlavor>
+									<codeValue>NI</codeValue>
+								</nullFlavor>
+							</name>
+							<archetype_id>at0601</archetype_id>
+							<rc_id>
+								<root>
+									<oid>oid_value</oid>
+								</root>
+							</rc_id>
+							<synthesised>true</synthesised>
+							<!--PROFESSION_OK_VALUE -->
+							<value xsi:type="SIMPLE_TEXT">
+								<originalText>1</originalText>
+							</value>
+						</parts>
+						<!--WORKPLACE_OK-->
+						<parts xsi:type="ELEMENT">
+							<name xsi:type="SIMPLE_TEXT">
+								<nullFlavor>
+									<codeValue>NI</codeValue>
+								</nullFlavor>
+							</name>
+							<archetype_id>at0194</archetype_id>
+							<rc_id>
+								<root>
+									<oid>oid_value</oid>
+								</root>
+							</rc_id>
+							<synthesised>false</synthesised>
+							<!--WORKPLACE_OK_VALUE-->
+							<value xsi:type="SIMPLE_TEXT">
+								<originalText>originalText_value</originalText>
+							</value>
+						</parts>
+						<!--CONDITIONS-->
+						<parts xsi:type="CLUSTER">
+							<name xsi:type="SIMPLE_TEXT">
+								<nullFlavor>
+									<codeValue>NI</codeValue>
+								</nullFlavor>
+							</name>
+							<archetype_id>at0604</archetype_id>
+							<rc_id>
+								<root>
+									<oid>oid_value</oid>
+								</root>
+							</rc_id>
+							<synthesised>false</synthesised>
+							<structure_type>
+								<codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+								<codeValue>STRC01</codeValue>
+							</structure_type>
+							<!--CONDITION-->
+							<parts xsi:type="ELEMENT">
+								<name xsi:type="SIMPLE_TEXT">
+									<nullFlavor>
+										<codeValue>NI</codeValue>
+									</nullFlavor>
+								</name>
+								<archetype_id>at0606</archetype_id>
+								<rc_id>
+									<root>
+										<oid>oid_value</oid>
+									</root>
+								</rc_id>
+								<synthesised>true</synthesised>
+								<!--CONDITION_VALUE -->
+								<value xsi:type="SIMPLE_TEXT">
+									<originalText>originalText_value</originalText>
+									<language>
+										<codingSchemeName>ISO_639-1</codingSchemeName>
+										<codeValue>en</codeValue>
+									</language>
+									<charset>
+										<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+										<codeValue>UTF-16</codeValue>
+									</charset>
+								</value>
+							</parts>
+						</parts>
+						<!--PROFESSION_EXCEPTIONS-->
+						<parts xsi:type="CLUSTER">
+							<name xsi:type="SIMPLE_TEXT">
+								<nullFlavor>
+									<codeValue>NI</codeValue>
+								</nullFlavor>
+							</name>
+							<archetype_id>at0001</archetype_id>
+							<rc_id>
+								<root>
+									<oid>oid_value</oid>
+								</root>
+							</rc_id>
+							<synthesised>false</synthesised>
+							<structure_type>
+								<codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+								<codeValue>STRC01</codeValue>
+							</structure_type>
+							<!--PROFESSION-->
+							<parts xsi:type="ELEMENT">
+								<name xsi:type="SIMPLE_TEXT">
+									<nullFlavor>
+										<codeValue>NI</codeValue>
+									</nullFlavor>
+								</name>
+								<archetype_id>at0010</archetype_id>
+								<rc_id>
+									<root>
+										<oid>oid_value</oid>
+									</root>
+								</rc_id>
+								<synthesised>true</synthesised>
+								<!--PROFESSION_VALUE-->
+								<value xsi:type="SIMPLE_TEXT">
+									<originalText>originalText_value</originalText>
+									<language>
+										<codingSchemeName>ISO_639-1</codingSchemeName>
+										<codeValue>en</codeValue>
+									</language>
+									<charset>
+										<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+										<codeValue>UTF-16</codeValue>
+									</charset>
+								</value>
+							</parts>
+							<!--INDUSRTY_TITLE-->
+							<parts xsi:type="ELEMENT">
+								<name xsi:type="SIMPLE_TEXT">
+									<nullFlavor>
+										<codeValue>NI</codeValue>
+									</nullFlavor>
+								</name>
+								<archetype_id>at0032</archetype_id>
+								<rc_id>
+									<root>
+										<oid>oid_value</oid>
+									</root>
+								</rc_id>
+								<synthesised>false</synthesised>
+								<!--INDUSRTY_TITLE_VALUE-->
+								<value xsi:type="SIMPLE_TEXT">
+									<originalText>originalText_value</originalText>
+									<language>
+										<codingSchemeName>ISO_639-1</codingSchemeName>
+										<codeValue>bg</codeValue>
+									</language>
+									<charset>
+										<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+										<codeValue>UTF-16</codeValue>
+									</charset>
+								</value>
+							</parts>
+						</parts>
+					</parts>
+				</items>
+			</members>
+			<!--CONCLUSION-->
+			<members xsi:type="ENTRY">
+				<name xsi:type="SIMPLE_TEXT">
+					<nullFlavor>
+						<codeValue>NI</codeValue>
+					</nullFlavor>
+				</name>
+				<archetype_id>at0331</archetype_id>
+				<rc_id>
+					<root>
+						<oid>oid_value</oid>
+					</root>
+				</rc_id>
+				<synthesised>false</synthesised>
+				<uncertainty_expressed>true</uncertainty_expressed>
+				<!--COMMISSION-->
+				<items xsi:type="CLUSTER">
+					<name xsi:type="SIMPLE_TEXT">
+						<nullFlavor>
+							<codeValue>NI</codeValue>
+						</nullFlavor>
+					</name>
+					<archetype_id>at0332</archetype_id>
+					<rc_id>
+						<root>
+							<oid>oid_value</oid>
+						</root>
+					</rc_id>
+					<synthesised>true</synthesised>
+					<structure_type>
+						<codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+						<codeValue>STRC01</codeValue>
+					</structure_type>
+					<!--ADDRESS-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0334</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--ADDRESS_VALIUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>originalText_value</originalText>
+						</value>
+					</parts>
+					<!--TITLE-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0336</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>false</synthesised>
+						<!--TITLE_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>originalText_value</originalText>
+						</value>
+					</parts>
+					<!--DATE-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0338</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--DATE_VALUE-->
+						<value xsi:type="DATE">
+							<date>2071-09-30</date>
+						</value>
+					</parts>
+					<!--POSITIVE_CONC-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0340</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>false</synthesised>
+						<!--POSITIVE_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>originalText_value</originalText>
+						</value>
+					</parts>
+					<!--NEGATIVE_CONC-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0342</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--NEGATIVE_VAUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>1</originalText>
+						</value>
+					</parts>
+				</items>
+			</members>
+			<!--INDIVIDUAL_EXAMS-->
+			<members xsi:type="ENTRY">
+				<name xsi:type="SIMPLE_TEXT">
+					<nullFlavor>
+						<codeValue>NI</codeValue>
+					</nullFlavor>
+				</name>
+				<archetype_id>at0348</archetype_id>
+				<rc_id>
+					<root>
+						<oid>oid_value</oid>
+					</root>
+				</rc_id>
+				<synthesised>true</synthesised>
+				<uncertainty_expressed>true</uncertainty_expressed>
+				<!--EXAM_DATA-->
+				<items xsi:type="CLUSTER">
+					<name xsi:type="SIMPLE_TEXT">
+						<nullFlavor>
+							<codeValue>NI</codeValue>
+						</nullFlavor>
+					</name>
+					<archetype_id>at0349</archetype_id>
+					<rc_id>
+						<root>
+							<oid>oid_value</oid>
+						</root>
+					</rc_id>
+					<synthesised>true</synthesised>
+					<structure_type>
+						<codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+						<codeValue>STRC01</codeValue>
+					</structure_type>
+					<!--OFFICE_TITLE-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0351</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--TITLE_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>originalText_value</originalText>
+							<language>
+								<codingSchemeName>ISO_639-1</codingSchemeName>
+								<codeValue>en</codeValue>
+							</language>
+							<charset>
+								<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+								<codeValue>UTF-16</codeValue>
+							</charset>
+						</value>
+					</parts>
+					<!--OFFICE_ADDRESS-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0362</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--ADDRESS_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>originalText_value</originalText>
+							<language>
+								<codingSchemeName>ISO_639-1</codingSchemeName>
+								<codeValue>bg</codeValue>
+							</language>
+							<charset>
+								<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+								<codeValue>UTF-16</codeValue>
+							</charset>
+						</value>
+					</parts>
+					<!--OFFICE_SERVES-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0374</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>false</synthesised>
+						<!--SERVES_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>originalText_value</originalText>
+							<language>
+								<codingSchemeName>ISO_639-1</codingSchemeName>
+								<codeValue>en</codeValue>
+							</language>
+							<charset>
+								<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+								<codeValue>UTF-16</codeValue>
+							</charset>
+						</value>
+					</parts>
+					<!--VISIT_DATE-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0399</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--DATE_VALUE-->
+						<value xsi:type="DATE">
+							<date>2020-04-08</date>
+						</value>
+					</parts>
+					<!--VISIT_DESC-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0401</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>false</synthesised>
+						<!--VISIT_DESC_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>originalText_value</originalText>
+						</value>
+					</parts>
+					<!--ACTION_DESC-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0407</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--ACTION_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>originalText_value</originalText>
+							<language>
+								<codingSchemeName>ISO_639-1</codingSchemeName>
+								<codeValue>en</codeValue>
+							</language>
+							<charset>
+								<codingSchemeName>IANA::CHARACTER_SET</codingSchemeName>
+								<codeValue>UTF-16</codeValue>
+							</charset>
+						</value>
+					</parts>
+					<!--OTHER_COMMENTS-->
+					<parts xsi:type="ELEMENT">
+						<name xsi:type="SIMPLE_TEXT">
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
+						</name>
+						<archetype_id>at0422</archetype_id>
+						<rc_id>
+							<root>
+								<oid>oid_value</oid>
+							</root>
+						</rc_id>
+						<synthesised>true</synthesised>
+						<!--OTHERS_VALUE-->
+						<value xsi:type="SIMPLE_TEXT">
+							<originalText>originalText_value</originalText>
+						</value>
+					</parts>
+				</items>
+			</members>
+		</members>
+	</content>
+</COMPOSITION>

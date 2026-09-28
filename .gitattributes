@@ -1,0 +1,3 @@
+# Keep every file exactly as committed: the archetypes and instances are
+# verified by checksum, and line-ending conversion would change them.
+* -text
