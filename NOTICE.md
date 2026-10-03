@@ -8,8 +8,8 @@ unchanged unless stated otherwise.
 
 `EN13606-RM.xsd` and `TS14796-dataTypes.xsd` are the work of
 
-> IBIME, Grupo de Informatica Biomedica, Instituto ITACA,
-> Universidad Politecnica de Valencia, Spain
+> IBIME, Grupo de Informática Biomédica, Instituto ITACA,
+> Universidad Politécnica de Valencia, Spain
 
 and are distributed under the Creative Commons Attribution (CC-BY) licence. They are
 tools used here, not artefacts of this work, and the CC0 dedication does not extend to

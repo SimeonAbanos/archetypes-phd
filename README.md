@@ -3,7 +3,7 @@
 The archetypes behind the doctoral thesis
 *Archetype-Oriented Modeling and Management of Clinical Data* by Simeon Abanos,
 Faculty of Mathematics and Informatics, Sofia University St. Kliment Ohridski.
-The models are built under EN ISO 13606 and under the openEHR specifications.
+The models follow EN ISO 13606 and the openEHR specifications.
 Each folder holds one model, its instances and a script that checks them.
 
 For readers new to archetypes, a description in Bulgarian of how the models were built and checked is in
@@ -12,7 +12,7 @@ For readers new to archetypes, a description in Bulgarian of how the models were
 | Folder | Framework | Root archetype | Origin |
 | --- | --- | --- | --- |
 | [`body-mass-index`](body-mass-index) | openEHR | `openEHR-EHR-COMPOSITION.anthropometry.v0` | after the body mass index example of Krastev, Abanos and Tcharaktchiev (2022) |
-| [`occupational-health-assessment-summary`](occupational-health-assessment-summary) | EN ISO 13606 | `CEN-EN13606-COMPOSITION.OccupationalHealthAssessmentSummary.v1` | published by E. Krastev with Krastev et al. (2023), here with changes |
+| [`occupational-health-assessment-summary`](occupational-health-assessment-summary) | EN ISO 13606 | `CEN-EN13606-COMPOSITION.OccupationalHealthAssessmentSummary.v1` | published by E. Krastev with Krastev et al. (2023), here with updates |
 | [`infectious-disease-case-notification`](infectious-disease-case-notification) | EN ISO 13606 | `CEN-EN13606-COMPOSITION.InfectiousDiseaseCaseNotification.v1` | built in the thesis, continuing Abanos et al. (2023) |
 | [`ambulatory-list`](ambulatory-list) | EN ISO 13606 | `CEN-EN13606-COMPOSITION.AmbulatoryList.v1` | built in the thesis, after the method of Krastev et al. (2020) |
 
@@ -22,23 +22,23 @@ Every folder has the same four subfolders:
 
 | Subfolder | Holds |
 | --- | --- |
-| `1-reference-model` | the XML schema of the reference model (RM) |
+| `1-reference-model` | the XML schemas of the reference model (RM) and its data types; in two folders only the data types |
 | `2-archetypes` | the archetypes in ADL; in two folders also the XML schema derived from the archetype, in one the template, the operational template and the XML schema derived from it (TDS) |
 | `3-instances` | the instances; in `body-mass-index` also `generation`, the scripts that produced the TDS and the valid instance |
 | `4-validity-check` | the script that checks the instances, with its launchers |
 
 ## Two steps of validity
 
-An instance is valid in two steps.
+Validity is checked in two steps.
 
-1. **Structural validity** – the instance against the reference model (RM) of its
+1. **Structural validity** – the instance against the RM of its
    framework, EN ISO 13606-1 or openEHR, in `1-reference-model`. In `body-mass-index` the
    instance is checked against the TDS, which imports the RM and adds the structure of the
    template.
 2. **Semantic validity** – the instance against the constraints of the archetype, or of
    the operational template where there is one, in `2-archetypes`.
 
-The archetype itself is written in the Archetype Object Model (AOM). Whether it is a
+The archetype itself is written in ADL as an instance of the Archetype Object Model (AOM). Whether it is a
 valid AOM model is checked by the modelling tool – LinkEHR Studio for EN ISO 13606,
 Archetype Designer for openEHR – and not by the scripts here.
 
