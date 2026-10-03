@@ -15,19 +15,19 @@ the Bulgarian Ministry of Health. Built on 2026-09-20 within the doctoral thesis
 | `SECTION-CASE.CLASSIFICATION` | the class of the case, the rule that produced it, and every criterion it rests on |
 | `SECTION-REPORTER` | the reporting physician, the practice and the date |
 
-The third section is the point of the model. The class of a case, possible or probable
-or confirmed, is normally a rule inside application logic and stays in the system that
+The third section carries what the model is built for. The class of a case, possible or probable
+or confirmed, is normally set by a rule in the application logic and stays in the system that
 computed it. Here it is recorded in the document as a coded statement, together with the
 grounds it follows from: each criterion with its category, its number in Annex 3 of the
 ordinance, and its text.
 
 ## Terminology binding
 
-Two bindings, both through `codingSchemeName` in the data type itself rather than
+Four coding schemes, all bound through `codingSchemeName` in the data type itself rather than
 through a `term_binding` section: `ICD10_1998` for the ICD-10 code of the disease, and
 the numbering of the ordinance's annexes – `NAREDBA21-PRIL1` for the number of the
 disease, `NAREDBA21-PRIL2` for the class of the case and `NAREDBA21-PRIL3` for the
-criteria. **There is no binding to SNOMED CT or LOINC anywhere in this archetype.**
+criteria. The archetype has no binding to SNOMED CT or LOINC.
 
 ## Files
 
@@ -51,14 +51,12 @@ error.
 
 The valid instance is the export of a recorded notification of a confirmed case of
 scarlet fever, produced by the information system that holds it.
-**The data is demonstration data**: the names, the practices and the national numbers
-are invented, and the national number is not part of the document at all.
+**The data is demonstration data**: the names, the practices and the identifiers are invented, and the national number is not part of the document.
 
-## Three things recorded as the source has them
+## Recorded as in the source
 
 **A clinical criterion may be unnumbered in the ordinance itself.** Scarlet fever is
-such a case. `CRITERION.CODE` is therefore optional and such a criterion carries only
-its text, which is how the ordinance states it.
+such a case. `CRITERION.CODE` is therefore optional and such a criterion carries only its category and its text, which is how the ordinance states it.
 
 **`APPLIED.RULE` is an uncoded string.** It is the expression the system computed with,
 and there is no nomenclature to bind it to.
