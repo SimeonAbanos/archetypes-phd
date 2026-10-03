@@ -5,6 +5,10 @@
 #                                       template (TDS) when the folder has one
 #   validate-2-semantic-archetype.cmd   step 2: every instance against the archetype, or against
 #                                       the operational template (.opt) when the folder has one
+#                                       - for EN ISO 13606: the patterns and lists of allowed
+#                                       texts, the data type of every value, the code and the
+#                                       code system of every coded value, and the unit and the
+#                                       allowed range of every quantity
 #   validate-all.cmd                   step 1, then step 2 for the instances valid in step 1
 # The file name of an instance may state the result it should have, and the run reports
 # whether it gets it:
@@ -94,15 +98,119 @@ function Test-Schema([string]$path) {
 
 # ---------------------------------------------------------------- step 2: EN ISO 13606
 
-# The archetype sets its value constraints on originalText: a regular expression or a list of
-# allowed strings. Each is read together with the ELEMENT it belongs to.
+# The parent of every data type, read from the schema of the data types (TS14796-dataTypes.xsd),
+# so that a value whose type is derived from the required one is accepted: CD for CV, say.
+$script:baseOf = @{}
+function Read-TypeTree([string]$xsd) {
+    $x = New-Object System.Xml.XmlDocument
+    $x.Load($xsd)
+    foreach ($t in $x.DocumentElement.SelectNodes("*[local-name()='complexType']")) {
+        $ext = $t.SelectSingleNode(".//*[local-name()='extension' or local-name()='restriction']")
+        if ($null -ne $ext) { $script:baseOf[$t.GetAttribute('name')] = ($ext.GetAttribute('base') -split ':')[-1] }
+    }
+}
+
+function Test-TypeConforms([string]$actual, [string]$required) {
+    $t = $actual
+    for ($n = 0; $t -ne '' -and $n -lt 20; $n++) {
+        if ($t -eq $required) { return $true }
+        $t = [string]$script:baseOf[$t]
+    }
+    return $false
+}
+
+# The block of a PQ in the archetype: the units its CS allows and the constraint on its number -
+# an interval such as |>=0.0| or a single value. After ";" stands the assumed value, not a limit.
+function Read-En13606Quantity($lines, [int]$k) {
+    $units = @(); $schemes = @(); $range = $null; $depth = 0
+    for ($j = $k; $j -lt $lines.Length; $j++) {
+        $l = $lines[$j]
+        $u = [regex]::Match($l, '^\s*codeValue existence matches \{[^}]*\} matches \{(.+)\}\s*$')
+        if ($u.Success) { $units += @(Get-Strings $u.Groups[1].Value) }
+        $n = [regex]::Match($l, '^\s*codingSchemeName existence matches \{[^}]*\} matches \{(.+)\}\s*$')
+        if ($n.Success) { $schemes += @(Get-Strings $n.Groups[1].Value) }
+        $v = [regex]::Match($l, '^\s*value existence matches \{[^}]*\} matches \{([^{}]+)\}\s*$')
+        if ($v.Success) {
+            $c = ($v.Groups[1].Value -split ';', 2)[0].Trim()
+            if ($c.StartsWith('|') -and $c.EndsWith('|')) { $c = $c.Substring(1, $c.Length - 2) }
+            if ($c -ne '*') { $range = Read-Interval $c }
+        }
+        $depth += [regex]::Matches($l, '\{').Count - [regex]::Matches($l, '\}').Count
+        if ($j -gt $k -and $depth -le 0) { break }
+    }
+    return New-Object PSObject -Property @{ Units = $units; Schemes = $schemes; Range = $range }
+}
+
+# The strings of a list constraint such as {"ICD10_1998"} or {"0","1"; "0"}; after ";" stands the
+# assumed value, not a further option. {*} gives no string, that is no constraint.
+function Get-Strings([string]$spec) {
+    return @([regex]::Matches(($spec -split ';', 2)[0], '"([^"]*)"') | ForEach-Object { $_.Groups[1].Value })
+}
+
+# The block of a coded value (CS, CV, CE, CD) in the archetype: the constraint on its code - a
+# regular expression or a list - and the code systems it allows.
+function Read-En13606Coded($lines, [int]$k) {
+    $rx = $null; $codes = @(); $schemes = @(); $depth = 0
+    for ($j = $k; $j -lt $lines.Length; $j++) {
+        $l = $lines[$j]
+        if ($depth -eq 1) {
+            $c = [regex]::Match($l, '^\s*codeValue existence matches \{[^}]*\} matches \{(.+)\}\s*$')
+            if ($c.Success) {
+                $spec = $c.Groups[1].Value.Trim()
+                if ($spec.StartsWith('/') -and $spec.EndsWith('/') -and $spec -ne '/.*/') { $rx = $spec.Substring(1, $spec.Length - 2) }
+                else { $codes += @(Get-Strings $spec) }
+            }
+            $n = [regex]::Match($l, '^\s*codingSchemeName existence matches \{[^}]*\} matches \{(.+)\}\s*$')
+            if ($n.Success) { $schemes += @(Get-Strings $n.Groups[1].Value) }
+        }
+        $depth += [regex]::Matches($l, '\{').Count - [regex]::Matches($l, '\}').Count
+        if ($j -gt $k -and $depth -le 0) { break }
+    }
+    return New-Object PSObject -Property @{ Pattern = $rx; Codes = $codes; Schemes = $schemes
+        Regex = $(if ($null -ne $rx) { New-Object System.Text.RegularExpressions.Regex('\A(?:' + $rx + ')\z') } else { $null }) }
+}
+
+# Three kinds of constraint are read, each together with the ELEMENT it belongs to:
+#   text      a regular expression or a list of allowed strings for originalText
+#   type      the data type of the value, or of each of its alternatives
+#   code      for a coded value (CS, CV, CE, CD), the allowed codes and the code system
+#   quantity  for a PQ, the allowed units, their code system and the allowed range of the number
 function Get-En13606Constraints($archetypes) {
     $list = @()
     foreach ($a in $archetypes) {
         $lines = $a.Lines
+        $code = ''; $name = ''
         for ($i = 0; $i -lt $lines.Length; $i++) {
+            $e = [regex]::Match($lines[$i], 'ELEMENT\[(at\d+)\].*--\s*(.*?)\s*$')
+            if ($e.Success) {
+                $code = $e.Groups[1].Value; $name = $e.Groups[2].Value
+                # the value may have several alternatives, each an object of its own data type
+                if ($i + 2 -lt $lines.Length -and $lines[$i + 1] -match '^\s*value existence matches \{[^}]*\} matches \{\s*$') {
+                    $types = @(); $depth = 1
+                    for ($j = $i + 2; $j -lt $lines.Length -and $depth -gt 0; $j++) {
+                        $t = [regex]::Match($lines[$j], '^\s*([A-Z_]+)\[at\d+\]')
+                        if ($depth -eq 1 -and $t.Success) {
+                            $types += $t.Groups[1].Value
+                            if ($t.Groups[1].Value -eq 'PQ') {
+                                $q = Read-En13606Quantity $lines $j
+                                $list += New-Object PSObject -Property @{ Kind = 'quantity'; Code = $code; Name = $name; Units = $q.Units; Schemes = $q.Schemes; Range = $q.Range }
+                            }
+                            if (@('CS', 'CV', 'CE', 'CD') -contains $t.Groups[1].Value) {
+                                $q = Read-En13606Coded $lines $j
+                                if ($null -ne $q.Regex -or $q.Codes.Count -gt 0 -or $q.Schemes.Count -gt 0) {
+                                    $list += New-Object PSObject -Property @{ Kind = 'code'; Code = $code; Name = $name; Type = $t.Groups[1].Value
+                                        Pattern = $q.Pattern; Regex = $q.Regex; Codes = $q.Codes; Schemes = $q.Schemes }
+                                }
+                            }
+                        }
+                        $depth += [regex]::Matches($lines[$j], '\{').Count - [regex]::Matches($lines[$j], '\}').Count
+                    }
+                    if ($types.Count -gt 0) { $list += New-Object PSObject -Property @{ Kind = 'type'; Code = $code; Name = $name; Types = $types } }
+                }
+                continue
+            }
             $m = [regex]::Match($lines[$i], '^\s*originalText existence matches \{[^}]*\} matches \{(.+)\}\s*$')
-            if (-not $m.Success) { continue }
+            if (-not $m.Success -or $code -eq '') { continue }
             $spec = $m.Groups[1].Value.Trim()
             $rx = $null; $values = $null
             if ($spec.StartsWith('/') -and $spec.EndsWith('/')) {
@@ -113,18 +221,18 @@ function Get-En13606Constraints($archetypes) {
                 # a list of allowed strings; after ";" stands the assumed value, not a further option
                 $values = @([regex]::Matches(($spec -split ';', 2)[0], '"([^"]*)"') | ForEach-Object { $_.Groups[1].Value })
             } else { continue }
-            for ($j = $i - 1; $j -ge [Math]::Max(0, $i - 40); $j--) {
-                $e = [regex]::Match($lines[$j], 'ELEMENT\[(at\d+)\].*--\s*(.*?)\s*$')
-                if ($e.Success) {
-                    $list += New-Object PSObject -Property @{ Code = $e.Groups[1].Value; Name = $e.Groups[2].Value
-                        Pattern = $rx; Values = $values
-                        Regex = $(if ($null -ne $rx) { New-Object System.Text.RegularExpressions.Regex('\A(?:' + $rx + ')\z') } else { $null }) }
-                    break
-                }
-            }
+            $list += New-Object PSObject -Property @{ Kind = 'text'; Code = $code; Name = $name
+                Pattern = $rx; Values = $values
+                Regex = $(if ($null -ne $rx) { New-Object System.Text.RegularExpressions.Regex('\A(?:' + $rx + ')\z') } else { $null }) }
         }
     }
     return $list
+}
+
+# '- the archetype allows only 18.0' for a single value, '- outside the allowed range >=0.0' otherwise
+function Format-Allowed($iv) {
+    if ($null -ne $iv.Lo -and $null -ne $iv.Hi -and $iv.Lo -eq $iv.Hi) { return ' - the archetype allows only ' + $iv.Text.Trim() }
+    return ' - outside the allowed range ' + $iv.Text.Trim()
 }
 
 function Test-En13606([string]$path, $constraints) {
@@ -132,8 +240,9 @@ function Test-En13606([string]$path, $constraints) {
     $doc.Load($path)
     $nm = New-Object System.Xml.XmlNamespaceManager($doc.NameTable)
     $nm.AddNamespace('e', 'http://EN13606-RM.xsd')
+    $xsi = 'http://www.w3.org/2001/XMLSchema-instance'
     $count = 0; $bad = @()
-    foreach ($c in $constraints) {
+    foreach ($c in @($constraints | Where-Object { $_.Kind -eq 'text' })) {
         foreach ($v in $doc.SelectNodes("//e:*[e:archetype_id='" + $c.Code + "']/e:value/e:originalText", $nm)) {
             $count++
             $t = $v.InnerText
@@ -144,7 +253,59 @@ function Test-En13606([string]$path, $constraints) {
             }
         }
     }
-    return New-Object PSObject -Property @{ Count = $count; Bad = $bad; Unit = 'value' }
+    foreach ($c in @($constraints | Where-Object { $_.Kind -eq 'type' })) {
+        foreach ($v in $doc.SelectNodes("//e:*[e:archetype_id='" + $c.Code + "']/e:value", $nm)) {
+            $count++
+            $t = ($v.GetAttribute('type', $xsi) -split ':')[-1]
+            if (@($c.Types | Where-Object { Test-TypeConforms $t $_ }).Count -eq 0) {
+                $bad += ($c.Name + ' (' + $c.Code + '): data type ' + $t + ', the archetype requires ' + ($c.Types -join ' or '))
+            }
+        }
+    }
+    foreach ($c in @($constraints | Where-Object { $_.Kind -eq 'code' })) {
+        foreach ($v in $doc.SelectNodes("//e:*[e:archetype_id='" + $c.Code + "']/e:value", $nm)) {
+            if (-not (Test-TypeConforms (($v.GetAttribute('type', $xsi) -split ':')[-1]) $c.Type)) { continue }
+            $cv = $v.SelectSingleNode('e:codeValue', $nm)
+            $sn = $v.SelectSingleNode('e:codingSchemeName', $nm)
+            if ($null -eq $cv -and $null -eq $sn) { continue }
+            $what = $c.Name + ' (' + $c.Code + ')'
+            if ($null -ne $cv -and ($null -ne $c.Regex -or $c.Codes.Count -gt 0)) {
+                $count++
+                $t = $cv.InnerText.Trim()
+                if ($null -ne $c.Regex) { if (-not $c.Regex.IsMatch($t)) { $bad += ($what + ": code '" + $t + "' does not match /" + $c.Pattern + '/') } }
+                elseif ($c.Codes -notcontains $t) { $bad += ($what + ": code '" + $t + "' is not one of " + ($c.Codes -join ', ')) }
+            }
+            if ($null -ne $sn -and $c.Schemes.Count -gt 0) {
+                $count++
+                $t = $sn.InnerText.Trim()
+                if ($c.Schemes -notcontains $t) { $bad += ($what + ": code system '" + $t + "', the archetype requires " + ($c.Schemes -join ' or ')) }
+            }
+        }
+    }
+    foreach ($c in @($constraints | Where-Object { $_.Kind -eq 'quantity' })) {
+        foreach ($v in $doc.SelectNodes("//e:*[e:archetype_id='" + $c.Code + "']/e:value[e:value][e:units]", $nm)) {
+            $text = $v.SelectSingleNode('e:value', $nm).InnerText.Trim()
+            $un = $v.SelectSingleNode('e:units/e:codeValue', $nm)
+            $unit = $(if ($null -ne $un) { $un.InnerText.Trim() } else { '' })
+            $what = $c.Name + ' (' + $c.Code + '): ' + $text + ' ' + $unit
+            if (@($c.Units).Count -gt 0) {
+                $count++
+                if ($c.Units -notcontains $unit) { $bad += ($what + " - unit not allowed; allowed: " + ($c.Units -join ', ')) }
+            }
+            $us = $v.SelectSingleNode('e:units/e:codingSchemeName', $nm)
+            if (@($c.Schemes).Count -gt 0 -and $null -ne $us) {
+                $count++
+                if ($c.Schemes -notcontains $us.InnerText.Trim()) { $bad += ($what + " - unit system '" + $us.InnerText.Trim() + "', the archetype requires " + ($c.Schemes -join ' or ')) }
+            }
+            if ($null -ne $c.Range) {
+                $count++
+                $x = 0.0
+                if (-not [double]::TryParse($text, [Globalization.NumberStyles]::Float, $inv, [ref]$x)) { $bad += ($what + ' - not a number') }
+                elseif (-not (Test-Interval $c.Range $x)) { $bad += ($what + (Format-Allowed $c.Range)) }
+            }
+        }
+    }
+    return New-Object PSObject -Property @{ Count = $count; Bad = $bad; Unit = 'check' }
 }
 
 # ---------------------------------------------------------------- step 2: openEHR
@@ -500,6 +661,8 @@ try {
         }
     } else {
         $rm = @(Get-SetFiles 'EN13606-RM.xsd') | Select-Object -First 1
+        $dt = @(Get-SetFiles 'TS14796-dataTypes.xsd') | Select-Object -First 1
+        if ($null -ne $dt) { Read-TypeTree $dt.FullName }
         $rmName = 'Reference Model (RM) of EN ISO 13606-1'
         $tool = 'LinkEHR Studio'
         if ($null -eq $rm) {
@@ -511,6 +674,13 @@ try {
         }
     }
     if ($null -eq $rm) { Write-Line '' 'No XML schema of the reference model in this folder.' 'Yellow'; return }
+    Write-Host ''
+    Write-Line 'What' 'Each instance - a sample record in XML - is checked against the model it is built on.'
+    if ($derived) { Write-Line '' 'One check covers both its structure and its values. The files are only read.' }
+    else {
+        Write-Line '' 'Step 1 checks its structure, step 2 its values. An instance is valid when it passes both.'
+        Write-Line '' 'The files are only read.'
+    }
     if ($null -ne $tds) { Open-Schema $tds.FullName $true } else { Open-Schema $rm.FullName }
     Write-Host ''
     if ($derived) {
@@ -547,7 +717,13 @@ try {
             if ($null -ne $opt) { Write-Line '' ($t + ',') ; Write-Line '' ('and whether every node is one of the ' + $script:optNodes.Count + ' the template keeps') }
             else { Write-Line '' $t }
         } else {
-            Write-Line '' ('checked: ' + $constraints.Count + ' value constraints - regular expressions and lists of values')
+            $nt = @($constraints | Where-Object { $_.Kind -eq 'text' }).Count
+            $ny = @($constraints | Where-Object { $_.Kind -eq 'type' }).Count
+            $nq = @($constraints | Where-Object { $_.Kind -eq 'quantity' }).Count
+            $nc = @($constraints | Where-Object { $_.Kind -eq 'code' }).Count
+            Write-Line '' ('checked: ' + $nt + ' texts - patterns and lists of allowed values,')
+            Write-Line '' ('         ' + $ny + ' data types, ' + $nc + ' coded values - code and code system,')
+            Write-Line '' ('         ' + $nq + ' quantities - unit, its code system and allowed range')
         }
     }
     $what = $(if ($null -ne $opt) { 'The template and its archetypes are' } elseif ($archetypes.Count -gt 1) { 'The archetypes themselves are' } else { 'The archetype itself is' })
@@ -571,7 +747,7 @@ try {
         } else {
             Write-Line '' ('  ' + 'instance-valid'.PadRight(38) + 'valid in both steps')
             Write-Line '' ('  ' + 'instance-invalid-structural-rm'.PadRight(38) + 'invalid in step 1 - the structure does not fit the schema')
-            Write-Line '' ('  ' + 'instance-invalid-semantic-archetype'.PadRight(38) + 'valid in step 1, invalid in step 2 - a value that breaks a constraint')
+            Write-Line '' ('  ' + 'instance-invalid-semantic-archetype'.PadRight(38) + 'valid in step 1, invalid in step 2 - a value breaks a constraint')
         }
     }
     Write-Host ''
