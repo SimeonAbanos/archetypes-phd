@@ -82,5 +82,4 @@ schema accepts it, which is why that schema is used here.
 - **Step 1.** The publication describes checking instances against the TDS, the XML schema
   to which the operational template can be converted. Here the TDS is derived with
   `tds.py` and leaves the constraints on values to step 2.
-- **Data.** The publication loads real data into the instances. The values here are
-  illustrative.
+- **Data and terminology.** The publication loads real data into the instances and binds weight, height and body mass index to SNOMED CT codes. Here the values are illustrative, and the bindings are those of the CKM archetypes: LOINC for weight and height, SNOMED CT and LOINC for body mass index.
