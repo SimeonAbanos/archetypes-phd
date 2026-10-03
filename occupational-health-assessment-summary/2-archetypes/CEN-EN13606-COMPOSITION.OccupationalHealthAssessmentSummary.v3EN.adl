@@ -473,7 +473,6 @@ definition
                                                     CV[at0303] occurrences matches {1..1} matches {  -- PROFESSIONAL_ILLNESS_DIAGNOSE_VALUE
                                                         codeValue existence matches {0..1} matches {/.*/}
                                                         codingSchemeName existence matches {0..1} matches {"ICD10_1998"}
-                                                        displayName existence matches {0..1} matches {"Professional illness diagnose"}
                                                     }
                                                 }
                                             }
@@ -499,7 +498,6 @@ definition
                                                     CV[at0321] occurrences matches {1..1} matches {  -- LABOR_INCIDENT_DIAGNOSE_VALUE
                                                         codeValue existence matches {0..1} matches {/.*/}
                                                         codingSchemeName existence matches {0..1} matches {"SNOMED-CT"}
-                                                        displayName existence matches {0..1} matches {"DIagnose of labor incident"}
                                                     }
                                                 }
                                             }
@@ -548,7 +546,6 @@ definition
                                                     CV[at0096] occurrences matches {1..1} matches {  -- EXEMPTION_DIAGNOSE_VALUE
                                                         codeValue existence matches {0..1} matches {/.*/}
                                                         codingSchemeName existence matches {0..1} matches {"ICD10AE_1998"}
-                                                        displayName existence matches {0..1} matches {"ICD-10 diagnose"}
                                                     }
                                                 }
                                             }
@@ -628,7 +625,6 @@ definition
                                                     CV[at0142] occurrences matches {0..1} matches {  -- DISABILITY_REASON_DIAGNOSE
                                                         codeValue existence matches {0..1} matches {/.*/}
                                                         codingSchemeName existence matches {0..1} matches {"SNOMED-CT"}
-                                                        displayName existence matches {0..1} matches {"Reason for disability (diagnose)"}
                                                     }
                                                 }
                                             }
@@ -726,7 +722,7 @@ definition
                                                                         codingSchemeName existence matches {0..1} matches {"UCUM"}
                                                                     }
                                                                 }
-                                                                value existence matches {1..1} matches {18.0}
+                                                                value existence matches {1..1} matches {*}
                                                             }
                                                         }
                                                     }
@@ -739,7 +735,7 @@ definition
                                                                         codingSchemeName existence matches {0..1} matches {"UCUM"}
                                                                     }
                                                                 }
-                                                                value existence matches {1..1} matches {80.0}
+                                                                value existence matches {1..1} matches {|0.0..100.0|}
                                                             }
                                                         }
                                                     }
@@ -879,6 +875,27 @@ definition
                                                         value existence matches {0..1} matches {
                                                             SIMPLE_TEXT[at0085] occurrences matches {1..1} matches {  -- CODE_VALUE
                                                                 originalText existence matches {0..1} matches {/[15][0-9]{3}/}
+                                                            }
+                                                        }
+                                                    }
+                                                    ELEMENT[at0608] occurrences matches {0..*} matches {  -- CAS_NUMBER
+                                                        value existence matches {0..1} matches {
+                                                            CV[at0609] occurrences matches {1..1} matches {  -- CAS_NUMBER_VALUE
+                                                                codeValue existence matches {0..1} matches {/[0-9]{2,7}-[0-9]{2}-[0-9]/}
+                                                                codingSchemeName existence matches {0..1} matches {"CAS"}
+                                                            }
+                                                        }
+                                                    }
+                                                    ELEMENT[at0610] occurrences matches {0..*} matches {  -- AIR_CONCENTRATION
+                                                        value existence matches {0..1} matches {
+                                                            PQ[at0611] occurrences matches {1..1} matches {  -- AIR_CONCENTRATION_VALUE
+                                                                units existence matches {1..1} matches {
+                                                                    CS[at0612] occurrences matches {1..1} matches {  -- 
+                                                                        codeValue existence matches {0..1} matches {"ug/m3"}
+                                                                        codingSchemeName existence matches {0..1} matches {"UCUM"}
+                                                                    }
+                                                                }
+                                                                value existence matches {1..1} matches {|>=0.0|}
                                                             }
                                                         }
                                                     }
@@ -1107,7 +1124,6 @@ definition
                                                     CV[at0368] occurrences matches {1..1} matches {  -- DIAGNOSE_VALUE
                                                         codeValue existence matches {0..1} matches {/.*/}
                                                         codingSchemeName existence matches {0..1} matches {"ICD10_1998"}
-                                                        displayName existence matches {0..1} matches {"Diagnose from medical preliminary exam"}
                                                     }
                                                 }
                                             }
@@ -1115,6 +1131,74 @@ definition
                                                 value existence matches {0..1} matches {
                                                     SIMPLE_TEXT[at0042] occurrences matches {1..1} matches {  -- EXAMINATION_VALUE
                                                         originalText existence matches {0..1} matches {/.*/}
+                                                    }
+                                                }
+                                            }
+                                            CLUSTER[at0613] occurrences matches {0..*} matches {  -- BIOLOGICAL_MONITORING
+                                                parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                                                    ELEMENT[at0614] occurrences matches {1..1} matches {  -- AGENT
+                                                        value existence matches {0..1} matches {
+                                                            CV[at0615] occurrences matches {1..1} matches {  -- AGENT_VALUE
+                                                                codeValue existence matches {0..1} matches {/[0-9]{2,7}-[0-9]{2}-[0-9]/}
+                                                                codingSchemeName existence matches {0..1} matches {"CAS"}
+                                                            }
+                                                        }
+                                                    }
+                                                    ELEMENT[at0616] occurrences matches {1..1} matches {  -- SPECIMEN
+                                                        value existence matches {0..1} matches {
+                                                            SIMPLE_TEXT[at0617] occurrences matches {1..1} matches {  -- SPECIMEN_VALUE
+                                                                originalText existence matches {0..1} matches {"кръв","урина","blood","urine"}
+                                                            }
+                                                        }
+                                                    }
+                                                    ELEMENT[at0618] occurrences matches {1..1} matches {  -- RESULT
+                                                        value existence matches {0..1} matches {
+                                                            PQ[at0619] occurrences matches {1..1} matches {  -- RESULT_VALUE
+                                                                units existence matches {1..1} matches {
+                                                                    CS[at0620] occurrences matches {1..1} matches {  -- 
+                                                                        codeValue existence matches {0..1} matches {"ug/dL","umol/L"}
+                                                                        codingSchemeName existence matches {0..1} matches {"UCUM"}
+                                                                    }
+                                                                }
+                                                                value existence matches {1..1} matches {|>=0.0|}
+                                                            }
+                                                        }
+                                                    }
+                                                    ELEMENT[at0621] occurrences matches {0..1} matches {  -- REFERENCE_RANGE
+                                                        value existence matches {0..1} matches {
+                                                            IVLPQ[at0622] occurrences matches {1..1} matches {  -- REFERENCE_RANGE_VALUE
+                                                                low existence matches {0..1} matches {
+                                                                    PQ[at0623] occurrences matches {0..1} matches {  -- 
+                                                                        units existence matches {1..1} matches {
+                                                                            CS[at0624] occurrences matches {1..1} matches {  -- 
+                                                                                codeValue existence matches {0..1} matches {"ug/dL","umol/L"}
+                                                                                codingSchemeName existence matches {0..1} matches {"UCUM"}
+                                                                            }
+                                                                        }
+                                                                        value existence matches {1..1} matches {*}
+                                                                    }
+                                                                }
+                                                                high existence matches {0..1} matches {
+                                                                    PQ[at0625] occurrences matches {0..1} matches {  -- 
+                                                                        units existence matches {1..1} matches {
+                                                                            CS[at0626] occurrences matches {1..1} matches {  -- 
+                                                                                codeValue existence matches {0..1} matches {"ug/dL","umol/L"}
+                                                                                codingSchemeName existence matches {0..1} matches {"UCUM"}
+                                                                            }
+                                                                        }
+                                                                        value existence matches {1..1} matches {*}
+                                                                    }
+                                                                }
+                                                                lowClosed existence matches {0..1} matches {true, false}
+                                                                highClosed existence matches {0..1} matches {true, false}
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                structure_type existence matches {1..1} matches {
+                                                    CS[at0627] occurrences matches {1..1} matches {  -- 
+                                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
                                                     }
                                                 }
                                             }
@@ -1471,7 +1555,6 @@ definition
                                                             CV[at0592] occurrences matches {1..1} matches {  -- ILLNESS_VALUE 
                                                                 codeValue existence matches {0..1} matches {/.*/}
                                                                 codingSchemeName existence matches {0..1} matches {"ICD10_1998"}
-                                                                displayName existence matches {0..1} matches {"Заболяване"}
                                                             }
                                                         }
                                                     }
@@ -3074,6 +3157,71 @@ https://www.denetim.com/bg/muayene/calisma-ortami/toz-olcumu/">
                 ["at0262"] = <
                     text = <"GP_UIN_VALUE">
                     description = <"SIMPLE_TEXT">
+                >
+                ["at0608"] = <
+                    text = <"CAS_NUMBER">
+                    description = <"CAS Registry Number of the chemical agent">
+                    comment = <"ELEMENT">
+                >
+                ["at0609"] = <
+                    text = <"CAS_NUMBER_VALUE">
+                    description = <"">
+                    comment = <"CV">
+                >
+                ["at0610"] = <
+                    text = <"AIR_CONCENTRATION">
+                    description = <"Time-weighted average concentration of the chemical agent in the workplace air">
+                    comment = <"ELEMENT">
+                >
+                ["at0611"] = <
+                    text = <"AIR_CONCENTRATION_VALUE">
+                    description = <"">
+                    comment = <"PQ">
+                >
+                ["at0613"] = <
+                    text = <"BIOLOGICAL_MONITORING">
+                    description = <"Level of a chemical agent measured in a biological specimen, with its reference range">
+                    comment = <"CLUSTER">
+                >
+                ["at0614"] = <
+                    text = <"AGENT">
+                    description = <"Chemical agent measured, by its CAS Registry Number">
+                    comment = <"ELEMENT">
+                >
+                ["at0615"] = <
+                    text = <"AGENT_VALUE">
+                    description = <"">
+                    comment = <"CV">
+                >
+                ["at0616"] = <
+                    text = <"SPECIMEN">
+                    description = <"Biological specimen in which the agent is measured">
+                    comment = <"ELEMENT">
+                >
+                ["at0617"] = <
+                    text = <"SPECIMEN_VALUE">
+                    description = <"">
+                    comment = <"SIMPLE_TEXT">
+                >
+                ["at0618"] = <
+                    text = <"RESULT">
+                    description = <"Measured level of the agent">
+                    comment = <"ELEMENT">
+                >
+                ["at0619"] = <
+                    text = <"RESULT_VALUE">
+                    description = <"">
+                    comment = <"PQ">
+                >
+                ["at0621"] = <
+                    text = <"REFERENCE_RANGE">
+                    description = <"Reference range for the measured level">
+                    comment = <"ELEMENT">
+                >
+                ["at0622"] = <
+                    text = <"REFERENCE_RANGE_VALUE">
+                    description = <"">
+                    comment = <"IVLPQ">
                 >
             >
         >
