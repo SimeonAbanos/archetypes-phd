@@ -876,18 +876,11 @@
                         </rc_id>
                         <synthesised>true</synthesised>
                         <!--PROFESSIONAL_ILLNESS_DIAGNOSE_VALUE-->
-                        <value xsi:type="CODED_TEXT">
-                            <nullFlavor>
-                                <codingSchemeName>ICD10_1998</codingSchemeName>
-                            </nullFlavor>
-                            <codedValue>
-                                <nullFlavor>
-                                    <codeValue>G62.2</codeValue>
-                                    <!--Data value xxx!!!!-->
-                                </nullFlavor>
-                            </codedValue>
+                        <value xsi:type="CV">
+                            <codingSchemeName>ICD10_1998</codingSchemeName>
+                            <codeValue>G62.2</codeValue>
+                            <displayName>Polyneuropathy due to other toxic agents</displayName>
                         </value>
-                        <!-- <displayName>Professional illness diagnose</displayName> -->
                     </parts>
                 </items>
                 <!-- End data for first professional illness -->
@@ -946,18 +939,11 @@
                         </rc_id>
                         <synthesised>true</synthesised>
                         <!--PROFESSIONAL_ILLNESS_DIAGNOSE_VALUE-->
-                        <value xsi:type="CODED_TEXT">
-                            <nullFlavor>
-                                <codingSchemeName>ICD10_1998</codingSchemeName>
-                            </nullFlavor>
-                            <codedValue>
-                                <nullFlavor>
-                                    <codeValue>N14.3</codeValue>
-                                    <!--Data value xxx!!!!-->
-                                </nullFlavor>
-                            </codedValue>
+                        <value xsi:type="CV">
+                            <codingSchemeName>ICD10_1998</codingSchemeName>
+                            <codeValue>N14.3</codeValue>
+                            <displayName>Nephropathy induced by heavy metals</displayName>
                         </value>
-                        <!-- <displayName>Professional illness diagnose</displayName> -->
                     </parts>
                 </items>
                 <!-- End data for second professional illness -->
@@ -1014,16 +1000,10 @@
                         </rc_id>
                         <synthesised>false</synthesised>
                         <!--LABOR_INCIDENT_DIAGNOSE_VALUE-->
-                        <value xsi:type="CODED_TEXT">
+                        <value xsi:type="CV">
                             <nullFlavor>
-                                <codingSchemeName>ICD10_1998</codingSchemeName>
+                                <codeValue>NI</codeValue>
                             </nullFlavor>
-                            <codedValue>
-                                <nullFlavor>
-                                    <codeValue>NI</codeValue>
-                                </nullFlavor>
-                            </codedValue>
-                            <!-- <displayName>Diagnose of labor incident</displayName> -->
                         </value>
                     </parts>
                     <!--DATE_OF_LABOR_INCIDENT-->
@@ -1107,16 +1087,9 @@
                         </rc_id>
                         <synthesised>true</synthesised>
                         <!--EXEMPTION_DIAGNOSE_VALUE-->
-                        <value xsi:type="CODED_TEXT">
-                            <nullFlavor>
-                                <codingSchemeName>ICD10_1998</codingSchemeName>
-                            </nullFlavor>
-                            <codedValue>
-                                <nullFlavor>
-                                    <codeValue>codeValue_value</codeValue>
-                                </nullFlavor>
-                            </codedValue>
-                            <!-- <displayName>ICD10_1998 diagnose</displayName> -->
+                        <value xsi:type="CV">
+                            <codingSchemeName>ICD10AE_1998</codingSchemeName>
+                            <codeValue>codeValue_value</codeValue>
                         </value>
                     </parts>
                     <!--WORKPLACE_RELOCATION-->
@@ -1275,16 +1248,9 @@
                         </rc_id>
                         <synthesised>true</synthesised>
                         <!--DISABILITY_REASON_DIAGNOSE-->
-                        <value xsi:type="CODED_TEXT">
-                            <nullFlavor>
-                                <codingSchemeName>SNOMED-CT</codingSchemeName>
-                            </nullFlavor>
-                            <codedValue>
-                                <nullFlavor>
-                                    <codeValue>codeValue_value</codeValue>
-                                </nullFlavor>
-                            </codedValue>
-                            <!-- <displayName>Reason for disability (diagnose)</displayName> -->
+                        <value xsi:type="CV">
+                            <codingSchemeName>SNOMED-CT</codingSchemeName>
+                            <codeValue>codeValue_value</codeValue>
                         </value>
                     </parts>
                     <!--DISABILITY_LEVEL-->
@@ -1469,7 +1435,7 @@
                                 <value>80.0</value>
                                 <units>
                                     <codingSchemeName>UCUM</codingSchemeName>
-                                    <codeValue>80%</codeValue>
+                                    <codeValue>%</codeValue>
                                 </units>
                             </value>
                         </parts>
@@ -1728,6 +1694,43 @@
                             <value xsi:type="SIMPLE_TEXT">
                                 <originalText>1101</originalText>
                                 <!--Data value xxx!!!!-->
+                            </value>
+                        </parts>
+                        <!--CAS_NUMBER-->
+                        <parts xsi:type="ELEMENT">
+                            <name xsi:type="SIMPLE_TEXT">
+                                <originalText>Код по CAS</originalText>
+                            </name>
+                            <archetype_id>at0608</archetype_id>
+                            <rc_id>
+                                <root>
+                                    <oid>oid_value</oid>
+                                </root>
+                            </rc_id>
+                            <synthesised>false</synthesised>
+                            <value xsi:type="CV">
+                                <codingSchemeName>CAS</codingSchemeName>
+                                <codeValue>7439-92-1</codeValue>
+                            </value>
+                        </parts>
+                        <!--AIR_CONCENTRATION-->
+                        <parts xsi:type="ELEMENT">
+                            <name xsi:type="SIMPLE_TEXT">
+                                <originalText>Концентрация във въздуха</originalText>
+                            </name>
+                            <archetype_id>at0610</archetype_id>
+                            <rc_id>
+                                <root>
+                                    <oid>oid_value</oid>
+                                </root>
+                            </rc_id>
+                            <synthesised>false</synthesised>
+                            <value xsi:type="PQ">
+                                <value>120.0</value>
+                                <units>
+                                    <codingSchemeName>UCUM</codingSchemeName>
+                                    <codeValue>ug/m3</codeValue>
+                                </units>
                             </value>
                         </parts>
                     </parts>
@@ -2205,17 +2208,10 @@
                         </rc_id>
                         <synthesised>true</synthesised>
                         <!--DIAGNOSE_VALUE-->
-                        <value xsi:type="CODED_TEXT">
-                            <nullFlavor>
-                                <codingSchemeName>ICD10_1998</codingSchemeName>
-                            </nullFlavor>
-                            <codedValue>
-                                <nullFlavor>
-                                    <codeValue>G62.2</codeValue>
-                                    <!--Data value xxx!!!!-->
-                                </nullFlavor>
-                            </codedValue>
-                            <!-- <displayName>Diagnose from medical preliminary exam</displayName> -->
+                        <value xsi:type="CV">
+                            <codingSchemeName>ICD10_1998</codingSchemeName>
+                            <codeValue>G62.2</codeValue>
+                            <displayName>Polyneuropathy due to other toxic agents</displayName>
                         </value>
                     </parts>
                     <!--EXAMINATION-->
@@ -2239,6 +2235,99 @@
                             </originalText>
                             <!--Data value xxx!!!!-->
                         </value>
+                    </parts>
+                    <!--BIOLOGICAL_MONITORING-->
+                    <parts xsi:type="CLUSTER">
+                        <name xsi:type="SIMPLE_TEXT">
+                            <originalText>Биологичен мониторинг</originalText>
+                        </name>
+                        <archetype_id>at0613</archetype_id>
+                        <rc_id>
+                            <root>
+                                <oid>oid_value</oid>
+                            </root>
+                        </rc_id>
+                        <synthesised>false</synthesised>
+                        <structure_type>
+                            <codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+                            <codeValue>STRC01</codeValue>
+                        </structure_type>
+                        <!--AGENT-->
+                        <parts xsi:type="ELEMENT">
+                            <name xsi:type="SIMPLE_TEXT">
+                                <originalText>Агент</originalText>
+                            </name>
+                            <archetype_id>at0614</archetype_id>
+                            <rc_id>
+                                <root>
+                                    <oid>oid_value</oid>
+                                </root>
+                            </rc_id>
+                            <synthesised>false</synthesised>
+                            <value xsi:type="CV">
+                                <codingSchemeName>CAS</codingSchemeName>
+                                <codeValue>7439-92-1</codeValue>
+                            </value>
+                        </parts>
+                        <!--SPECIMEN-->
+                        <parts xsi:type="ELEMENT">
+                            <name xsi:type="SIMPLE_TEXT">
+                                <originalText>Биологична проба</originalText>
+                            </name>
+                            <archetype_id>at0616</archetype_id>
+                            <rc_id>
+                                <root>
+                                    <oid>oid_value</oid>
+                                </root>
+                            </rc_id>
+                            <synthesised>false</synthesised>
+                            <value xsi:type="SIMPLE_TEXT">
+                                <originalText>кръв</originalText>
+                            </value>
+                        </parts>
+                        <!--RESULT-->
+                        <parts xsi:type="ELEMENT">
+                            <name xsi:type="SIMPLE_TEXT">
+                                <originalText>Резултат</originalText>
+                            </name>
+                            <archetype_id>at0618</archetype_id>
+                            <rc_id>
+                                <root>
+                                    <oid>oid_value</oid>
+                                </root>
+                            </rc_id>
+                            <synthesised>false</synthesised>
+                            <value xsi:type="PQ">
+                                <value>55.0</value>
+                                <units>
+                                    <codingSchemeName>UCUM</codingSchemeName>
+                                    <codeValue>ug/dL</codeValue>
+                                </units>
+                            </value>
+                        </parts>
+                        <!--REFERENCE_RANGE-->
+                        <parts xsi:type="ELEMENT">
+                            <name xsi:type="SIMPLE_TEXT">
+                                <originalText>Референтна граница</originalText>
+                            </name>
+                            <archetype_id>at0621</archetype_id>
+                            <rc_id>
+                                <root>
+                                    <oid>oid_value</oid>
+                                </root>
+                            </rc_id>
+                            <synthesised>false</synthesised>
+                            <value xsi:type="IVLPQ">
+                                <high>
+                                    <value>25.0</value>
+                                    <units>
+                                        <codingSchemeName>UCUM</codingSchemeName>
+                                        <codeValue>ug/dL</codeValue>
+                                    </units>
+                                </high>
+                                <highClosed>true</highClosed>
+                            </value>
+                        </parts>
                     </parts>
                     <!--DOCTOR_CONCLUSION-->
                     <parts xsi:type="ELEMENT">
@@ -2445,17 +2534,10 @@
                         </rc_id>
                         <synthesised>true</synthesised>
                         <!--DIAGNOSE_VALUE-->
-                        <value xsi:type="CODED_TEXT">
-                            <nullFlavor>
-                                <codingSchemeName>ICD10_1998</codingSchemeName>
-                            </nullFlavor>
-                            <codedValue>
-                                <nullFlavor>
-                                    <codeValue>G62.2</codeValue>
-                                    <!--Data value xxx!!!!-->
-                                </nullFlavor>
-                            </codedValue>
-                            <!-- <displayName>Diagnose from medical preliminary exam</displayName> -->
+                        <value xsi:type="CV">
+                            <codingSchemeName>ICD10_1998</codingSchemeName>
+                            <codeValue>G62.2</codeValue>
+                            <displayName>Polyneuropathy due to other toxic agents</displayName>
                         </value>
                     </parts>
                     <!--EXAMINATION-->
@@ -2475,11 +2557,103 @@
                         <synthesised>false</synthesised>
                         <!--EXAMINATION_VALUE-->
                         <value xsi:type="SIMPLE_TEXT">
-                            <originalText>повишени стойности на олово (Pb) в кръв - 0.25 μmol/L (норма до 0.10
-                                μmol/L),повишени стойности на олово (Pb) в урина - 0.55 µmol/l
+                            <originalText>повишени стойности на олово (Pb) в урина - 0.25 μmol/L (норма до 0.10 μmol/L)
                             </originalText>
                             <!--Data value xxx!!!!-->
                         </value>
+                    </parts>
+                    <!--BIOLOGICAL_MONITORING-->
+                    <parts xsi:type="CLUSTER">
+                        <name xsi:type="SIMPLE_TEXT">
+                            <originalText>Биологичен мониторинг</originalText>
+                        </name>
+                        <archetype_id>at0613</archetype_id>
+                        <rc_id>
+                            <root>
+                                <oid>oid_value</oid>
+                            </root>
+                        </rc_id>
+                        <synthesised>false</synthesised>
+                        <structure_type>
+                            <codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+                            <codeValue>STRC01</codeValue>
+                        </structure_type>
+                        <!--AGENT-->
+                        <parts xsi:type="ELEMENT">
+                            <name xsi:type="SIMPLE_TEXT">
+                                <originalText>Агент</originalText>
+                            </name>
+                            <archetype_id>at0614</archetype_id>
+                            <rc_id>
+                                <root>
+                                    <oid>oid_value</oid>
+                                </root>
+                            </rc_id>
+                            <synthesised>false</synthesised>
+                            <value xsi:type="CV">
+                                <codingSchemeName>CAS</codingSchemeName>
+                                <codeValue>7439-92-1</codeValue>
+                            </value>
+                        </parts>
+                        <!--SPECIMEN-->
+                        <parts xsi:type="ELEMENT">
+                            <name xsi:type="SIMPLE_TEXT">
+                                <originalText>Биологична проба</originalText>
+                            </name>
+                            <archetype_id>at0616</archetype_id>
+                            <rc_id>
+                                <root>
+                                    <oid>oid_value</oid>
+                                </root>
+                            </rc_id>
+                            <synthesised>false</synthesised>
+                            <value xsi:type="SIMPLE_TEXT">
+                                <originalText>урина</originalText>
+                            </value>
+                        </parts>
+                        <!--RESULT-->
+                        <parts xsi:type="ELEMENT">
+                            <name xsi:type="SIMPLE_TEXT">
+                                <originalText>Резултат</originalText>
+                            </name>
+                            <archetype_id>at0618</archetype_id>
+                            <rc_id>
+                                <root>
+                                    <oid>oid_value</oid>
+                                </root>
+                            </rc_id>
+                            <synthesised>false</synthesised>
+                            <value xsi:type="PQ">
+                                <value>0.25</value>
+                                <units>
+                                    <codingSchemeName>UCUM</codingSchemeName>
+                                    <codeValue>umol/L</codeValue>
+                                </units>
+                            </value>
+                        </parts>
+                        <!--REFERENCE_RANGE-->
+                        <parts xsi:type="ELEMENT">
+                            <name xsi:type="SIMPLE_TEXT">
+                                <originalText>Референтна граница</originalText>
+                            </name>
+                            <archetype_id>at0621</archetype_id>
+                            <rc_id>
+                                <root>
+                                    <oid>oid_value</oid>
+                                </root>
+                            </rc_id>
+                            <synthesised>false</synthesised>
+                            <value xsi:type="IVLPQ">
+                                <high>
+                                    <value>0.10</value>
+                                    <units>
+                                        <codingSchemeName>UCUM</codingSchemeName>
+                                        <codeValue>umol/L</codeValue>
+                                    </units>
+                                </high>
+                                <highClosed>true</highClosed>
+                            </value>
+                        </parts>
                     </parts>
                     <!--DOCTOR_CONCLUSION-->
                     <parts xsi:type="ELEMENT">
@@ -3037,16 +3211,9 @@
                             </rc_id>
                             <synthesised>true</synthesised>
                             <!--ILLNESS_VALUE -->
-                            <value xsi:type="CODED_TEXT">
-                                <nullFlavor>
-                                    <codingSchemeName>ICD10_1998</codingSchemeName>
-                                </nullFlavor>
-                                <codedValue>
-                                    <nullFlavor>
-                                        <codeValue>codeValue_value</codeValue>
-                                    </nullFlavor>
-                                </codedValue>
-                                <!-- <displayName>&amp;#1047;&amp;#1072;&amp;#1073;&amp;#1086;&amp;#1083;&amp;#1103;&amp;#1074;&amp;#1072;&amp;#1085;&amp;#107</displayName> -->
+                            <value xsi:type="CV">
+                                <codingSchemeName>ICD10_1998</codingSchemeName>
+                                <codeValue>codeValue_value</codeValue>
                             </value>
                         </parts>
                     </parts>
@@ -3956,18 +4123,11 @@
                         </rc_id>
                         <synthesised>true</synthesised>
                         <!--PROFESSIONAL_ILLNESS_DIAGNOSE_VALUE-->
-                        <value xsi:type="CODED_TEXT">
-                            <nullFlavor>
-                                <codingSchemeName>ICD10_1998</codingSchemeName>
-                            </nullFlavor>
-                            <codedValue>
-                                <nullFlavor>
-                                    <codeValue>G62.2</codeValue>
-                                    <!--Data value xxx!!!!-->
-                                </nullFlavor>
-                            </codedValue>
+                        <value xsi:type="CV">
+                            <codingSchemeName>ICD10_1998</codingSchemeName>
+                            <codeValue>G62.2</codeValue>
+                            <displayName>Polyneuropathy due to other toxic agents</displayName>
                         </value>
-                        <!-- <displayName>Professional illness diagnose</displayName> -->
                     </parts>
                 </items>
                 <!-- End data for first professional illness -->
@@ -4026,18 +4186,11 @@
                         </rc_id>
                         <synthesised>true</synthesised>
                         <!--PROFESSIONAL_ILLNESS_DIAGNOSE_VALUE-->
-                        <value xsi:type="CODED_TEXT">
-                            <nullFlavor>
-                                <codingSchemeName>ICD10_1998</codingSchemeName>
-                            </nullFlavor>
-                            <codedValue>
-                                <nullFlavor>
-                                    <codeValue>N14.3</codeValue>
-                                    <!--Data value xxx!!!!-->
-                                </nullFlavor>
-                            </codedValue>
+                        <value xsi:type="CV">
+                            <codingSchemeName>ICD10_1998</codingSchemeName>
+                            <codeValue>N14.3</codeValue>
+                            <displayName>Nephropathy induced by heavy metals</displayName>
                         </value>
-                        <!-- <displayName>Professional illness diagnose</displayName> -->
                     </parts>
                 </items>
                 <!-- End data for second professional illness -->
@@ -4094,16 +4247,10 @@
                         </rc_id>
                         <synthesised>false</synthesised>
                         <!--LABOR_INCIDENT_DIAGNOSE_VALUE-->
-                        <value xsi:type="CODED_TEXT">
+                        <value xsi:type="CV">
                             <nullFlavor>
-                                <codingSchemeName>ICD10_1998</codingSchemeName>
+                                <codeValue>NI</codeValue>
                             </nullFlavor>
-                            <codedValue>
-                                <nullFlavor>
-                                    <codeValue>NI</codeValue>
-                                </nullFlavor>
-                            </codedValue>
-                            <!-- <displayName>Diagnose of labor incident</displayName> -->
                         </value>
                     </parts>
                     <!--DATE_OF_LABOR_INCIDENT-->
@@ -4187,16 +4334,9 @@
                         </rc_id>
                         <synthesised>true</synthesised>
                         <!--EXEMPTION_DIAGNOSE_VALUE-->
-                        <value xsi:type="CODED_TEXT">
-                            <nullFlavor>
-                                <codingSchemeName>ICD10_1998</codingSchemeName>
-                            </nullFlavor>
-                            <codedValue>
-                                <nullFlavor>
-                                    <codeValue>codeValue_value</codeValue>
-                                </nullFlavor>
-                            </codedValue>
-                            <!-- <displayName>ICD10_1998 diagnose</displayName> -->
+                        <value xsi:type="CV">
+                            <codingSchemeName>ICD10AE_1998</codingSchemeName>
+                            <codeValue>codeValue_value</codeValue>
                         </value>
                     </parts>
                     <!--WORKPLACE_RELOCATION-->
@@ -4355,16 +4495,9 @@
                         </rc_id>
                         <synthesised>true</synthesised>
                         <!--DISABILITY_REASON_DIAGNOSE-->
-                        <value xsi:type="CODED_TEXT">
-                            <nullFlavor>
-                                <codingSchemeName>SNOMED-CT</codingSchemeName>
-                            </nullFlavor>
-                            <codedValue>
-                                <nullFlavor>
-                                    <codeValue>codeValue_value</codeValue>
-                                </nullFlavor>
-                            </codedValue>
-                            <!-- <displayName>Reason for disability (diagnose)</displayName> -->
+                        <value xsi:type="CV">
+                            <codingSchemeName>SNOMED-CT</codingSchemeName>
+                            <codeValue>codeValue_value</codeValue>
                         </value>
                     </parts>
                     <!--DISABILITY_LEVEL-->
@@ -4549,7 +4682,7 @@
                                 <value>80.0</value>
                                 <units>
                                     <codingSchemeName>UCUM</codingSchemeName>
-                                    <codeValue>80%</codeValue>
+                                    <codeValue>%</codeValue>
                                 </units>
                             </value>
                         </parts>
@@ -4808,6 +4941,43 @@
                             <value xsi:type="SIMPLE_TEXT">
                                 <originalText>1101</originalText>
                                 <!--Data value xxx!!!!-->
+                            </value>
+                        </parts>
+                        <!--CAS_NUMBER-->
+                        <parts xsi:type="ELEMENT">
+                            <name xsi:type="SIMPLE_TEXT">
+                                <originalText>Код по CAS</originalText>
+                            </name>
+                            <archetype_id>at0608</archetype_id>
+                            <rc_id>
+                                <root>
+                                    <oid>oid_value</oid>
+                                </root>
+                            </rc_id>
+                            <synthesised>false</synthesised>
+                            <value xsi:type="CV">
+                                <codingSchemeName>CAS</codingSchemeName>
+                                <codeValue>7439-92-1</codeValue>
+                            </value>
+                        </parts>
+                        <!--AIR_CONCENTRATION-->
+                        <parts xsi:type="ELEMENT">
+                            <name xsi:type="SIMPLE_TEXT">
+                                <originalText>Концентрация във въздуха</originalText>
+                            </name>
+                            <archetype_id>at0610</archetype_id>
+                            <rc_id>
+                                <root>
+                                    <oid>oid_value</oid>
+                                </root>
+                            </rc_id>
+                            <synthesised>false</synthesised>
+                            <value xsi:type="PQ">
+                                <value>120.0</value>
+                                <units>
+                                    <codingSchemeName>UCUM</codingSchemeName>
+                                    <codeValue>ug/m3</codeValue>
+                                </units>
                             </value>
                         </parts>
                     </parts>
@@ -5285,17 +5455,10 @@
                         </rc_id>
                         <synthesised>true</synthesised>
                         <!--DIAGNOSE_VALUE-->
-                        <value xsi:type="CODED_TEXT">
-                            <nullFlavor>
-                                <codingSchemeName>ICD10_1998</codingSchemeName>
-                            </nullFlavor>
-                            <codedValue>
-                                <nullFlavor>
-                                    <codeValue>G62.2</codeValue>
-                                    <!--Data value xxx!!!!-->
-                                </nullFlavor>
-                            </codedValue>
-                            <!-- <displayName>Diagnose from medical preliminary exam</displayName> -->
+                        <value xsi:type="CV">
+                            <codingSchemeName>ICD10_1998</codingSchemeName>
+                            <codeValue>G62.2</codeValue>
+                            <displayName>Polyneuropathy due to other toxic agents</displayName>
                         </value>
                     </parts>
                     <!--EXAMINATION-->
@@ -5319,6 +5482,99 @@
                             </originalText>
                             <!--Data value xxx!!!!-->
                         </value>
+                    </parts>
+                    <!--BIOLOGICAL_MONITORING-->
+                    <parts xsi:type="CLUSTER">
+                        <name xsi:type="SIMPLE_TEXT">
+                            <originalText>Биологичен мониторинг</originalText>
+                        </name>
+                        <archetype_id>at0613</archetype_id>
+                        <rc_id>
+                            <root>
+                                <oid>oid_value</oid>
+                            </root>
+                        </rc_id>
+                        <synthesised>false</synthesised>
+                        <structure_type>
+                            <codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+                            <codeValue>STRC01</codeValue>
+                        </structure_type>
+                        <!--AGENT-->
+                        <parts xsi:type="ELEMENT">
+                            <name xsi:type="SIMPLE_TEXT">
+                                <originalText>Агент</originalText>
+                            </name>
+                            <archetype_id>at0614</archetype_id>
+                            <rc_id>
+                                <root>
+                                    <oid>oid_value</oid>
+                                </root>
+                            </rc_id>
+                            <synthesised>false</synthesised>
+                            <value xsi:type="CV">
+                                <codingSchemeName>CAS</codingSchemeName>
+                                <codeValue>7439-92-1</codeValue>
+                            </value>
+                        </parts>
+                        <!--SPECIMEN-->
+                        <parts xsi:type="ELEMENT">
+                            <name xsi:type="SIMPLE_TEXT">
+                                <originalText>Биологична проба</originalText>
+                            </name>
+                            <archetype_id>at0616</archetype_id>
+                            <rc_id>
+                                <root>
+                                    <oid>oid_value</oid>
+                                </root>
+                            </rc_id>
+                            <synthesised>false</synthesised>
+                            <value xsi:type="SIMPLE_TEXT">
+                                <originalText>кръв</originalText>
+                            </value>
+                        </parts>
+                        <!--RESULT-->
+                        <parts xsi:type="ELEMENT">
+                            <name xsi:type="SIMPLE_TEXT">
+                                <originalText>Резултат</originalText>
+                            </name>
+                            <archetype_id>at0618</archetype_id>
+                            <rc_id>
+                                <root>
+                                    <oid>oid_value</oid>
+                                </root>
+                            </rc_id>
+                            <synthesised>false</synthesised>
+                            <value xsi:type="PQ">
+                                <value>55.0</value>
+                                <units>
+                                    <codingSchemeName>UCUM</codingSchemeName>
+                                    <codeValue>ug/dL</codeValue>
+                                </units>
+                            </value>
+                        </parts>
+                        <!--REFERENCE_RANGE-->
+                        <parts xsi:type="ELEMENT">
+                            <name xsi:type="SIMPLE_TEXT">
+                                <originalText>Референтна граница</originalText>
+                            </name>
+                            <archetype_id>at0621</archetype_id>
+                            <rc_id>
+                                <root>
+                                    <oid>oid_value</oid>
+                                </root>
+                            </rc_id>
+                            <synthesised>false</synthesised>
+                            <value xsi:type="IVLPQ">
+                                <high>
+                                    <value>25.0</value>
+                                    <units>
+                                        <codingSchemeName>UCUM</codingSchemeName>
+                                        <codeValue>ug/dL</codeValue>
+                                    </units>
+                                </high>
+                                <highClosed>true</highClosed>
+                            </value>
+                        </parts>
                     </parts>
                     <!--DOCTOR_CONCLUSION-->
                     <parts xsi:type="ELEMENT">
@@ -5525,17 +5781,10 @@
                         </rc_id>
                         <synthesised>true</synthesised>
                         <!--DIAGNOSE_VALUE-->
-                        <value xsi:type="CODED_TEXT">
-                            <nullFlavor>
-                                <codingSchemeName>ICD10_1998</codingSchemeName>
-                            </nullFlavor>
-                            <codedValue>
-                                <nullFlavor>
-                                    <codeValue>G62.2</codeValue>
-                                    <!--Data value xxx!!!!-->
-                                </nullFlavor>
-                            </codedValue>
-                            <!-- <displayName>Diagnose from medical preliminary exam</displayName> -->
+                        <value xsi:type="CV">
+                            <codingSchemeName>ICD10_1998</codingSchemeName>
+                            <codeValue>G62.2</codeValue>
+                            <displayName>Polyneuropathy due to other toxic agents</displayName>
                         </value>
                     </parts>
                     <!--EXAMINATION-->
@@ -5555,11 +5804,103 @@
                         <synthesised>false</synthesised>
                         <!--EXAMINATION_VALUE-->
                         <value xsi:type="SIMPLE_TEXT">
-                            <originalText>повишени стойности на олово (Pb) в кръв - 0.25 μmol/L (норма до 0.10
-                                μmol/L),повишени стойности на олово (Pb) в урина - 0.55 µmol/l
+                            <originalText>повишени стойности на олово (Pb) в урина - 0.25 μmol/L (норма до 0.10 μmol/L)
                             </originalText>
                             <!--Data value xxx!!!!-->
                         </value>
+                    </parts>
+                    <!--BIOLOGICAL_MONITORING-->
+                    <parts xsi:type="CLUSTER">
+                        <name xsi:type="SIMPLE_TEXT">
+                            <originalText>Биологичен мониторинг</originalText>
+                        </name>
+                        <archetype_id>at0613</archetype_id>
+                        <rc_id>
+                            <root>
+                                <oid>oid_value</oid>
+                            </root>
+                        </rc_id>
+                        <synthesised>false</synthesised>
+                        <structure_type>
+                            <codingSchemeName>CEN/TC251/EN13606-3:STRUCTURE_TYPE</codingSchemeName>
+                            <codeValue>STRC01</codeValue>
+                        </structure_type>
+                        <!--AGENT-->
+                        <parts xsi:type="ELEMENT">
+                            <name xsi:type="SIMPLE_TEXT">
+                                <originalText>Агент</originalText>
+                            </name>
+                            <archetype_id>at0614</archetype_id>
+                            <rc_id>
+                                <root>
+                                    <oid>oid_value</oid>
+                                </root>
+                            </rc_id>
+                            <synthesised>false</synthesised>
+                            <value xsi:type="CV">
+                                <codingSchemeName>CAS</codingSchemeName>
+                                <codeValue>7439-92-1</codeValue>
+                            </value>
+                        </parts>
+                        <!--SPECIMEN-->
+                        <parts xsi:type="ELEMENT">
+                            <name xsi:type="SIMPLE_TEXT">
+                                <originalText>Биологична проба</originalText>
+                            </name>
+                            <archetype_id>at0616</archetype_id>
+                            <rc_id>
+                                <root>
+                                    <oid>oid_value</oid>
+                                </root>
+                            </rc_id>
+                            <synthesised>false</synthesised>
+                            <value xsi:type="SIMPLE_TEXT">
+                                <originalText>урина</originalText>
+                            </value>
+                        </parts>
+                        <!--RESULT-->
+                        <parts xsi:type="ELEMENT">
+                            <name xsi:type="SIMPLE_TEXT">
+                                <originalText>Резултат</originalText>
+                            </name>
+                            <archetype_id>at0618</archetype_id>
+                            <rc_id>
+                                <root>
+                                    <oid>oid_value</oid>
+                                </root>
+                            </rc_id>
+                            <synthesised>false</synthesised>
+                            <value xsi:type="PQ">
+                                <value>0.25</value>
+                                <units>
+                                    <codingSchemeName>UCUM</codingSchemeName>
+                                    <codeValue>umol/L</codeValue>
+                                </units>
+                            </value>
+                        </parts>
+                        <!--REFERENCE_RANGE-->
+                        <parts xsi:type="ELEMENT">
+                            <name xsi:type="SIMPLE_TEXT">
+                                <originalText>Референтна граница</originalText>
+                            </name>
+                            <archetype_id>at0621</archetype_id>
+                            <rc_id>
+                                <root>
+                                    <oid>oid_value</oid>
+                                </root>
+                            </rc_id>
+                            <synthesised>false</synthesised>
+                            <value xsi:type="IVLPQ">
+                                <high>
+                                    <value>0.10</value>
+                                    <units>
+                                        <codingSchemeName>UCUM</codingSchemeName>
+                                        <codeValue>umol/L</codeValue>
+                                    </units>
+                                </high>
+                                <highClosed>true</highClosed>
+                            </value>
+                        </parts>
                     </parts>
                     <!--DOCTOR_CONCLUSION-->
                     <parts xsi:type="ELEMENT">
@@ -6117,16 +6458,9 @@
                             </rc_id>
                             <synthesised>true</synthesised>
                             <!--ILLNESS_VALUE -->
-                            <value xsi:type="CODED_TEXT">
-                                <nullFlavor>
-                                    <codingSchemeName>ICD10_1998</codingSchemeName>
-                                </nullFlavor>
-                                <codedValue>
-                                    <nullFlavor>
-                                        <codeValue>codeValue_value</codeValue>
-                                    </nullFlavor>
-                                </codedValue>
-                                <!-- <displayName>&amp;#1047;&amp;#1072;&amp;#1073;&amp;#1086;&amp;#1083;&amp;#1103;&amp;#1074;&amp;#1072;&amp;#1085;&amp;#107</displayName> -->
+                            <value xsi:type="CV">
+                                <codingSchemeName>ICD10_1998</codingSchemeName>
+                                <codeValue>codeValue_value</codeValue>
                             </value>
                         </parts>
                     </parts>
