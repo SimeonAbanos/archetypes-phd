@@ -10,7 +10,7 @@ The valid instance was generated from the operational template with the CaboLabs
 
 ## Steps
 
-1. Get openEHR-OPT at the commit used here and compile it with Groovy 3.0, leaving out the JSON parts, which need libraries this kit does not use:
+1. Get openEHR-OPT at the commit used here and compile it with Groovy 3.0, leaving out the JSON classes and AdlToOpt, which need libraries this kit does not use:
 
    ```
    git clone https://github.com/ppazos/openEHR-OPT
@@ -48,4 +48,4 @@ The valid instance was generated from the operational template with the CaboLabs
 
 6. Delete `generated.xml` and `filled.xml`, because the check reads every XML file in the kit. Then check the instances with `validate-all.cmd` in `4-validity-check`, which needs nothing to be installed.
 
-openEHR-OPT is developed by CaboLabs and is under the Apache License 2.0. It is not copied here. The three scripts are part of this kit and fall under its CC0 1.0 licence.
+openEHR-OPT is developed by CaboLabs and released under the Apache License 2.0. It is not copied here. The three scripts are part of this kit and fall under its CC0 1.0 licence.
