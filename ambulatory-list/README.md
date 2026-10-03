@@ -9,7 +9,7 @@ doctoral thesis.
 
 ## Scope
 
-The archetype is built from the method published in section 6 of
+The archetype follows the method published in section 6 of
 
 > Evgeniy Krastev, Dimitar Tcharaktchiev, Kalinka Kaloyanova, Lyubomir Kirov, Petko Kovachev,
 > Simeon Abanos, Nonka Mateva,
@@ -17,7 +17,7 @@ The archetype is built from the method published in section 6 of
 > *Information Systems and Grid Technologies* (ISGT 2020), Sofia, Bulgaria, 29–30 May 2020,
 > pp. 14–29. (CEUR-WS.org vol. 2656).
 
-It follows the vocabulary and the recording style of
+It takes the names, codes and data types of its elements from
 `CEN-EN13606-COMPOSITION.PATIENT.v1` (E. Krastev, FMI, 2019), from which it is derived.
 
 ## Files
