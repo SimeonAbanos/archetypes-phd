@@ -24,7 +24,8 @@ The main changes concern the hierarchy of the nodes and the data types:
 - `CARD_PRELIMINARY_EXAM_DATA` has a `BIOLOGICAL_MONITORING` cluster with the agent, the specimen, the result (PQ) and
   the reference range as an interval of physical quantities (IVLPQ).
 - In the instances `...v3EN.xml` and `...v3EN_SAdata.xml`, each job is in its own employment section.
-- In the instances, each diagnosis is a coded value (CV) in one of the coding schemes the archetype allows.
+- In the instances, each diagnosis is a coded value (CV) with a code from a coding scheme the archetype allows. Where no
+  diagnosis is recorded, the value has the null flavor NI (no information).
 - The instances record the lead exposure case from the publication: lead (CAS number 7439-92-1) at 120 μg/m³ in air, 55
   μg/dL in blood with an upper limit of 25 μg/dL, and 0.25 μmol/L in urine with an upper limit of 0.10 μmol/L.
 

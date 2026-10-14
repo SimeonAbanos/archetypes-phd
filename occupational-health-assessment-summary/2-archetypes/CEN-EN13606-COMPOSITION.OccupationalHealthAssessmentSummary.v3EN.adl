@@ -19,7 +19,7 @@ description
             language = <[ISO_639-1::en]>
             purpose = <"Medical summary of Employee (ЗДРАВНО ДОСИЕ)
 To record summary Medical information about health status of  employees">
-            use = <"Use to evaluate Employee medical status in relaton to job activity requirements">
+            use = <"Use to evaluate Employee medical status in relation to job activity requirements">
         >
     >
 
@@ -615,14 +615,14 @@ definition
                                         parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
                                             ELEMENT[at0139] occurrences matches {1..1} matches {  -- NUMBER_DOCUMENT_DISABILITY
                                                 value existence matches {0..1} matches {
-                                                    SIMPLE_TEXT[at0140] occurrences matches {1..1} matches {  -- NUMBER_DOCUMENT_DISABILITY_VALUE 
+                                                    SIMPLE_TEXT[at0140] occurrences matches {1..1} matches {  -- NUMBER_DOCUMENT_DISABILITY_VALUE
                                                         originalText existence matches {0..1} matches {/.*/}
                                                     }
                                                 }
                                             }
                                             ELEMENT[at0141] occurrences matches {1..1} matches {  -- DISABILITY_REASON_DIAGNOSIS
                                                 value existence matches {0..1} matches {
-                                                    CV[at0142] occurrences matches {0..1} matches {  -- DISABILITY_REASON_DIAGNOSIS
+                                                    CV[at0142] occurrences matches {0..1} matches {  -- DISABILITY_REASON_DIAGNOSIS_VALUE
                                                         codeValue existence matches {0..1} matches {/.*/}
                                                         codingSchemeName existence matches {0..1} matches {"SNOMED-CT"}
                                                     }
@@ -630,7 +630,7 @@ definition
                                             }
                                             ELEMENT[at0143] occurrences matches {0..*} matches {  -- DISABILITY_LEVEL
                                                 value existence matches {0..1} matches {
-                                                    SIMPLE_TEXT[at0144] occurrences matches {1..1} matches {  -- DISABILITY_LEVEL_LEVEL 
+                                                    SIMPLE_TEXT[at0144] occurrences matches {1..1} matches {  -- DISABILITY_LEVEL_LEVEL
                                                         originalText existence matches {0..1} matches {"Above 90%","Between 71 and 90%","Between 50 and 70%"}
                                                         charset existence matches {0..1} matches {
                                                             CS[at0148] occurrences matches {0..1} matches {  -- 
@@ -1061,7 +1061,7 @@ definition
                                         parts existence matches {0..1} cardinality matches {1..*; ordered; unique} matches {
                                             ELEMENT[at0294] occurrences matches {1..1} matches {  -- CARD_ISSUED_BY_DOCTOR
                                                 value existence matches {0..1} matches {
-                                                    SIMPLE_TEXT[at0295] occurrences matches {1..1} matches {  -- CARD_ISSUED_BY_DOCTOR_VALUE 
+                                                    SIMPLE_TEXT[at0295] occurrences matches {1..1} matches {  -- CARD_ISSUED_BY_DOCTOR_VALUE
                                                         originalText existence matches {0..1} matches {/.*/}
                                                         charset existence matches {0..1} matches {
                                                             CS[at0378] occurrences matches {0..1} matches {  -- 
@@ -1091,7 +1091,7 @@ definition
                                             }
                                             ELEMENT[at0345] occurrences matches {1..1} matches {  -- CARD_FOR_PROFESSION
                                                 value existence matches {0..1} matches {
-                                                    SIMPLE_TEXT[at0346] occurrences matches {1..1} matches {  -- CARD_FOR_PROFESSION_VALUE 
+                                                    SIMPLE_TEXT[at0346] occurrences matches {1..1} matches {  -- CARD_FOR_PROFESSION_VALUE
                                                         originalText existence matches {0..1} matches {/.*/}
                                                         charset existence matches {0..1} matches {
                                                             CS[at0365] occurrences matches {0..1} matches {  -- 
@@ -1287,7 +1287,7 @@ definition
                                             }
                                             ELEMENT[at0420] occurrences matches {1..1} matches {  -- DATE
                                                 value existence matches {0..1} matches {
-                                                    DATE[at0421] occurrences matches {1..1} matches {  -- DATE_VALUE 
+                                                    DATE[at0421] occurrences matches {1..1} matches {  -- DATE_VALUE
                                                         date existence matches {1..1} matches {yyyy-mm-dd}
                                                     }
                                                 }
@@ -1319,7 +1319,7 @@ definition
                                                     }
                                                     ELEMENT[at0444] occurrences matches {1..1} matches {  -- WORKPLACE_OK
                                                         value existence matches {0..1} matches {
-                                                            SIMPLE_TEXT[at0445] occurrences matches {1..1} matches {  -- WORKPLACE_OK_VALUE 
+                                                            SIMPLE_TEXT[at0445] occurrences matches {1..1} matches {  -- WORKPLACE_OK_VALUE
                                                                 originalText existence matches {0..1} matches {/.*/}
                                                                 charset existence matches {0..1} matches {
                                                                     CS[at0210] occurrences matches {0..1} matches {  -- 
@@ -1344,7 +1344,7 @@ definition
                                                         parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
                                                             ELEMENT[at0239] occurrences matches {1..*} matches {  -- CONDITION
                                                                 value existence matches {0..1} matches {
-                                                                    SIMPLE_TEXT[at0257] occurrences matches {1..1} matches {  -- CONDITION_VALUE 
+                                                                    SIMPLE_TEXT[at0257] occurrences matches {1..1} matches {  -- CONDITION_VALUE
                                                                         originalText existence matches {0..1} matches {/.*/}
                                                                         charset existence matches {0..1} matches {
                                                                             CS[at0314] occurrences matches {0..1} matches {  -- 
@@ -1377,7 +1377,7 @@ definition
                                                         parts existence matches {0..1} cardinality matches {0..*; ordered; unique} matches {
                                                             ELEMENT[at0070] occurrences matches {1..*} matches {  -- PROFESSION
                                                                 value existence matches {0..1} matches {
-                                                                    SIMPLE_TEXT[at0071] occurrences matches {0..1} matches {  -- PROFESSION_VALUE 
+                                                                    SIMPLE_TEXT[at0071] occurrences matches {0..1} matches {  -- PROFESSION_VALUE
                                                                         originalText existence matches {0..1} matches {/.*/}
                                                                         charset existence matches {0..1} matches {
                                                                             CS[at0075] occurrences matches {0..1} matches {  -- 
@@ -1400,7 +1400,7 @@ definition
                                                             }
                                                             ELEMENT[at0078] occurrences matches {1..*} matches {  -- INDUSTRY
                                                                 value existence matches {0..1} matches {
-                                                                    SIMPLE_TEXT[at0079] occurrences matches {0..1} matches {  -- INDUSTRY_VALUE 
+                                                                    SIMPLE_TEXT[at0079] occurrences matches {0..1} matches {  -- INDUSTRY_VALUE
                                                                         originalText existence matches {0..1} matches {/.*/}
                                                                         charset existence matches {0..1} matches {
                                                                             CS[at0119] occurrences matches {0..1} matches {  -- 
@@ -1458,7 +1458,7 @@ definition
                                     }
                                     ELEMENT[at0526] occurrences matches {1..1} matches {  -- EXAM_FOR_PROFESSION
                                         value existence matches {0..1} matches {
-                                            SIMPLE_TEXT[at0527] occurrences matches {1..1} matches {  -- EXAM_FOR_PROFESSION_VALUE 
+                                            SIMPLE_TEXT[at0527] occurrences matches {1..1} matches {  -- EXAM_FOR_PROFESSION_VALUE
                                                 originalText existence matches {0..1} matches {/.*/}
                                                 charset existence matches {0..1} matches {
                                                     CS[at0556] occurrences matches {0..1} matches {  -- 
@@ -1481,14 +1481,14 @@ definition
                                     }
                                     ELEMENT[at0552] occurrences matches {1..1} matches {  -- EXAM_DATE
                                         value existence matches {0..1} matches {
-                                            DATE[at0559] occurrences matches {1..1} matches {  -- EXAM_DATE_VALUE 
+                                            DATE[at0559] occurrences matches {1..1} matches {  -- EXAM_DATE_VALUE
                                                 date existence matches {1..1} matches {yyyy-mm-dd}
                                             }
                                         }
                                     }
                                     ELEMENT[at0560] occurrences matches {1..1} matches {  -- EXAM_AUTHORITY
                                         value existence matches {0..1} matches {
-                                            SIMPLE_TEXT[at0561] occurrences matches {1..1} matches {  -- EXAM_AUTHORITY_VALUE  
+                                            SIMPLE_TEXT[at0561] occurrences matches {1..1} matches {  -- EXAM_AUTHORITY_VALUE
                                                 originalText existence matches {0..1} matches {/.*/}
                                             }
                                         }
@@ -1552,7 +1552,7 @@ definition
                                                 parts existence matches {0..1} cardinality matches {0..*; ordered; unique} matches {
                                                     ELEMENT[at0591] occurrences matches {1..*} matches {  -- ILLNESS
                                                         value existence matches {0..1} matches {
-                                                            CV[at0592] occurrences matches {1..1} matches {  -- ILLNESS_VALUE 
+                                                            CV[at0592] occurrences matches {1..1} matches {  -- ILLNESS_VALUE
                                                                 codeValue existence matches {0..1} matches {/.*/}
                                                                 codingSchemeName existence matches {0..1} matches {"ICD10_1998"}
                                                             }
@@ -1568,21 +1568,21 @@ definition
                                             }
                                             ELEMENT[at0593] occurrences matches {1..1} matches {  -- DISPENSARIZATION_YESNO
                                                 value existence matches {0..1} matches {
-                                                    SIMPLE_TEXT[at0594] occurrences matches {1..1} matches {  -- DISPENSARIZATION_YESNO_VALUE 
+                                                    SIMPLE_TEXT[at0594] occurrences matches {1..1} matches {  -- DISPENSARIZATION_YESNO_VALUE
                                                         originalText existence matches {0..1} matches {"0","1"; "0"}
                                                     }
                                                 }
                                             }
                                             ELEMENT[at0595] occurrences matches {1..1} matches {  -- HOSPITALIZATION_YESNO
                                                 value existence matches {0..1} matches {
-                                                    SIMPLE_TEXT[at0596] occurrences matches {1..1} matches {  -- HOSPITALIZATION_YESNO_VALUE 
+                                                    SIMPLE_TEXT[at0596] occurrences matches {1..1} matches {  -- HOSPITALIZATION_YESNO_VALUE
                                                         originalText existence matches {0..1} matches {"0","1"; "0"}
                                                     }
                                                 }
                                             }
                                             ELEMENT[at0597] occurrences matches {1..1} matches {  -- NEEDS_EMPLOYMENT
                                                 value existence matches {0..1} matches {
-                                                    SIMPLE_TEXT[at0598] occurrences matches {1..1} matches {  -- NEEDS_EMPLOYMENT_VALUE 
+                                                    SIMPLE_TEXT[at0598] occurrences matches {1..1} matches {  -- NEEDS_EMPLOYMENT_VALUE
                                                         originalText existence matches {0..1} matches {"0","1","2"; "0"}
                                                     }
                                                 }
@@ -1626,7 +1626,7 @@ definition
                                                 parts existence matches {0..1} cardinality matches {0..*; ordered; unique} matches {
                                                     ELEMENT[at0601] occurrences matches {1..1} matches {  -- PROFESSION_OK
                                                         value existence matches {0..1} matches {
-                                                            SIMPLE_TEXT[at0602] occurrences matches {1..1} matches {  -- PROFESSION_OK_VALUE 
+                                                            SIMPLE_TEXT[at0602] occurrences matches {1..1} matches {  -- PROFESSION_OK_VALUE
                                                                 originalText existence matches {0..1} matches {"0","1"; "0"}
                                                             }
                                                         }
@@ -1642,7 +1642,7 @@ definition
                                                         parts existence matches {0..1} cardinality matches {0..*; ordered; unique} matches {
                                                             ELEMENT[at0606] occurrences matches {1..*} matches {  -- CONDITION
                                                                 value existence matches {0..1} matches {
-                                                                    SIMPLE_TEXT[at0607] occurrences matches {1..1} matches {  -- CONDITION_VALUE 
+                                                                    SIMPLE_TEXT[at0607] occurrences matches {1..1} matches {  -- CONDITION_VALUE
                                                                         originalText existence matches {0..1} matches {/.*/}
                                                                         charset existence matches {0..1} matches {
                                                                             CS[at0289] occurrences matches {0..1} matches {  -- 
@@ -2073,7 +2073,7 @@ ontology
 № на експертното решение на ТЕЛК/НЕЛК ">
                 >
                 ["at0140"] = <
-                    text = <"NUMBER_DOCUMENT_DISABILITY_VALUE ">
+                    text = <"NUMBER_DOCUMENT_DISABILITY_VALUE">
                     description = <"The number of the document for disability">
                     comment = <"SIMPLE_TEXT ">
                 >
@@ -2082,7 +2082,7 @@ ontology
                     description = <"The diagnosis reason for disability">
                 >
                 ["at0142"] = <
-                    text = <"DISABILITY_REASON_DIAGNOSIS">
+                    text = <"DISABILITY_REASON_DIAGNOSIS_VALUE">
                     description = <"SNOMED_CT code for diagnosis">
                     comment = <"CV">
                 >
@@ -2091,7 +2091,7 @@ ontology
                     description = <"Percentage of lost disability">
                 >
                 ["at0144"] = <
-                    text = <"DISABILITY_LEVEL_LEVEL ">
+                    text = <"DISABILITY_LEVEL_LEVEL">
                     description = <"">
                     comment = <"SIMPLE_TEXT">
                 >
@@ -2373,7 +2373,7 @@ Not passed -false(0)">
                     comment = <"SIMPLE_TEXT">
                 >
                 ["at0295"] = <
-                    text = <"CARD_ISSUED_BY_DOCTOR_VALUE ">
+                    text = <"CARD_ISSUED_BY_DOCTOR_VALUE">
                     description = <"Описание на издателя на картата за предварителен преглед">
                     comment = <"SIMPLE_TEXT">
                 >
@@ -2461,7 +2461,7 @@ Simple text">
                     description = <"Job title,  Profession.">
                 >
                 ["at0346"] = <
-                    text = <"CARD_FOR_PROFESSION_VALUE ">
+                    text = <"CARD_FOR_PROFESSION_VALUE">
                     description = <"The profession for which the card is issued">
                     comment = <"SIMPLE_TEXT">
                 >
@@ -2479,7 +2479,7 @@ Simple text">
                 >
                 ["at0368"] = <
                     text = <"DIAGNOSIS_VALUE">
-                    description = <"Diagnosis code from SNOMED-CT">
+                    description = <"Diagnosis code from ICD-10">
                     comment = <"CV">
                 >
                 ["at0381"] = <
@@ -2519,7 +2519,7 @@ Simple text">
                     description = <"Date of Conclusion issue">
                 >
                 ["at0421"] = <
-                    text = <"DATE_VALUE ">
+                    text = <"DATE_VALUE">
                     description = <"">
                     comment = <"DATE">
                 >
@@ -2541,7 +2541,7 @@ Simple text">
                     description = <"Specify job workplace">
                 >
                 ["at0445"] = <
-                    text = <"WORKPLACE_OK_VALUE ">
+                    text = <"WORKPLACE_OK_VALUE">
                     description = <"Specify job workplace text">
                     comment = <"SIMPLE_TEXT">
                 >
@@ -2568,7 +2568,7 @@ Simple text">
 Професия">
                 >
                 ["at0527"] = <
-                    text = <"EXAM_FOR_PROFESSION_VALUE ">
+                    text = <"EXAM_FOR_PROFESSION_VALUE">
                     description = <"Profession, job position">
                     comment = <"SIMPLE_TEXT">
                 >
@@ -2578,7 +2578,7 @@ Simple text">
 Дата за извършване на прегледа">
                 >
                 ["at0559"] = <
-                    text = <"EXAM_DATE_VALUE ">
+                    text = <"EXAM_DATE_VALUE">
                     description = <"">
                     comment = <"DATE">
                 >
@@ -2589,7 +2589,7 @@ Simple text">
 ">
                 >
                 ["at0561"] = <
-                    text = <"EXAM_AUTHORITY_VALUE  ">
+                    text = <"EXAM_AUTHORITY_VALUE">
                     description = <"Title of authority that performed the exam">
                     comment = <"SIMPLE_TEXT">
                 >
@@ -2635,7 +2635,7 @@ false(0)">
                     description = <"Заболяване/ Illness">
                 >
                 ["at0592"] = <
-                    text = <"ILLNESS_VALUE ">
+                    text = <"ILLNESS_VALUE">
                     description = <"Заболяване">
                     comment = <"CV">
                 >
@@ -2647,7 +2647,7 @@ false(0)">
                     comment = <"SIMPLE_TEXT">
                 >
                 ["at0594"] = <
-                    text = <"DISPENSARIZATION_YESNO_VALUE ">
+                    text = <"DISPENSARIZATION_YESNO_VALUE">
                     description = <"true(1)
 false(0)">
                     comment = <"SIMPLE_TEXT">
@@ -2658,7 +2658,7 @@ false(0)">
 false(0)">
                 >
                 ["at0596"] = <
-                    text = <"HOSPITALIZATION_YESNO_VALUE ">
+                    text = <"HOSPITALIZATION_YESNO_VALUE">
                     description = <"true(1)
 false(0)">
                     comment = <"SIMPLE_TEXT">
@@ -2671,7 +2671,7 @@ permanent  1
 no need      0">
                 >
                 ["at0598"] = <
-                    text = <"NEEDS_EMPLOYMENT_VALUE ">
+                    text = <"NEEDS_EMPLOYMENT_VALUE">
                     description = <"Нуждае се от трудоустрояване
 temporarily 2
 permanent  1
@@ -2687,7 +2687,7 @@ no need       0">
                     description = <"Fit for the profession, job position in EXAM_FOR_PROFESSION">
                 >
                 ["at0602"] = <
-                    text = <"PROFESSION_OK_VALUE ">
+                    text = <"PROFESSION_OK_VALUE">
                     description = <"Може да изпълнява посочената длъжност/професия EXAM_FOR_PROFESSION
 true (1)
 false(0)">
@@ -2704,7 +2704,7 @@ false(0)">
                     comment = <"SIMPLE_TEXT">
                 >
                 ["at0607"] = <
-                    text = <"CONDITION_VALUE ">
+                    text = <"CONDITION_VALUE">
                     description = <"Can execute job on condition">
                     comment = <"SIMPLE_TEXT">
                 >
@@ -2742,7 +2742,7 @@ false(0)">
                     description = <"Не може да изпълнява посочената длъжност/професия">
                 >
                 ["at0071"] = <
-                    text = <"PROFESSION_VALUE ">
+                    text = <"PROFESSION_VALUE">
                     description = <"Текст или код на професия(по каталог)">
                     comment = <"SIMPLE_TEXT">
                 >
@@ -2751,7 +2751,7 @@ false(0)">
                     description = <"(посочва се наименованието на предприятието)">
                 >
                 ["at0079"] = <
-                    text = <"INDUSTRY_VALUE ">
+                    text = <"INDUSTRY_VALUE">
                     description = <"наименованието на предприятието">
                     comment = <"SIMPLE_TEXT">
                 >
@@ -2814,7 +2814,7 @@ false(0)">
 може да изпълнява посочената длъжност/професия при условие">
                 >
                 ["at0257"] = <
-                    text = <"CONDITION_VALUE ">
+                    text = <"CONDITION_VALUE">
                     description = <"Can execute job on condition">
                 >
                 ["at0327"] = <

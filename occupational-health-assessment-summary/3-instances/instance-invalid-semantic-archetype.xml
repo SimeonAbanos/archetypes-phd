@@ -916,8 +916,9 @@
 						<synthesised>true</synthesised>
 						<!--EXEMPTION_DIAGNOSIS_VALUE-->
 						<value xsi:type="CV">
-							<codingSchemeName>ICD10AE_1998</codingSchemeName>
-							<codeValue>codeValue_value</codeValue>
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
 						</value>
 					</parts>
 					<!--WORKPLACE_RELOCATION-->
@@ -1056,7 +1057,7 @@
 							</root>
 						</rc_id>
 						<synthesised>false</synthesised>
-						<!--NUMBER_DOCUMENT_DISABILITY_VALUE -->
+						<!--NUMBER_DOCUMENT_DISABILITY_VALUE-->
 						<value xsi:type="SIMPLE_TEXT">
 							<originalText>originalText_value</originalText>
 						</value>
@@ -1075,10 +1076,11 @@
 							</root>
 						</rc_id>
 						<synthesised>true</synthesised>
-						<!--DISABILITY_REASON_DIAGNOSIS-->
+						<!--DISABILITY_REASON_DIAGNOSIS_VALUE-->
 						<value xsi:type="CV">
-							<codingSchemeName>SNOMED-CT</codingSchemeName>
-							<codeValue>codeValue_value</codeValue>
+							<nullFlavor>
+								<codeValue>NI</codeValue>
+							</nullFlavor>
 						</value>
 					</parts>
 					<!--DISABILITY_LEVEL-->
@@ -1095,7 +1097,7 @@
 							</root>
 						</rc_id>
 						<synthesised>false</synthesised>
-						<!--DISABILITY_LEVEL_LEVEL -->
+						<!--DISABILITY_LEVEL_LEVEL-->
 						<value xsi:type="SIMPLE_TEXT">
 							<originalText>Above 90%</originalText>
 							<language>
@@ -1880,7 +1882,7 @@
 							</root>
 						</rc_id>
 						<synthesised>true</synthesised>
-						<!--CARD_ISSUED_BY_DOCTOR_VALUE -->
+						<!--CARD_ISSUED_BY_DOCTOR_VALUE-->
 						<value xsi:type="SIMPLE_TEXT">
 							<originalText>Георги Иванов</originalText><!--Data value xxx!!!!-->
 							<language>
@@ -1924,7 +1926,7 @@
 							</root>
 						</rc_id>
 						<synthesised>true</synthesised>
-						<!--CARD_FOR_PROFESSION_VALUE -->
+						<!--CARD_FOR_PROFESSION_VALUE-->
 						<value xsi:type="SIMPLE_TEXT">
 							<originalText>Складов работник</originalText><!--Data value xxx!!!!-->
 							<language>
@@ -2176,7 +2178,7 @@
 							</root>
 						</rc_id>
 						<synthesised>true</synthesised>
-						<!--CARD_ISSUED_BY_DOCTOR_VALUE -->
+						<!--CARD_ISSUED_BY_DOCTOR_VALUE-->
 						<value xsi:type="SIMPLE_TEXT">
 							<originalText>Иван Георгиев</originalText><!--Data value xxx!!!!-->
 							<language>
@@ -2220,7 +2222,7 @@
 							</root>
 						</rc_id>
 						<synthesised>true</synthesised>
-						<!--CARD_FOR_PROFESSION_VALUE -->
+						<!--CARD_FOR_PROFESSION_VALUE-->
 						<value xsi:type="SIMPLE_TEXT">
 							<originalText>Складов работник</originalText><!--Data value xxx!!!!-->
 							<language>
@@ -2512,7 +2514,7 @@
 							</root>
 						</rc_id>
 						<synthesised>true</synthesised>
-						<!--DATE_VALUE -->
+						<!--DATE_VALUE-->
 						<value xsi:type="DATE">
 							<date>2082-05-04</date>
 						</value>
@@ -2576,7 +2578,7 @@
 								</root>
 							</rc_id>
 							<synthesised>true</synthesised>
-							<!--WORKPLACE_OK_VALUE -->
+							<!--WORKPLACE_OK_VALUE-->
 							<value xsi:type="SIMPLE_TEXT">
 								<originalText>originalText_value</originalText>
 								<language>
@@ -2621,7 +2623,7 @@
 									</root>
 								</rc_id>
 								<synthesised>false</synthesised>
-								<!--CONDITION_VALUE -->
+								<!--CONDITION_VALUE-->
 								<value xsi:type="SIMPLE_TEXT">
 									<originalText>originalText_value</originalText>
 									<language>
@@ -2667,7 +2669,7 @@
 									</root>
 								</rc_id>
 								<synthesised>true</synthesised>
-								<!--PROFESSION_VALUE -->
+								<!--PROFESSION_VALUE-->
 								<value xsi:type="SIMPLE_TEXT">
 									<originalText>originalText_value</originalText>
 									<language>
@@ -2694,7 +2696,7 @@
 									</root>
 								</rc_id>
 								<synthesised>true</synthesised>
-								<!--INDUSTRY_VALUE -->
+								<!--INDUSTRY_VALUE-->
 								<value xsi:type="SIMPLE_TEXT">
 									<originalText>originalText_value</originalText>
 									<language>
@@ -2759,7 +2761,7 @@
 						</root>
 					</rc_id>
 					<synthesised>false</synthesised>
-					<!--EXAM_FOR_PROFESSION_VALUE -->
+					<!--EXAM_FOR_PROFESSION_VALUE-->
 					<value xsi:type="SIMPLE_TEXT">
 						<originalText>originalText_value</originalText>
 						<language>
@@ -2786,7 +2788,7 @@
 						</root>
 					</rc_id>
 					<synthesised>true</synthesised>
-					<!--EXAM_DATE_VALUE -->
+					<!--EXAM_DATE_VALUE-->
 					<value xsi:type="DATE">
 						<date>1931-11-04</date>
 					</value>
@@ -2805,7 +2807,7 @@
 						</root>
 					</rc_id>
 					<synthesised>true</synthesised>
-					<!--EXAM_AUTHORITY_VALUE  -->
+					<!--EXAM_AUTHORITY_VALUE-->
 					<value xsi:type="SIMPLE_TEXT">
 						<originalText>originalText_value</originalText>
 					</value>
@@ -2933,10 +2935,11 @@
 								</root>
 							</rc_id>
 							<synthesised>true</synthesised>
-							<!--ILLNESS_VALUE -->
+							<!--ILLNESS_VALUE-->
 							<value xsi:type="CV">
-								<codingSchemeName>ICD10_1998</codingSchemeName>
-								<codeValue>codeValue_value</codeValue>
+								<nullFlavor>
+									<codeValue>NI</codeValue>
+								</nullFlavor>
 							</value>
 						</parts>
 					</parts>
@@ -2954,7 +2957,7 @@
 							</root>
 						</rc_id>
 						<synthesised>false</synthesised>
-						<!--DISPENSARIZATION_YESNO_VALUE -->
+						<!--DISPENSARIZATION_YESNO_VALUE-->
 						<value xsi:type="SIMPLE_TEXT">
 							<originalText>0</originalText>
 						</value>
@@ -2973,7 +2976,7 @@
 							</root>
 						</rc_id>
 						<synthesised>true</synthesised>
-						<!--HOSPITALIZATION_YESNO_VALUE -->
+						<!--HOSPITALIZATION_YESNO_VALUE-->
 						<value xsi:type="SIMPLE_TEXT">
 							<originalText>0</originalText>
 						</value>
@@ -2992,7 +2995,7 @@
 							</root>
 						</rc_id>
 						<synthesised>true</synthesised>
-						<!--NEEDS_EMPLOYMENT_VALUE -->
+						<!--NEEDS_EMPLOYMENT_VALUE-->
 						<value xsi:type="SIMPLE_TEXT">
 							<originalText>1</originalText>
 						</value>
@@ -3121,7 +3124,7 @@
 								</root>
 							</rc_id>
 							<synthesised>true</synthesised>
-							<!--PROFESSION_OK_VALUE -->
+							<!--PROFESSION_OK_VALUE-->
 							<value xsi:type="SIMPLE_TEXT">
 								<originalText>1</originalText>
 							</value>
@@ -3177,7 +3180,7 @@
 									</root>
 								</rc_id>
 								<synthesised>true</synthesised>
-								<!--CONDITION_VALUE -->
+								<!--CONDITION_VALUE-->
 								<value xsi:type="SIMPLE_TEXT">
 									<originalText>originalText_value</originalText>
 									<language>
