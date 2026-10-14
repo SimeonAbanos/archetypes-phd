@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?><template xmlns="openEHR/v1/Template">
+    <id>18a03362-7150-4462-ab6d-cf73d3c5a386</id>
+    <name>anthropometric_measurements.en.v0</name>
+    <description>
+        <original_author>
+            <item>
+                <key>date</key>
+                <value>2026-09-26</value>
+            </item>
+            <item>
+                <key>name</key>
+                <value>Simeon Abanos</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>Faculty of Mathematics and Informatics, Sofia University St. Kliment Ohridski</value>
+            </item>
+        </original_author>
+        <lifecycle_state>unmanaged</lifecycle_state>
+        <details>
+            <purpose>To record the body weight, the height and the body mass index measured at one encounter, with the published CKM archetypes for the three observations.</purpose>
+            <keywords>
+                <item>body mass index</item>
+                <item>BMI</item>
+                <item>body weight</item>
+                <item>height</item>
+                <item>anthropometry</item>
+            </keywords>
+            <use>Rebuilt for the doctoral thesis of Simeon Abanos after the body mass index example of Krastev, Abanos and Tcharaktchiev (2022), whose working files were not kept. The template fills the three slots of the composition, leaves out the birth events of the weight and height archetypes and restricts the units to kg, cm and kg/m2. Its identifier has the form concept.language.version, which the XML schema of EHRServer 2.3 requires.</use>
+        </details>
+        <other_details>
+            <item>
+                <key>licence</key>
+                <value>This work is dedicated to the public domain under the Creative Commons CC0 1.0 Universal Public Domain Dedication. To view a copy of this dedication, visit https://creativecommons.org/publicdomain/zero/1.0/.</value>
+            </item>
+            <item>
+                <key>custodian_organisation</key>
+                <value/>
+            </item>
+            <item>
+                <key>original_namespace</key>
+                <value/>
+            </item>
+            <item>
+                <key>original_publisher</key>
+                <value/>
+            </item>
+            <item>
+                <key>custodian_namespace</key>
+                <value/>
+            </item>
+            <item>
+                <key>sem_ver</key>
+                <value>0.2.0</value>
+            </item>
+            <item>
+                <key>build_uid</key>
+                <value/>
+            </item>
+            <item>
+                <key>original_language</key>
+                <value>ISO_639-1::en</value>
+            </item>
+        </other_details>
+    </description>
+    <definition archetype_id="openEHR-EHR-COMPOSITION.anthropometry.v0" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:COMPOSITION">
+        <Content archetype_id="openEHR-EHR-OBSERVATION.body_weight.v2" max="1" path="/content[at0001]" xsi:type="tem:OBSERVATION">
+            <Rule path="/data[at0002]/events[at0003]/data[at0001]/items[at0004]">
+                <constraint xsi:type="tem:quantityConstraint">
+                    <excludedUnits>[lb_av]</excludedUnits>
+                    <excludedUnits>g</excludedUnits>
+                    <unitMagnitude>
+                        <unit>kg</unit>
+                        <maxMagnitude>1000.0</maxMagnitude>
+                        <minMagnitude>0.0</minMagnitude>
+                        <includesMaximum>true</includesMaximum>
+                        <includesMinimum>true</includesMinimum>
+                    </unitMagnitude>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0002]/events[at0026]"/>
+            <Rule name="Simple" path="/data[at0002]/events[at0026]/data[at0001]"/>
+            <Rule name="state structure" path="/data[at0002]/events[at0026]/state[at0008]"/>
+        </Content>
+        <Content archetype_id="openEHR-EHR-OBSERVATION.height.v2" max="1" path="/content[at0002]" xsi:type="tem:OBSERVATION">
+            <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+                <constraint xsi:type="tem:quantityConstraint">
+                    <excludedUnits>[in_i]</excludedUnits>
+                    <unitMagnitude>
+                        <unit>cm</unit>
+                        <maxMagnitude>1000.0</maxMagnitude>
+                        <minMagnitude>0.0</minMagnitude>
+                        <includesMaximum>true</includesMaximum>
+                        <includesMinimum>true</includesMinimum>
+                    </unitMagnitude>
+                </constraint>
+            </Rule>
+            <Rule max="0" path="/data[at0001]/events[at0021]"/>
+            <Rule name="Simple" path="/data[at0001]/events[at0021]/data[at0003]"/>
+            <Rule name="Tree" path="/data[at0001]/events[at0021]/state[at0013]"/>
+        </Content>
+        <Content archetype_id="openEHR-EHR-OBSERVATION.body_mass_index.v2" max="1" path="/content[at0003]" xsi:type="tem:OBSERVATION">
+            <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]">
+                <constraint xsi:type="tem:quantityConstraint">
+                    <excludedUnits>[lb_av]/[in_i]2</excludedUnits>
+                    <unitMagnitude>
+                        <unit>kg/m2</unit>
+                        <maxMagnitude>1000.0</maxMagnitude>
+                        <minMagnitude>0.0</minMagnitude>
+                        <includesMaximum>false</includesMaximum>
+                        <includesMinimum>true</includesMinimum>
+                    </unitMagnitude>
+                </constraint>
+            </Rule>
+        </Content>
+    </definition>
+    <integrity_checks archetype_id="openEHR-EHR-COMPOSITION.anthropometry.v0" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">47c53307fd5aef88fe46babd1d790c33</digest>
+    </integrity_checks>
+    <integrity_checks archetype_id="openEHR-EHR-OBSERVATION.body_weight.v2" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">FF43C658C2F6609F551AFBB698BC238A</digest>
+    </integrity_checks>
+    <integrity_checks archetype_id="openEHR-EHR-OBSERVATION.height.v2" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">33E2001AF2863B8775C887AAD1BF179B</digest>
+    </integrity_checks>
+    <integrity_checks archetype_id="openEHR-EHR-OBSERVATION.body_mass_index.v2" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">45CDA8C2180DDA3CAB6EBB6AF603493D</digest>
+    </integrity_checks>
+</template>
