@@ -69,7 +69,7 @@ on EHRServer.
 
 ## Differences from the publication
 
-- **Height.** The publication derives a height archetype by specialising the body weight archetype. Here `height.v2` is
+- **Height.** In the publication, the height archetype is modelled on the body weight archetype. Here `height.v2` is
   used as published in CKM, unchanged.
 - **Step 1.** The publication names the TDS, the XML schema to which the operational template can be converted, as a way
   to check instances. Here the TDS is derived with `tds.py` and leaves the constraints on values to step 2.
