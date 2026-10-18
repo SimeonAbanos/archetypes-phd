@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Structurally invalid - step 1, against the TDS: the body mass index observation has no subject. The reference model requires one in every entry, and the TDS keeps that rule. Otherwise the same as instance-valid.xml. -->
+<Anthropometric_measurements xmlns="http://schemas.oceanehr.com/templates" xmlns:oe="http://schemas.openehr.org/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" archetype_node_id="openEHR-EHR-COMPOSITION.anthropometry.v0" template_id="anthropometric_measurements.en.v0">
+  <name>
+    <value>Anthropometric measurements</value>
+  </name>
+  <language>
+    <oe:terminology_id>
+      <oe:value>ISO_639-1</oe:value>
+    </oe:terminology_id>
+    <oe:code_string>en</oe:code_string>
+  </language>
+  <territory>
+    <oe:terminology_id>
+      <oe:value>ISO_3166-1</oe:value>
+    </oe:terminology_id>
+    <oe:code_string>BG</oe:code_string>
+  </territory>
+  <category>
+    <oe:value>event</oe:value>
+    <oe:defining_code>
+      <oe:terminology_id>
+        <oe:value>openehr</oe:value>
+      </oe:terminology_id>
+      <oe:code_string>433</oe:code_string>
+    </oe:defining_code>
+  </category>
+  <composer xsi:type="oe:PARTY_IDENTIFIED">
+    <oe:name>Demonstration</oe:name>
+  </composer>
+  <context>
+    <oe:start_time>
+      <oe:value>2026-09-26T10:00:00</oe:value>
+    </oe:start_time>
+    <oe:setting>
+      <oe:value>other care</oe:value>
+      <oe:defining_code>
+        <oe:terminology_id>
+          <oe:value>openehr</oe:value>
+        </oe:terminology_id>
+        <oe:code_string>238</oe:code_string>
+      </oe:defining_code>
+    </oe:setting>
+  </context>
+  <Body_weight archetype_node_id="openEHR-EHR-OBSERVATION.body_weight.v2">
+    <name>
+      <value>Body weight</value>
+    </name>
+    <language>
+      <oe:terminology_id>
+        <oe:value>ISO_639-1</oe:value>
+      </oe:terminology_id>
+      <oe:code_string>en</oe:code_string>
+    </language>
+    <encoding>
+      <oe:terminology_id>
+        <oe:value>IANA_character-sets</oe:value>
+      </oe:terminology_id>
+      <oe:code_string>UTF-8</oe:code_string>
+    </encoding>
+    <subject xsi:type="oe:PARTY_SELF"/>
+    <data archetype_node_id="at0002">
+      <name>
+        <value>history</value>
+      </name>
+      <origin>
+        <oe:value>2026-09-26T10:00:00</oe:value>
+      </origin>
+      <Any_event archetype_node_id="at0003" type="POINT_EVENT">
+        <name>
+          <value>Any event</value>
+        </name>
+        <time>
+          <oe:value>2026-09-26T10:00:00</oe:value>
+        </time>
+        <data archetype_node_id="at0001">
+          <name>
+            <value>Simple</value>
+          </name>
+          <Weight archetype_node_id="at0004">
+            <name>
+              <value>Weight</value>
+            </name>
+            <value>
+              <oe:magnitude>82.0</oe:magnitude>
+              <oe:units>kg</oe:units>
+            </value>
+          </Weight>
+        </data>
+        <state archetype_node_id="at0008">
+          <name>
+            <value>state structure</value>
+          </name>
+          <State_of_dress archetype_node_id="at0009">
+            <name>
+              <value>State of dress</value>
+            </name>
+            <value>
+              <oe:value>Lightly clothed/underwear</oe:value>
+              <oe:defining_code>
+                <oe:terminology_id>
+                  <oe:value>local</oe:value>
+                </oe:terminology_id>
+                <oe:code_string>at0011</oe:code_string>
+              </oe:defining_code>
+            </value>
+          </State_of_dress>
+        </state>
+      </Any_event>
+    </data>
+  </Body_weight>
+  <Height_Length archetype_node_id="openEHR-EHR-OBSERVATION.height.v2">
+    <name>
+      <value>Height/Length</value>
+    </name>
+    <language>
+      <oe:terminology_id>
+        <oe:value>ISO_639-1</oe:value>
+      </oe:terminology_id>
+      <oe:code_string>en</oe:code_string>
+    </language>
+    <encoding>
+      <oe:terminology_id>
+        <oe:value>IANA_character-sets</oe:value>
+      </oe:terminology_id>
+      <oe:code_string>UTF-8</oe:code_string>
+    </encoding>
+    <subject xsi:type="oe:PARTY_SELF"/>
+    <data archetype_node_id="at0001">
+      <name>
+        <value>history</value>
+      </name>
+      <origin>
+        <oe:value>2026-09-26T10:00:00</oe:value>
+      </origin>
+      <Any_event archetype_node_id="at0002" type="POINT_EVENT">
+        <name>
+          <value>Any event</value>
+        </name>
+        <time>
+          <oe:value>2026-09-26T10:00:00</oe:value>
+        </time>
+        <data archetype_node_id="at0003">
+          <name>
+            <value>Simple</value>
+          </name>
+          <Height_Length archetype_node_id="at0004">
+            <name>
+              <value>Height/Length</value>
+            </name>
+            <value>
+              <oe:magnitude>178.0</oe:magnitude>
+              <oe:units>cm</oe:units>
+            </value>
+          </Height_Length>
+        </data>
+        <state archetype_node_id="at0013">
+          <name>
+            <value>Tree</value>
+          </name>
+          <Position archetype_node_id="at0014">
+            <name>
+              <value>Position</value>
+            </name>
+            <value>
+              <oe:value>Standing</oe:value>
+              <oe:defining_code>
+                <oe:terminology_id>
+                  <oe:value>local</oe:value>
+                </oe:terminology_id>
+                <oe:code_string>at0016</oe:code_string>
+              </oe:defining_code>
+            </value>
+          </Position>
+        </state>
+      </Any_event>
+    </data>
+  </Height_Length>
+  <Body_Mass_Index_BMI archetype_node_id="openEHR-EHR-OBSERVATION.body_mass_index.v2">
+    <name>
+      <value>Body Mass Index (BMI)</value>
+    </name>
+    <language>
+      <oe:terminology_id>
+        <oe:value>ISO_639-1</oe:value>
+      </oe:terminology_id>
+      <oe:code_string>en</oe:code_string>
+    </language>
+    <encoding>
+      <oe:terminology_id>
+        <oe:value>IANA_character-sets</oe:value>
+      </oe:terminology_id>
+      <oe:code_string>UTF-8</oe:code_string>
+    </encoding>
+    <protocol archetype_node_id="at0005">
+      <name>
+        <value>Tree</value>
+      </name>
+      <Method archetype_node_id="at0006">
+        <name>
+          <value>Method</value>
+        </name>
+        <value>
+          <oe:value>Automatic entry</oe:value>
+          <oe:defining_code>
+            <oe:terminology_id>
+              <oe:value>local</oe:value>
+            </oe:terminology_id>
+            <oe:code_string>at0007</oe:code_string>
+          </oe:defining_code>
+        </value>
+      </Method>
+      <Formula archetype_node_id="at0010">
+        <name>
+          <value>Formula</value>
+        </name>
+        <value>
+          <oe:value>body weight (kg) / height (m)^2</oe:value>
+        </value>
+      </Formula>
+    </protocol>
+    <data archetype_node_id="at0001">
+      <name>
+        <value>history</value>
+      </name>
+      <origin>
+        <oe:value>2026-09-26T10:00:00</oe:value>
+      </origin>
+      <Any_event archetype_node_id="at0002" type="POINT_EVENT">
+        <name>
+          <value>Any event</value>
+        </name>
+        <time>
+          <oe:value>2026-09-26T10:00:00</oe:value>
+        </time>
+        <data archetype_node_id="at0003">
+          <name>
+            <value>Single</value>
+          </name>
+          <Body_mass_index archetype_node_id="at0004">
+            <name>
+              <value>Body mass index</value>
+            </name>
+            <value>
+              <oe:magnitude>25.9</oe:magnitude>
+              <oe:units>kg/m2</oe:units>
+              <oe:precision>1</oe:precision>
+            </value>
+          </Body_mass_index>
+        </data>
+      </Any_event>
+    </data>
+  </Body_Mass_Index_BMI>
+</Anthropometric_measurements>
