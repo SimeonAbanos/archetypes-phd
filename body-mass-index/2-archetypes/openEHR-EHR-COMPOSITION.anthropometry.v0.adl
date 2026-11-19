@@ -1,0 +1,78 @@
+﻿archetype (adl_version=1.4; uid=518105bf-e89f-416d-8026-ace05d4a198d)
+	openEHR-EHR-COMPOSITION.anthropometry.v0
+
+concept
+	[at0000]	-- Anthropometric measurements
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"Simeon Abanos">
+		["organisation"] = <"Faculty of Mathematics and Informatics, Sofia University St. Kliment Ohridski">
+		["date"] = <"2026-09-26">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To group the body weight, the height and the body mass index recorded at one encounter into a single document.">
+			use = <"Use as the document of an encounter at which the body weight and the height are measured and the body mass index is derived from them. The content is limited to three archetype slots, one for each observation, so that every instance carries only these three kinds of entry.">
+			keywords = <"body mass index", "BMI", "body weight", "height", "anthropometry">
+			misuse = <"Not to be used for other measurements or for a longer clinical record. Such content belongs in its own composition.">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <>
+	other_details = <
+		["licence"] = <"This work is dedicated to the public domain under the Creative Commons CC0 1.0 Universal Public Domain Dedication. To view a copy of this dedication, visit https://creativecommons.org/publicdomain/zero/1.0/.">
+		["references"] = <"Krastev E, Abanos S, Tcharaktchiev D. Health Data Exchange Based on Archetypes of Clinical Concepts. ISGT 2022, CEUR Workshop Proceedings. The composition follows the body mass index example of the paper.">
+	>
+
+definition
+	COMPOSITION[at0000] matches {	-- Anthropometric measurements
+		category matches {
+			DV_CODED_TEXT matches {
+				defining_code matches {
+					[openehr::433]
+				}
+			}
+		}
+		content cardinality matches {1..*; unordered} matches {
+			allow_archetype OBSERVATION[at0001] occurrences matches {0..1} matches {	-- Body weight
+				include
+					archetype_id/value matches {/openEHR-EHR-OBSERVATION\.body_weight(-[a-zA-Z0-9_]+)*\.v2/}
+			}
+			allow_archetype OBSERVATION[at0002] occurrences matches {0..1} matches {	-- Height/Length
+				include
+					archetype_id/value matches {/openEHR-EHR-OBSERVATION\.height(-[a-zA-Z0-9_]+)*\.v2/}
+			}
+			allow_archetype OBSERVATION[at0003] occurrences matches {0..1} matches {	-- Body mass index
+				include
+					archetype_id/value matches {/openEHR-EHR-OBSERVATION\.body_mass_index(-[a-zA-Z0-9_]+)*\.v2/}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Anthropometric measurements">
+					description = <"Body weight, height and body mass index recorded at one encounter.">
+				>
+				["at0001"] = <
+					text = <"Body weight">
+					description = <"Slot for the observation of the body weight.">
+				>
+				["at0002"] = <
+					text = <"Height/Length">
+					description = <"Slot for the observation of the height or body length.">
+				>
+				["at0003"] = <
+					text = <"Body mass index">
+					description = <"Slot for the observation of the body mass index.">
+				>
+			>
+		>
+	>

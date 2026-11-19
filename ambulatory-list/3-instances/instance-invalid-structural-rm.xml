@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Structurally invalid - step 1, against the reference model: in the diagnosis the code stands before the coding scheme, while the coded data type of the reference model sets their order. Otherwise the same as instance-valid.xml. -->
+<AmbulatoryList xmlns="http://EN13606-RM.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://EN13606-RM.xsd ../2-archetypes/CEN-EN13606-COMPOSITION.AmbulatoryList.v1.xsd">
+	<SECTION-EVALUATION>
+		<ENTRY-MAIN.DIAG>
+			<ImeMD>
+				<originalText>Есенциална (първична) хипертония</originalText>
+			</ImeMD>
+			<MKB>
+				<codeValue>I10</codeValue>
+				<codingSchemeName>ICD10_1998</codingSchemeName>
+				<displayName>Essential (primary) hypertension</displayName>
+			</MKB>
+		</ENTRY-MAIN.DIAG>
+	</SECTION-EVALUATION>
+</AmbulatoryList>

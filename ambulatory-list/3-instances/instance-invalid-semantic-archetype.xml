@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Semantically invalid - step 2, against the archetype: the diagnosis is coded in SNOMED-CT, while the archetype fixes the coding scheme to ICD10_1998. Otherwise the same as instance-valid.xml. -->
+<AmbulatoryList xmlns="http://EN13606-RM.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://EN13606-RM.xsd ../2-archetypes/CEN-EN13606-COMPOSITION.AmbulatoryList.v1.xsd">
+	<SECTION-EVALUATION>
+		<ENTRY-MAIN.DIAG>
+			<ImeMD>
+				<originalText>Есенциална (първична) хипертония</originalText>
+			</ImeMD>
+			<MKB>
+				<codingSchemeName>SNOMED-CT</codingSchemeName>
+				<codeValue>I10</codeValue>
+				<displayName>Essential (primary) hypertension</displayName>
+			</MKB>
+		</ENTRY-MAIN.DIAG>
+	</SECTION-EVALUATION>
+</AmbulatoryList>

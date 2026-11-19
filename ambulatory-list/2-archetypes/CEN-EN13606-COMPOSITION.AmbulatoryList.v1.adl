@@ -1,0 +1,1385 @@
+archetype (adl_version=1.4)
+    CEN-EN13606-COMPOSITION.AmbulatoryList.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["date"] = <"2026-09-12">
+        ["name"] = <"Simeon Abanos">
+        ["organisation"] = <"FMI, Sofia University St. Kliment Ohridski">
+    >
+    lifecycle_state = <"Draft">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"Record the Ambulatory list of a patient as reported by a general practitioner to the National Health Insurance Fund, structured in the four stages of a GP visit: observation, evaluation, instruction and action.">
+            use = <"Built within the doctoral thesis from the methodology published in E. Krastev, D. Tcharaktchiev, K. Kaloyanova, L. Kirov, P. Kovatchev, S. Abanos, N. Mateva, Standards Based Adaptation of Clinical Documents for Interoperability of e-Health Services, ISGT 2020, CEUR-WS vol. 2656, pp. 14-29, section 6.">
+            keywords = <"ambulatory list", "general practitioner", "NHIF account report", "legacy data", "EN ISO 13606">
+            copyright = <"ISO/CEN 13606">
+        >
+    >
+
+definition
+    COMPOSITION[at0000] occurrences matches {1..1} matches {  -- AmbulatoryList
+        content existence matches {1..1} cardinality matches {0..*; unordered} matches {
+            SECTION[at0008] occurrences matches {0..*} matches {  -- SECTION-OBSERVATION
+                members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    ENTRY[at0096] occurrences matches {0..*} matches {  -- ENTRY-EXAM.TYPE
+                        items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ELEMENT[at0097] occurrences matches {0..*} matches {  -- EXAM.TYPE
+                                value existence matches {0..1} matches {
+                                    CD[at0098] occurrences matches {0..1} matches {  -- CD
+                                        codeValue existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    ENTRY[at0099] occurrences matches {0..*} matches {  -- ENTRY-DOCS
+                        items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            CLUSTER[at0101] occurrences matches {0..*} matches {  -- SIMP.CONSULT
+                                parts existence matches {0..1} cardinality matches {0..1; unordered; unique} matches {
+                                    ELEMENT[at0106] occurrences matches {0..*} matches {  -- KOD.SP
+                                        value existence matches {0..1} matches {
+                                            CD[at0108] occurrences matches {0..1} matches {  -- CD
+                                                codeValue existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0110] occurrences matches {0..*} matches {  -- SP.FOR
+                                        value existence matches {0..1} matches {
+                                            INT[at0112] occurrences matches {0..1} matches {  -- INT
+                                                value existence matches {1..1} matches {|>-2147483647..<2147483647|}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0186] occurrences matches {0..*} matches {  -- SIMP.MKB
+                                        value existence matches {0..1} matches {
+                                            CD[at0188] occurrences matches {0..1} matches {  -- CD
+                                                codeValue existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0190] occurrences matches {0..*} matches {  -- NO.N
+                                        value existence matches {0..1} matches {
+                                            CD[at0192] occurrences matches {0..1} matches {  -- CD
+                                                codeValue existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                }
+                                item_category existence matches {0..1} matches {
+                                    CS[at0193] occurrences matches {0..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"IC02"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN::ITEM_CATEGORY"}
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0103] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    ENTRY[at0118] occurrences matches {0..*} matches {  -- ENTRY-VSD.SIMP.CONSULT
+                        items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            CLUSTER[at0119] occurrences matches {0..*} matches {  -- VSD.SIMP.CONSULT
+                                parts existence matches {0..1} cardinality matches {0..1; unordered; unique} matches {
+                                    ELEMENT[at0121] occurrences matches {0..*} matches {  -- KOD.SP.VSD
+                                        value existence matches {0..1} matches {
+                                            CD[at0122] occurrences matches {0..1} matches {  -- CD
+                                                codeValue existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0123] occurrences matches {0..*} matches {  -- VSD.FOR
+                                        value existence matches {0..1} matches {
+                                            INT[at0124] occurrences matches {0..1} matches {  -- INT
+                                                value existence matches {1..1} matches {|>-2147483647..<2147483647|}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0125] occurrences matches {0..*} matches {  -- NON.VSD
+                                        value existence matches {0..1} matches {
+                                            CD[at0126] occurrences matches {0..1} matches {  -- CD
+                                                codeValue existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0127] occurrences matches {0..*} matches {  -- ACHlcode
+                                        value existence matches {0..1} matches {
+                                            CD[at0128] occurrences matches {0..1} matches {  -- CD
+                                                codeValue existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0129] occurrences matches {0..*} matches {  -- HOSP.VSD
+                                        value existence matches {0..1} matches {
+                                            BL[at0130] occurrences matches {0..1} matches {  -- BL
+                                                value existence matches {1..1} matches {true, false}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0131] occurrences matches {0..*} matches {  -- VSD.MKB
+                                        value existence matches {0..1} matches {
+                                            CD[at0132] occurrences matches {0..1} matches {  -- CD
+                                                codeValue existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0120] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    ENTRY[at0133] occurrences matches {0..*} matches {  -- ENTRY-MDD
+                        items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ELEMENT[at0134] occurrences matches {0..*} matches {  -- NO.MDD
+                                value existence matches {0..1} matches {
+                                    CD[at0135] occurrences matches {0..1} matches {  -- CD
+                                        codeValue existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0136] occurrences matches {0..*} matches {  -- MDD.FOR
+                                value existence matches {0..1} matches {
+                                    INT[at0137] occurrences matches {0..1} matches {  -- INT
+                                        value existence matches {1..1} matches {|>-2147483647..<2147483647|}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0138] occurrences matches {0..*} matches {  -- KOD.MDD
+                                value existence matches {0..1} matches {
+                                    CD[at0139] occurrences matches {0..1} matches {  -- CD
+                                        codeValue existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0140] occurrences matches {0..*} matches {  -- ACHl.CODE
+                                value existence matches {0..1} matches {
+                                    CD[at0141] occurrences matches {0..1} matches {  -- CD
+                                        codeValue existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0142] occurrences matches {0..*} matches {  -- MDD.MKB
+                                value existence matches {0..1} matches {
+                                    CD[at0143] occurrences matches {0..1} matches {  -- CD
+                                        codeValue existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    ENTRY[at0144] occurrences matches {0..*} matches {  -- ENTRY-TALON.TELK
+                        items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ELEMENT[at0145] occurrences matches {0..*} matches {  -- ELEMENT
+                                value existence matches {0..1} matches {
+                                    BL[at0146] occurrences matches {0..1} matches {  -- BL
+                                        value existence matches {1..1} matches {true, false}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    ENTRY[at0147] occurrences matches {0..*} matches {  -- ENTRY-LKK
+                        items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ELEMENT[at0151] occurrences matches {0..*} matches {  -- NO.LKK
+                                value existence matches {0..1} matches {
+                                    CD[at0152] occurrences matches {0..1} matches {  -- CD
+                                        codeValue existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0153] occurrences matches {0..*} matches {  -- CODE.SPEC
+                                value existence matches {0..1} matches {
+                                    CD[at0154] occurrences matches {0..1} matches {  -- CD
+                                        codeValue existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0155] occurrences matches {0..*} matches {  -- TYPE.LKK
+                                value existence matches {0..1} matches {
+                                    INT[at0156] occurrences matches {0..1} matches {  -- INT
+                                        value existence matches {1..1} matches {|>-2147483647..<2147483647|}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            SECTION[at0009] occurrences matches {0..*} matches {  -- SECTION-EVALUATION
+                members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    ENTRY[at0021] occurrences matches {0..*} matches {  -- ENTRY-MAIN.DIAG
+                        items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ELEMENT[at0022] occurrences matches {0..*} matches {  -- ImeMD
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0023] occurrences matches {0..1} matches {  -- SIMPLE_TEXT
+                                        originalText existence matches {0..1} matches {/.*/}
+                                        language existence matches {0..1} matches {
+                                            CS[at0027] occurrences matches {0..1} matches {  -- 
+                                                codeValue existence matches {0..1} matches {"la"}
+                                                codingSchemeName existence matches {0..1} matches {"ISO_639-1"}
+                                            }
+                                            CS[at0028] occurrences matches {0..1} matches {  -- 
+                                                codeValue existence matches {0..1} matches {"en"}
+                                                codingSchemeName existence matches {0..1} matches {"ISO_639-1"}
+                                            }
+                                        }
+                                        charset existence matches {0..1} matches {
+                                            CS[at0026] occurrences matches {0..1} matches {  -- 
+                                                codeValue existence matches {0..1} matches {"UTF-8"}
+                                                codingSchemeName existence matches {0..1} matches {"IANA::CHARACTER_SET"}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            ELEMENT[at0029] occurrences matches {0..*} matches {  -- MKB
+                                value existence matches {0..1} matches {
+                                    CD[at0030] occurrences matches {0..1} matches {  -- CD
+                                        codeValue existence matches {0..1} matches {/.*/}
+                                        codingSchemeName existence matches {0..1} matches {"ICD10_1998"}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0033] occurrences matches {0..*} matches {  -- ImeLinkD
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0039] occurrences matches {0..1} matches {  -- SIMPLE_TEXT
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            CLUSTER[at0034] occurrences matches {0..*} matches {  -- MKBLinkD
+                                parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                                    ELEMENT[at0036] occurrences matches {0..*} matches {  -- MKB
+                                        value existence matches {0..1} matches {
+                                            CD[at0037] occurrences matches {0..1} matches {  -- CD
+                                                codeValue existence matches {0..1} matches {/.*/}
+                                                codingSchemeName existence matches {0..1} matches {"ICD10_1998"}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0035] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                                item_category existence matches {0..1} matches {
+                                    CS[at0184] occurrences matches {0..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"IC07"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN::ITEM_CATEGORY"}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    ENTRY[at0040] occurrences matches {0..*} matches {  -- ENTRY-DIAG
+                        items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ELEMENT[at0041] occurrences matches {0..*} matches {  -- ImeD
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0042] occurrences matches {0..1} matches {  -- SIMPLE_TEXT
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0047] occurrences matches {0..*} matches {  -- MKB
+                                value existence matches {0..1} matches {
+                                    CD[at0048] occurrences matches {0..1} matches {  -- CD
+                                        codeValue existence matches {0..1} matches {/.*/}
+                                        codingSchemeName existence matches {0..1} matches {"ICD10_1998"}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0049] occurrences matches {0..*} matches {  -- ImeLinkD
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0050] occurrences matches {0..1} matches {  -- SIMPLE_TEXT
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            CLUSTER[at0051] occurrences matches {0..*} matches {  -- MKBLinkD
+                                parts existence matches {0..1} cardinality matches {0..1; unordered; unique} matches {
+                                    ELEMENT[at0055] occurrences matches {0..*} matches {  -- MKB
+                                        value existence matches {0..1} matches {
+                                            CD[at0057] occurrences matches {0..1} matches {  -- CD
+                                                codeValue existence matches {0..1} matches {/.*/}
+                                                codingSchemeName existence matches {0..1} matches {"ICD10_1998"}
+                                            }
+                                        }
+                                    }
+                                }
+                                item_category existence matches {0..1} matches {
+                                    CS[at0210] occurrences matches {0..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"IC07"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN::ITEM_CATEGORY"}
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0053] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            SECTION[at0010] occurrences matches {0..*} matches {  -- SECTION-INSTRUCTION
+                members existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    ENTRY[at0157] occurrences matches {0..*} matches {  -- ENTRY-HOSP.NAPR
+                        items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            CLUSTER[at0159] occurrences matches {0..1} matches {  -- HOSP
+                                parts existence matches {0..1} cardinality matches {0..1; unordered; unique} matches {
+                                    ELEMENT[at0161] occurrences matches {0..*} matches {  -- HOSP.MKB
+                                        value existence matches {0..1} matches {
+                                            CD[at0162] occurrences matches {0..1} matches {  -- CD
+                                                codeValue existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0163] occurrences matches {0..*} matches {  -- PATH.NUM
+                                        value existence matches {0..1} matches {
+                                            SIMPLE_TEXT[at0164] occurrences matches {0..1} matches {  -- SIMPLE_TEXT
+                                                originalText existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0165] occurrences matches {0..*} matches {  -- NAPR.NO
+                                        value existence matches {0..1} matches {
+                                            CD[at0166] occurrences matches {0..1} matches {  -- CD
+                                                codeValue existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0167] occurrences matches {0..*} matches {  -- DATE.NAPR
+                                        value existence matches {0..1} matches {
+                                            DATE[at0168] occurrences matches {0..1} matches {  -- DATE
+                                                date existence matches {1..1} matches {yyyy-mm-dd}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0160] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    ENTRY[at0169] occurrences matches {0..*} matches {  -- ENTRY-HLIST
+                        items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            CLUSTER[at0170] occurrences matches {0..*} matches {  -- HOSPITALS
+                                parts existence matches {0..1} cardinality matches {0..6; unordered; unique} matches {
+                                    ELEMENT[at0172] occurrences matches {0..1} matches {  -- NOBI
+                                        value existence matches {0..1} matches {
+                                            CD[at0173] occurrences matches {0..1} matches {  -- CD
+                                                codeValue existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0174] occurrences matches {0..*} matches {  -- DAYS
+                                        value existence matches {0..1} matches {
+                                            INT[at0175] occurrences matches {0..1} matches {  -- INT
+                                                value existence matches {1..1} matches {|>-2147483647..<2147483647|}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0176] occurrences matches {0..*} matches {  -- HL.MKB
+                                        value existence matches {0..1} matches {
+                                            CD[at0177] occurrences matches {0..1} matches {  -- CD
+                                                codeValue existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0178] occurrences matches {0..*} matches {  -- HL.FROM.DATE
+                                        value existence matches {0..1} matches {
+                                            DATE[at0179] occurrences matches {0..1} matches {  -- DATE
+                                                date existence matches {1..1} matches {yyyy-mm-dd}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0180] occurrences matches {0..*} matches {  -- HL.TO.DATE
+                                        value existence matches {0..1} matches {
+                                            DATE[at0181] occurrences matches {0..1} matches {  -- DATE
+                                                date existence matches {1..1} matches {yyyy-mm-dd}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0182] occurrences matches {0..*} matches {  -- HL.TYPE
+                                        value existence matches {0..1} matches {
+                                            BL[at0183] occurrences matches {0..1} matches {  -- BL
+                                                value existence matches {1..1} matches {true, false}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0171] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    ENTRY[at0195] occurrences matches {0..*} matches {  -- ENTRY-RP
+                        items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ELEMENT[at0196] occurrences matches {0..*} matches {  -- RP.BOOK
+                                value existence matches {0..1} matches {
+                                    CD[at0197] occurrences matches {0..1} matches {  -- CD
+                                        codeValue existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            CLUSTER[at0198] occurrences matches {0..*} matches {  -- RP.DRUG
+                                parts existence matches {0..1} cardinality matches {0..5; unordered; unique} matches {
+                                    ELEMENT[at0200] occurrences matches {0..*} matches {  -- PRESC.NUM
+                                        value existence matches {0..1} matches {
+                                            INT[at0201] occurrences matches {0..1} matches {  -- INT
+                                                value existence matches {1..1} matches {|>-2147483647..<2147483647|}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0202] occurrences matches {0..*} matches {  -- DRUG.CODE
+                                        value existence matches {0..1} matches {
+                                            CD[at0203] occurrences matches {0..1} matches {  -- CD
+                                                codeValue existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0204] occurrences matches {0..*} matches {  -- DRUG.MKB
+                                        value existence matches {0..1} matches {
+                                            CD[at0205] occurrences matches {0..1} matches {  -- CD
+                                                codeValue existence matches {0..1} matches {/.*/}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0206] occurrences matches {0..*} matches {  -- QUANTITY
+                                        value existence matches {0..1} matches {
+                                            INT[at0207] occurrences matches {0..1} matches {  -- INT
+                                                value existence matches {1..1} matches {|>-2147483647..<2147483647|}
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0208] occurrences matches {0..*} matches {  -- DAY
+                                        value existence matches {0..1} matches {
+                                            INT[at0209] occurrences matches {0..1} matches {  -- INT
+                                                value existence matches {1..1} matches {1; 1}
+                                            }
+                                        }
+                                    }
+                                }
+                                structure_type existence matches {1..1} matches {
+                                    CS[at0199] occurrences matches {1..1} matches {  -- 
+                                        codeValue existence matches {0..1} matches {"STRC01"}
+                                        codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            SECTION[at0011] occurrences matches {0..*} matches {  -- SECTION-ACTION
+                members existence matches {1..1} cardinality matches {0..*; unordered; unique} matches {
+                    ENTRY[at0012] occurrences matches {0..*} matches {  -- ENTRY-PROCEDURE
+                        items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ELEMENT[at0013] occurrences matches {0..*} matches {  -- imeP
+                                value existence matches {0..1} matches {
+                                    SIMPLE_TEXT[at0014] occurrences matches {0..1} matches {  -- SIMPLE_TEXT
+                                        originalText existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0015] occurrences matches {0..*} matches {  -- kodP
+                                value existence matches {0..1} matches {
+                                    CD[at0016] occurrences matches {0..1} matches {  -- CD
+                                        codeValue existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0017] occurrences matches {0..*} matches {  -- ACHlcode
+                                value existence matches {0..1} matches {
+                                    CD[at0018] occurrences matches {0..1} matches {  -- CD
+                                        codeValue existence matches {0..1} matches {/.*/}
+                                    }
+                                }
+                            }
+                            ELEMENT[at0019] occurrences matches {0..*} matches {  -- CountP
+                                value existence matches {0..1} matches {
+                                    INT[at0020] occurrences matches {0..1} matches {  -- INT
+                                        value existence matches {1..1} matches {1; 1}
+                                    }
+                                }
+                            }
+                        }
+                        act_status existence matches {0..1} matches {
+                            CS[at0045] occurrences matches {0..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"ATC09"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:ACT_STATUS"}
+                            }
+                        }
+                        subject_of_information_category existence matches {0..1} matches {
+                            CS[at0046] occurrences matches {0..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"DS00"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:SUBJECT_CATEGORY"}
+                            }
+                        }
+                    }
+                    ENTRY[at0211] occurrences matches {0..*} matches {  -- ENTRY-IZVESTIE
+                        items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ELEMENT[at0212] occurrences matches {0..*} matches {  -- IZVESTIE
+                                value existence matches {0..1} matches {
+                                    BL[at0213] occurrences matches {0..1} matches {  -- BL
+                                        value existence matches {1..1} matches {true, false}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    ENTRY[at0214] occurrences matches {0..*} matches {  -- ENTRY-ET.EPIKRIZA
+                        items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ELEMENT[at0215] occurrences matches {0..*} matches {  -- ET.EPIKRIZA
+                                value existence matches {0..1} matches {
+                                    BL[at0216] occurrences matches {0..1} matches {  -- BL
+                                        value existence matches {1..1} matches {true, false}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    ENTRY[at0217] occurrences matches {0..*} matches {  -- ENTRY-MEDICAL.NOTE
+                        items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ELEMENT[at0218] occurrences matches {0..*} matches {  -- MEDICAL.NOTE
+                                value existence matches {0..1} matches {
+                                    BL[at0219] occurrences matches {0..1} matches {  -- BL
+                                        value existence matches {1..1} matches {true, false}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            ENTRY[at0091] occurrences matches {0..*} matches {  -- ENTRY-AMBULATORY.LIST.DETAILS
+                items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    ELEMENT[at0092] occurrences matches {0..*} matches {  -- DISADV
+                        value existence matches {0..1} matches {
+                            BL[at0093] occurrences matches {0..1} matches {  -- BL
+                                value existence matches {1..1} matches {true, false}
+                            }
+                        }
+                    }
+                    ELEMENT[at0094] occurrences matches {0..*} matches {  -- INCIDENTALLY
+                        value existence matches {0..1} matches {
+                            BL[at0095] occurrences matches {0..1} matches {  -- BL
+                                value existence matches {1..1} matches {true, false}
+                            }
+                        }
+                    }
+                    ELEMENT[at0220] occurrences matches {0..*} matches {  -- Sign
+                        value existence matches {0..1} matches {
+                            BL[at0221] occurrences matches {0..1} matches {  -- SIGNED
+                                value existence matches {1..1} matches {true, false}
+                            }
+                        }
+                    }
+                }
+            }
+            ENTRY[at0059] occurrences matches {0..*} matches {  -- PERSONAL.DATA
+                items existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                    ELEMENT[at0061] occurrences matches {0..*} matches {  -- EGN
+                        value existence matches {0..1} matches {
+                            CD[at0063] occurrences matches {0..1} matches {  -- CD
+                                codeValue existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0064] occurrences matches {0..*} matches {  -- LNCH
+                        value existence matches {0..1} matches {
+                            CD[at0065] occurrences matches {0..1} matches {  -- CD
+                                codeValue existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0066] occurrences matches {0..*} matches {  -- SS.NO
+                        value existence matches {0..1} matches {
+                            CD[at0067] occurrences matches {0..1} matches {  -- CD
+                                codeValue existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    CLUSTER[at0068] occurrences matches {0..*} matches {  -- FOREIGNER.COUNTRY
+                        parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ELEMENT[at0070] occurrences matches {0..*} matches {  -- COUNTRY.CODE
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0071] occurrences matches {0..*} matches {  -- COUNTRYDNO
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0072] occurrences matches {0..*} matches {  -- TYPE.CERTIFICATE
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0073] occurrences matches {0..*} matches {  -- DATE.ISSUE
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0074] occurrences matches {0..*} matches {  -- DATE.FROM
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0075] occurrences matches {0..*} matches {  -- DATE.TO
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0076] occurrences matches {0..*} matches {  -- EHIC.NO
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0077] occurrences matches {0..*} matches {  -- PERSON.ID.NO
+                                value existence matches {0..1} matches {*}
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0069] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                    ELEMENT[at0078] occurrences matches {0..*} matches {  -- RZOK
+                        value existence matches {0..1} matches {
+                            CD[at0079] occurrences matches {0..1} matches {  -- CD
+                                codeValue existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0080] occurrences matches {0..*} matches {  -- ZDR.RAJON
+                        value existence matches {0..1} matches {
+                            CD[at0081] occurrences matches {0..1} matches {  -- CD
+                                codeValue existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    CLUSTER[at0082] occurrences matches {0..*} matches {  -- NAME
+                        parts existence matches {0..1} cardinality matches {0..*; unordered; unique} matches {
+                            ELEMENT[at0084] occurrences matches {0..*} matches {  -- GIVEN
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0085] occurrences matches {0..*} matches {  -- SURNAME
+                                value existence matches {0..1} matches {*}
+                            }
+                            ELEMENT[at0086] occurrences matches {0..*} matches {  -- FAMILY.NAME
+                                value existence matches {0..1} matches {*}
+                            }
+                        }
+                        structure_type existence matches {1..1} matches {
+                            CS[at0083] occurrences matches {1..1} matches {  -- 
+                                codeValue existence matches {0..1} matches {"STRC01"}
+                                codingSchemeName existence matches {0..1} matches {"CEN/TC251/EN13606-3:STRUCTURE_TYPE"}
+                            }
+                        }
+                    }
+                    ELEMENT[at0087] occurrences matches {0..*} matches {  -- ADDRESS
+                        value existence matches {0..1} matches {
+                            SIMPLE_TEXT[at0088] occurrences matches {0..1} matches {  -- SIMPLE_TEXT
+                                originalText existence matches {0..1} matches {/.*/}
+                            }
+                        }
+                    }
+                    ELEMENT[at0089] occurrences matches {0..*} matches {  -- IS.HEALTH.INSURANCE
+                        value existence matches {0..1} matches {
+                            INT[at0090] occurrences matches {0..1} matches {  -- INT
+                                value existence matches {1..1} matches {|>-2147483647..<2147483647|}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        territory existence matches {0..1} matches {
+            CS[at0223] occurrences matches {0..1} matches {  -- 
+                codeValue existence matches {0..1} matches {"BG"}
+                codingSchemeName existence matches {0..1} matches {"ISO::3166"}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"AmbulatoryList">
+                    description = <"Ambulatory list of a patient, as reported by a general practitioner">
+                >
+                ["at0008"] = <
+                    text = <"SECTION-OBSERVATION">
+                    description = <"Contains entry details from observations">
+                >
+                ["at0009"] = <
+                    text = <"SECTION-EVALUATION">
+                    description = <"Contains entry details from evaluation">
+                >
+                ["at0010"] = <
+                    text = <"SECTION-INSTRUCTION">
+                    description = <"Contains entry details from instructions for therapy">
+                >
+                ["at0011"] = <
+                    text = <"SECTION-ACTION">
+                    description = <"Contains entry details from action based on instruction results">
+                >
+                ["at0012"] = <
+                    text = <"ENTRY-PROCEDURE">
+                    description = <"To record information about the activities required to carry out a procedure, including the planning, scheduling, performance, suspension, cancellation, documentation and completion.">
+                >
+                ["at0013"] = <
+                    text = <"imeP">
+                    description = <"Name of procedure">
+                >
+                ["at0014"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0015"] = <
+                    text = <"kodP">
+                    description = <"Code of procedure">
+                >
+                ["at0016"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0017"] = <
+                    text = <"ACHlcode">
+                    description = <"">
+                >
+                ["at0018"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0019"] = <
+                    text = <"CountP">
+                    description = <"Procedure sequence count">
+                >
+                ["at0020"] = <
+                    text = <"INT">
+                    description = <"">
+                >
+                ["at0021"] = <
+                    text = <"ENTRY-MAIN.DIAG">
+                    description = <"Main Diagnose coded using International Classification of Diseases  (ICD) 10">
+                >
+                ["at0022"] = <
+                    text = <"ImeMD">
+                    description = <"">
+                >
+                ["at0023"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0029"] = <
+                    text = <"MKB">
+                    description = <"Disease code (medical Code of Disease)">
+                >
+                ["at0030"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0033"] = <
+                    text = <"ImeLinkD">
+                    description = <"Textual description of Codes of related diseases">
+                >
+                ["at0034"] = <
+                    text = <"MKBLinkD">
+                    description = <"">
+                >
+                ["at0036"] = <
+                    text = <"MKB">
+                    description = <"Medical code of secondary disease">
+                >
+                ["at0037"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0039"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0040"] = <
+                    text = <"ENTRY-DIAG">
+                    description = <"Secondary diagnose">
+                >
+                ["at0041"] = <
+                    text = <"ImeD">
+                    description = <"Name of Disease">
+                >
+                ["at0042"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0047"] = <
+                    text = <"MKB">
+                    description = <"Medical code of secondary disease">
+                >
+                ["at0048"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0049"] = <
+                    text = <"ImeLinkD">
+                    description = <"Textual list of description of secondary diseases">
+                >
+                ["at0050"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0051"] = <
+                    text = <"MKBLinkD">
+                    description = <"List of medical codes for secondary diseases">
+                >
+                ["at0055"] = <
+                    text = <"MKB">
+                    description = <"Code of disease">
+                >
+                ["at0057"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0059"] = <
+                    text = <"PERSONAL.DATA">
+                    description = <"Personal data">
+                >
+                ["at0061"] = <
+                    text = <"EGN">
+                    description = <"">
+                >
+                ["at0063"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0064"] = <
+                    text = <"LNCH">
+                    description = <"">
+                >
+                ["at0065"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0066"] = <
+                    text = <"SS.NO">
+                    description = <"">
+                >
+                ["at0067"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0068"] = <
+                    text = <"FOREIGNER.COUNTRY">
+                    description = <"">
+                >
+                ["at0070"] = <
+                    text = <"COUNTRY.CODE">
+                    description = <"">
+                >
+                ["at0071"] = <
+                    text = <"COUNTRYDNO">
+                    description = <"">
+                >
+                ["at0072"] = <
+                    text = <"TYPE.CERTIFICATE">
+                    description = <"">
+                >
+                ["at0073"] = <
+                    text = <"DATE.ISSUE">
+                    description = <"">
+                >
+                ["at0074"] = <
+                    text = <"DATE.FROM">
+                    description = <"">
+                >
+                ["at0075"] = <
+                    text = <"DATE.TO">
+                    description = <"">
+                >
+                ["at0076"] = <
+                    text = <"EHIC.NO">
+                    description = <"">
+                >
+                ["at0077"] = <
+                    text = <"PERSON.ID.NO">
+                    description = <"">
+                >
+                ["at0078"] = <
+                    text = <"RZOK">
+                    description = <"">
+                >
+                ["at0079"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0080"] = <
+                    text = <"ZDR.RAJON">
+                    description = <"">
+                >
+                ["at0081"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0082"] = <
+                    text = <"NAME">
+                    description = <"">
+                >
+                ["at0084"] = <
+                    text = <"GIVEN">
+                    description = <"">
+                >
+                ["at0085"] = <
+                    text = <"SURNAME">
+                    description = <"">
+                >
+                ["at0086"] = <
+                    text = <"FAMILY.NAME">
+                    description = <"">
+                >
+                ["at0087"] = <
+                    text = <"ADDRESS">
+                    description = <"">
+                >
+                ["at0088"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0089"] = <
+                    text = <"IS.HEALTH.INSURANCE">
+                    description = <"">
+                >
+                ["at0090"] = <
+                    text = <"INT">
+                    description = <"">
+                >
+                ["at0091"] = <
+                    text = <"ENTRY-AMBULATORY.LIST.DETAILS">
+                    description = <"">
+                >
+                ["at0092"] = <
+                    text = <"DISADV">
+                    description = <"">
+                >
+                ["at0093"] = <
+                    text = <"BL">
+                    description = <"">
+                >
+                ["at0094"] = <
+                    text = <"INCIDENTALLY">
+                    description = <"">
+                >
+                ["at0095"] = <
+                    text = <"BL">
+                    description = <"">
+                >
+                ["at0096"] = <
+                    text = <"ENTRY-EXAM.TYPE">
+                    description = <"">
+                >
+                ["at0097"] = <
+                    text = <"EXAM.TYPE">
+                    description = <"">
+                >
+                ["at0098"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0099"] = <
+                    text = <"ENTRY-DOCS">
+                    description = <"">
+                >
+                ["at0101"] = <
+                    text = <"SIMP.CONSULT">
+                    description = <"">
+                >
+                ["at0106"] = <
+                    text = <"KOD.SP">
+                    description = <"Code of medical specialist">
+                >
+                ["at0108"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0110"] = <
+                    text = <"SP.FOR">
+                    description = <"">
+                >
+                ["at0112"] = <
+                    text = <"INT">
+                    description = <"">
+                >
+                ["at0118"] = <
+                    text = <"ENTRY-VSD.SIMP.CONSULT">
+                    description = <"">
+                >
+                ["at0119"] = <
+                    text = <"VSD.SIMP.CONSULT">
+                    description = <"">
+                >
+                ["at0121"] = <
+                    text = <"KOD.SP.VSD">
+                    description = <"">
+                >
+                ["at0122"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0123"] = <
+                    text = <"VSD.FOR">
+                    description = <"">
+                >
+                ["at0124"] = <
+                    text = <"INT">
+                    description = <"">
+                >
+                ["at0125"] = <
+                    text = <"NON.VSD">
+                    description = <"">
+                >
+                ["at0126"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0127"] = <
+                    text = <"ACHlcode">
+                    description = <"">
+                >
+                ["at0128"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0129"] = <
+                    text = <"HOSP.VSD">
+                    description = <"">
+                >
+                ["at0130"] = <
+                    text = <"BL">
+                    description = <"">
+                >
+                ["at0131"] = <
+                    text = <"VSD.MKB">
+                    description = <"">
+                >
+                ["at0132"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0133"] = <
+                    text = <"ENTRY-MDD">
+                    description = <"">
+                >
+                ["at0134"] = <
+                    text = <"NO.MDD">
+                    description = <"">
+                >
+                ["at0135"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0136"] = <
+                    text = <"MDD.FOR">
+                    description = <"">
+                >
+                ["at0137"] = <
+                    text = <"INT">
+                    description = <"">
+                >
+                ["at0138"] = <
+                    text = <"KOD.MDD">
+                    description = <"">
+                >
+                ["at0139"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0140"] = <
+                    text = <"ACHl.CODE">
+                    description = <"">
+                >
+                ["at0141"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0142"] = <
+                    text = <"MDD.MKB">
+                    description = <"">
+                >
+                ["at0143"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0144"] = <
+                    text = <"ENTRY-TALON.TELK">
+                    description = <"">
+                >
+                ["at0145"] = <
+                    text = <"ELEMENT">
+                    description = <"">
+                >
+                ["at0146"] = <
+                    text = <"BL">
+                    description = <"">
+                >
+                ["at0147"] = <
+                    text = <"ENTRY-LKK">
+                    description = <"">
+                >
+                ["at0151"] = <
+                    text = <"NO.LKK">
+                    description = <"">
+                >
+                ["at0152"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0153"] = <
+                    text = <"CODE.SPEC">
+                    description = <"">
+                >
+                ["at0154"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0155"] = <
+                    text = <"TYPE.LKK">
+                    description = <"">
+                >
+                ["at0156"] = <
+                    text = <"INT">
+                    description = <"">
+                >
+                ["at0157"] = <
+                    text = <"ENTRY-HOSP.NAPR">
+                    description = <"">
+                >
+                ["at0159"] = <
+                    text = <"HOSP">
+                    description = <"">
+                >
+                ["at0161"] = <
+                    text = <"HOSP.MKB">
+                    description = <"">
+                >
+                ["at0162"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0163"] = <
+                    text = <"PATH.NUM">
+                    description = <"">
+                >
+                ["at0164"] = <
+                    text = <"SIMPLE_TEXT">
+                    description = <"">
+                >
+                ["at0165"] = <
+                    text = <"NAPR.NO">
+                    description = <"">
+                >
+                ["at0166"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0167"] = <
+                    text = <"DATE.NAPR">
+                    description = <"">
+                >
+                ["at0168"] = <
+                    text = <"DATE">
+                    description = <"">
+                >
+                ["at0169"] = <
+                    text = <"ENTRY-HLIST">
+                    description = <"">
+                >
+                ["at0170"] = <
+                    text = <"HOSPITALS">
+                    description = <"">
+                >
+                ["at0172"] = <
+                    text = <"NOBI">
+                    description = <"">
+                >
+                ["at0173"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0174"] = <
+                    text = <"DAYS">
+                    description = <"">
+                >
+                ["at0175"] = <
+                    text = <"INT">
+                    description = <"">
+                >
+                ["at0176"] = <
+                    text = <"HL.MKB">
+                    description = <"">
+                >
+                ["at0177"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0178"] = <
+                    text = <"HL.FROM.DATE">
+                    description = <"">
+                >
+                ["at0179"] = <
+                    text = <"DATE">
+                    description = <"">
+                >
+                ["at0180"] = <
+                    text = <"HL.TO.DATE">
+                    description = <"">
+                >
+                ["at0181"] = <
+                    text = <"DATE">
+                    description = <"">
+                >
+                ["at0182"] = <
+                    text = <"HL.TYPE">
+                    description = <"">
+                >
+                ["at0183"] = <
+                    text = <"BL">
+                    description = <"">
+                >
+                ["at0186"] = <
+                    text = <"SIMP.MKB">
+                    description = <"">
+                >
+                ["at0188"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0190"] = <
+                    text = <"NO.N">
+                    description = <"">
+                >
+                ["at0192"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0195"] = <
+                    text = <"ENTRY-RP">
+                    description = <"">
+                >
+                ["at0196"] = <
+                    text = <"RP.BOOK">
+                    description = <"">
+                >
+                ["at0197"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0198"] = <
+                    text = <"RP.DRUG">
+                    description = <"">
+                >
+                ["at0200"] = <
+                    text = <"PRESC.NUM">
+                    description = <"">
+                >
+                ["at0201"] = <
+                    text = <"INT">
+                    description = <"">
+                >
+                ["at0202"] = <
+                    text = <"DRUG.CODE">
+                    description = <"">
+                >
+                ["at0203"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0204"] = <
+                    text = <"DRUG.MKB">
+                    description = <"">
+                >
+                ["at0205"] = <
+                    text = <"CD">
+                    description = <"">
+                >
+                ["at0206"] = <
+                    text = <"QUANTITY">
+                    description = <"">
+                >
+                ["at0207"] = <
+                    text = <"INT">
+                    description = <"">
+                >
+                ["at0208"] = <
+                    text = <"DAY">
+                    description = <"">
+                >
+                ["at0209"] = <
+                    text = <"INT">
+                    description = <"">
+                >
+                ["at0211"] = <
+                    text = <"ENTRY-IZVESTIE">
+                    description = <"">
+                >
+                ["at0212"] = <
+                    text = <"IZVESTIE">
+                    description = <"">
+                >
+                ["at0213"] = <
+                    text = <"BL">
+                    description = <"">
+                >
+                ["at0214"] = <
+                    text = <"ENTRY-ET.EPIKRIZA">
+                    description = <"">
+                >
+                ["at0215"] = <
+                    text = <"ET.EPIKRIZA">
+                    description = <"">
+                >
+                ["at0216"] = <
+                    text = <"BL">
+                    description = <"">
+                >
+                ["at0217"] = <
+                    text = <"ENTRY-MEDICAL.NOTE">
+                    description = <"">
+                >
+                ["at0218"] = <
+                    text = <"MEDICAL.NOTE">
+                    description = <"">
+                >
+                ["at0219"] = <
+                    text = <"BL">
+                    description = <"">
+                >
+                ["at0220"] = <
+                    text = <"Sign">
+                    description = <"">
+                >
+                ["at0221"] = <
+                    text = <"SIGNED">
+                    description = <"">
+                >
+            >
+        >
+    >
